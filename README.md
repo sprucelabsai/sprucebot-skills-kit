@@ -25,7 +25,9 @@ Amazon rocks, doesn't it? Pretty much everything you need, basement bargain prod
 You've never logged into Amazon, had it say, "Welcome back ${firstName}" and thought to yourself, "Wow, that was nice!" But, when you walk into your favorite boutique, coffeeshop, outdoor shop, barbershop, or salon and are welcomed by name, everything changes.
 
 ## Promote Human-to-Human Connection
-If your skill connects two people, we consider it a win. If you can manage to start a conversation, the small business wins.
+If your skill connects two people, we consider it a win. If you can manage to start a conversation, the small business wins. See, in order for Becca to beat amazon, she's gotta build relationships. Relationships, true relationships, are built face-to-face.
+
+*"Remember that a person's name is to that person the sweetest and most important sound in any language"* - Dale Carnegie
 
 # Using the CLI
 The best way to work with [sprucebot-cli](https://github.com/sprucelabsai/sprucebot-cli).
