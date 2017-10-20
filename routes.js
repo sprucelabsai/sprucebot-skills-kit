@@ -1,3 +1,3 @@
 module.exports = {
-    '/owner/:someVariable/settings': 'pages/owner/settings'
+	'/owner/:someVariable/settings': 'pages/owner/settings'
 }

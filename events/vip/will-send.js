@@ -1,3 +1,1 @@
-modules.export = async (sb, req, res) => {
-
-}
+modules.export = async (sb, req, res) => {}

@@ -1,7 +1,5 @@
 modules.export = () => {
-
-    generateDiscountCode: () => {
-        return 'sntaoehusnatoheusnatoheusnt';
-    }
-
+	generateDiscountCode: () => {
+		return 'sntaoehusnatoheusnatoheusnt'
+	}
 }
