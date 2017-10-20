@@ -1,11 +1,11 @@
 const Config = {
 	API_KEY: process.env.API_KEY
 		? process.env.API_KEY
-		: '32f90a43-4d2d-4224-9e7b-d55b706f564d',
-	HOST: process.env.HOST ? process.env.HOST : 'https://my.dev.sprucebot.com',
+		: 'you should have a .env file with API_KEY filled in for your skill',
+	HOST: process.env.HOST ? process.env.HOST : 'https://your.dev.sprucebot.com',
 	SKILL_ID: process.env.SKILL_ID
 		? process.env.SKILL_ID
-		: '3eab57bb-62dc-4d3e-adde-f3ec96192a90',
+		: 'you should have a .env file with SKILL_ID filled in for your skill',
 	log_colors: {
 		error: 'red',
 		warn: 'orange',
