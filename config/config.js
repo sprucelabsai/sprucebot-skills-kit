@@ -8,6 +8,9 @@ const Config = {
 	SKILL_ID: process.env.SKILL_ID
 		? process.env.SKILL_ID
 		: 'you should have a .env file with SKILL_ID filled in for your skill',
+	SKILL_NAME: process.env.SKILL_NAME
+		? process.env.SKILL_NAME
+		: 'you should have a .env file with SKILL_NAME filled in for your skill',
 	log_colors: {
 		error: 'red',
 		warn: 'orange',

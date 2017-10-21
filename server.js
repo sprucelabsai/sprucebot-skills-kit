@@ -11,11 +11,14 @@ const handle = app.getRequestHandler()
 
 class Sprucebot {
 	constructor(configObj) {
+		console.log(configObj)
 		// Check against defaults to see if dev has updated their env vars
+		const dqStr = 'you should'
 		if (
-			configObj.apiKey.indexOf(' ') >= 0 ||
-			configObj.skillId.indexOf(' ') >= 0 ||
-			configObj.host.indexOf(' ') >= 0
+			configObj.apiKey.indexOf(dqStr) >= 0 ||
+			configObj.skillId.indexOf(dqStr) >= 0 ||
+			configObj.host.indexOf(dqStr) >= 0 ||
+			configObj.skillName.indexOf(dqStr) >= 0
 		) {
 			throw new Error(
 				'Oi! You need to create an .env file at the root of this repository! 😠  Jk, but for real, you should take a peak at .env.sample and then customize your own but just call it .env . Alternatively, if you prefer, you can use an awesome tool like PM2, Nodemon, or ForeverJS to manage this server-process and environment.'
@@ -31,14 +34,17 @@ class Sprucebot {
 			throw new Error(`${configParamErrorBaseStr} a host key/value pair`)
 		} else if (!configObj.skillId) {
 			throw new Error(`${configParamErrorBaseStr} a skillId key/value pair`)
+		} else if (!configObj.skillName) {
+			throw new Error(`${configParamErrorBaseStr} a skillName key/value pair`)
 		}
 		this.apiKey = configObj.apiKey
 		this.host = configObj.host
 		this.skillId = configObj.skillId
+		this.skillName = configObj.skillName
 		console.log(
 			`🌲 Sprucebot🌲 Skills Kit instantiated with : \napiKey : ${this
 				.apiKey}, \nhost : ${this.host}, \nskillId : ${this
-				.skillId} \n---------------------------------`
+				.skillId} \nskillName : ${this.skillName} \n---------------------------------`
 		)
 	}
 }
@@ -47,7 +53,8 @@ class Sprucebot {
 const sprucebot = new Sprucebot({
 	apiKey: Config.API_KEY,
 	host: Config.HOST || 'https://api.sprucebot.com',
-	skillId: Config.SKILL_ID
+	skillId: Config.SKILL_ID,
+	skillName: Config.SKILL_NAME
 })
 
 app.prepare().then(() => {
@@ -58,6 +65,6 @@ app.prepare().then(() => {
 		handle(req, res, parsedUrl)
 	}).listen(port, err => {
 		if (err) throw err
-		console.log(`> Ready on http://localhost:${port}`)
+		console.log(`🌲 Sprucebot Skill 🌲 ready on http://localhost:${port}`)
 	})
 })
