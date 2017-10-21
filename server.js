@@ -36,8 +36,9 @@ class Sprucebot {
 		this.host = configObj.host
 		this.skillId = configObj.skillId
 		console.log(
-			`Sprucebot Instantiated with : \napiKey : ${this.apiKey}, \nhost : ${this
-				.host}, \nskillId : ${this.skillId} \n---------------------------------`
+			`🌲 Sprucebot🌲 Skills Kit instantiated with : \napiKey : ${this
+				.apiKey}, \nhost : ${this.host}, \nskillId : ${this
+				.skillId} \n---------------------------------`
 		)
 	}
 }
