@@ -44,7 +44,8 @@ class Sprucebot {
 		console.log(
 			`🌲 Sprucebot🌲 Skills Kit instantiated with : \napiKey : ${this
 				.apiKey}, \nhost : ${this.host}, \nskillId : ${this
-				.skillId} \nskillName : ${this.skillName} \n---------------------------------`
+				.skillId} \nskillName : ${this
+				.skillName} \n---------------------------------`
 		)
 	}
 }
