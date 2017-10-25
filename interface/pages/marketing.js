@@ -1,4 +1,5 @@
 import React from 'react'
+import Loader from '../sprucebot-react-components/Loader'
 
 const MarketingPage = () => (
 	<div>

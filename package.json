@@ -1,7 +1,7 @@
 {
   "name": "sprucebot-skills-kit",
   "scripts": {
-    "start": "node ./server.js",
+    "start": "node ./server/server.js",
     "lint": "./node_modules/.bin/eslint --fix '**/**/*{.js,.scss}'",
     "test": "./node_modules/.bin/jest --coverage",
     "precommit": "npm run lint",
