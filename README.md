@@ -1,7 +1,7 @@
 # 🌲  Sprucebot Skills Kit 🌲
 
 ### Table of Contents
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC depth=3 -->
 
 - Sprucebot Skills Manifesto
     - Automation
@@ -13,12 +13,17 @@
 - First, about the Skills Kit
 - What Skills Kit is Built on...
     - NextJS
+        - Why?
     - Koa
+        - Why?
+        - Getting Started
 - Skill Requirements
     - Know the rules
     - Technical Requirements
 - Getting Started
 - Development Guide
+    - Tools
+        - Event Simulator \(didEnter/didLeave\)
     - Setting Up Client Side Routes
     - Setting Up Server Side Routes
     - Sprucebot API
@@ -90,6 +95,13 @@ Next.js is a minimalistic framework for server-rendered React applications. Visi
 ### Why?
 Through leveraging generators Koa allows you to ditch callbacks and greatly increase error-handling. Koa does not bundle any middleware within core, and provides an elegant suite of methods that make writing servers fast and enjoyable.
 
+A Koa application is an object containing an array of middleware functions which are composed and executed in a stack-like manner upon request. Koa is similar to many other middleware systems that you may have encountered such as Ruby's Rack, Connect, and so on - however a key design decision was made to provide high level "sugar" at the otherwise low-level middleware layer. This improves interoperability, robustness, and makes writing middleware much more enjoyable.
+
+This includes methods for common tasks like content-negotiation, cache freshness, proxy support, and redirection among others. Despite supplying a reasonably large number of helpful methods Koa maintains a small footprint, as no middleware are bundled.
+
+### Getting Started
+Koa is on the bleeding edge of Javascript development.  Koa uses generators. If you are not familiar with generators, simply put... they offer a way to play and pause making software execution usually execute in a top-down order following a single-way model of computing.  Much easier to debug, and much faster to develop.
+
 # Skill Requirements
 
 ## Know the rules
@@ -105,6 +117,14 @@ Add rules about building skills...
 - Run `yarn start`
 
 # Development Guide
+
+## Tools
+
+### Event Simulator (didEnter/didLeave)
+
+The Sprucebot CLI ships with an event simulator.  With the CLI running, press the UP arrow to simmulate a `didEnter` event.  Press the DOWN arrow to simulate a `didLeave` event.
+
+(Add some notes on how these are configured and their payloads)
 
 ## Setting Up Client Side Routes
 

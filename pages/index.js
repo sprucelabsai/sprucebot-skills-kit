@@ -4,7 +4,7 @@ import Page from '../containers/Page'
 
 const DeveloperPage = ({ userAgent }) => (
 	<div>
-		<h1>Hello new Developer!</h1>
+		<h1>Hello Sprucebot Skills Developer!</h1>
 		<h2>I come pre-configured with a few different pages:</h2>
 		<ul>
 			<li>

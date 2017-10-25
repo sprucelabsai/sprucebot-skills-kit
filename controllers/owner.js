@@ -1,23 +1,27 @@
 module.exports = {
-	'get :locationId/save': async (sb, req, res) => {
-		const newCode = sb.utilites.rewards.generateDiscountCode()
-		const rewards = await sb.services.rewards.generateRewardWithCode(
-			req.params.locationId,
+
+	router.get('saveLocation', '/location/:locationId/save', async ctx => {
+ 		const newCode = ctx.sb.utilites.rewards.generateDiscountCode()
+		const rewards = await ctx.sb.services.rewards.generateRewardWithCode(
+			ctx.req.params.locationId,
 			newCode
 		)
-	},
+	});
 
 	// assuming appointments are stored in a local postrges/mysql/sqllite database
-	'get :locationId/appointments': async (sb, req, res) => {
-		const appointments = sb.models.appointment.find({
-			locationId: req.params.locationId
+	router.get('getAppointments', '/location/:locationId/save', async ctx => {
+		const appointments = ctx.sb.models.appointment.find({
+			locationId: ctx.req.params.locationId
 		})
-
-		return res.json(appointments.map(a => a.toPublic()))
-	},
+		return ctx.res.json(appointments.map(a => a.toPublic()))
+	});
 
 	// post only
-	'post :locationId/rewards/save': async (sb, req, res) => {
-		// ...
-	}
+	router.post('saveRewards', '/location/:locationId/rewards/save', async ctx => {
+		const appointments = ctx.sb.models.appointment.find({
+			locationId: req.params.locationId
+		})
+		return res.json(appointments.map(a => a.toPublic()))
+	});
+
 }
