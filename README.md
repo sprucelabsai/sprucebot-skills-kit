@@ -1,9 +1,43 @@
-# sprucebot-skills-kit
-🌲  Sprucebot Skills Kit 🌲
+# 🌲  Sprucebot Skills Kit 🌲
 
-TLDR; Create skills for Sprucebot
+### Table of Contents
+<!-- MarkdownTOC -->
 
-Skills are programs with a purpose: help [small business](https://vimeo.com/204933933). 
+- Sprucebot Skills Manifesto
+    - Automation
+    - Augmentation
+    - Making Small Business Successful
+    - Un-Amazon'able
+    - Promote Human-to-Human Connection
+- Using the CLI
+- First, about the Skills Kit
+- What Skills Kit is Built on...
+    - NextJS
+    - Koa
+- Skill Requirements
+    - Know the rules
+    - Technical Requirements
+- Getting Started
+- Development Guide
+    - Setting Up Client Side Routes
+    - Setting Up Server Side Routes
+    - Sprucebot API
+    - Sending a message to a teammate when a guest arrives
+    - Emitting a Custom Event
+    - Listening to Someone's Custom Event
+- Deployment
+    - Heroku
+    - AWS
+    - IBM Bluemix
+    - Other servers
+- Support
+
+<!-- /MarkdownTOC -->
+
+
+# Sprucebot Skills Manifesto
+
+Skills are programs with a purpose: help [small business](https://vimeo.com/204933933).
 
 They accomplish this in one two ways:
 
@@ -16,7 +50,7 @@ Lets say there is a lady named Becca. She nerds the f\*\*k out over fashion. So,
 ## Augmentation
 Good augmentation is much harder to acheive than good automation. Automation comes natural. You think, "What processes can I get rid of?" Augmentation is the opposite. The question becomes, "What processes can I make better?" It turns out it's much easier to point at something and say, "eliminate that" than it is to imagine something that does not yet exist.
 
-## Making Small Business Successful 
+## Making Small Business Successful
 This two pronged approach is the crux of our small business strategy. We want Becca to be able to focus on fashion, not all that other sh\*t. But, Becca's boutique needs more than good automation to succeed. She needs to be:
 
 ## Un-Amazon'able
@@ -32,13 +66,57 @@ If your skill connects two people, we consider it a win. If you can manage to st
 # Using the CLI
 The best way to work with [sprucebot-cli](https://github.com/sprucelabsai/sprucebot-cli).
 
-# Setting Up Client Side Routes
+# First, about the Skills Kit
+This is a highly opinionated approach on how to rapidly build skills for the Sprucebot platform.  Ultimately, you could build a skill on any stack. This particular kit uses NodeJS + ReactJS with Next and Koa as supporting frameworks... Ultimately, that's your choice - may the force be with you.
+
+- Add a diagram of the skills architecture
+
+# What Skills Kit is Built on...
+
+## NextJS
+Next.js is a minimalistic framework for server-rendered React applications. Visit [learnnextjs.com](https://learnnextjs.com/basics/getting-started) to get started with Next.js.
+
+### Why?
+- Server-rendered by default
+- Automatic code splitting for faster page loads
+- Simple client-side routing (page based)
+- Webpack-based dev environment which supports Hot Module Replacement (HMR)
+- Able to implement with Express or any other Node.js HTTP server
+- Customizable with your own Babel and Webpack configurations
+
+## Koa
+[Koa](http://koajs.com/) is a next generation web framework for NodeJS designed by the team behind Express, which aims to be a smaller, more expressive, and more robust foundation for web applications and APIs.
+
+### Why?
+Through leveraging generators Koa allows you to ditch callbacks and greatly increase error-handling. Koa does not bundle any middleware within core, and provides an elegant suite of methods that make writing servers fast and enjoyable.
+
+# Skill Requirements
+
+## Know the rules
+Add rules about building skills...
+
+## Technical Requirements
+- node v7.6+ : Koa requires node v7.6.0 or higher for ES2015 and async function support.
+- Yarn is installed (you can use NPM if you really want)
+
+# Getting Started
+- Clone this repository
+- Run `yarn install`
+- Run `yarn start`
+
+# Development Guide
+
+## Setting Up Client Side Routes
+
+With NextJS, client-side routing becomes super simple... it's the file system based on the `pages` directory you find here.
 
 ```bash
 sprucebot skill create route /owner/settings
 ```
 
-Routes are stored in `routes.js` to setup all your client side routes. 
+Winds up scaffolding a page (i.e. a React component)
+
+Routes are stored in `routes.js` to setup all your client side routes.
 
 
 ```js
@@ -95,7 +173,7 @@ try {
 
     // USER API
     const guest = await sb.user(locationId, userId)
-    
+
     console.log(guest) // {} or null
 
     const teammates = await sb.users(locationId, {
@@ -246,7 +324,7 @@ module.exports = async (sb, req, res) => {
             message: `Alerts sent to ${meta.values.length} teammates!`
         }
 
-        
+
     }
 
 }
@@ -259,7 +337,7 @@ When you emit a custom event, it MUST be namespaced `vip:event-name`. The respon
 
  - event.data
  - event.errors
- 
+
 Data is an array of payloads returned from each skill enabled for a particular location
 
 
@@ -276,7 +354,7 @@ module.export = async (sb, req, res) => {
         },
         {
             title: 'photo',
-            value: '<img src="">' 
+            value: '<img src="">'
         }
     ]
 
@@ -284,7 +362,7 @@ module.export = async (sb, req, res) => {
     const event = sb.emit(req.location.id, 'vip:will-send', attachments)
 
     // all the responses from every skill enabled for this location
-    console.log(event.data) 
+    console.log(event.data)
     /*
 
         [
@@ -330,3 +408,33 @@ modules.export = async (sb, req, res) => {
 }
 
 ```
+
+# Deployment
+
+## Heroku
+Simply configure your environmental variables in your Heroku control pannel and push your app.  This skillskit is very Heroku friendly if not modified extensively.
+
+- Add Screenshot
+- Add link to **Sprucebot Skill Deployment Guide - Heroku**
+
+## AWS
+Skills built on this kit are easily deployed to EC2. You will need to start the application process.  The Spruce team recommends managing your node processes with PM2.  Hint hint, PM2 has some nifty power tools for AWS deployments.  Just configure the provided `sample.ecosystem.js` file and run `pm2 deploy`
+
+Simply configure your environmental variables in your Heroku control pannel and push your app.  This skillskit is very Heroku friendly if not modified extensively.
+
+- Add link to **Sprucebot Skill Deployment Guide - AWS**
+
+## IBM Bluemix
+Simply configure your environmental variables in your Cloud Foundry control pannel and push your app.  This skillskit is very Cloud Foundry friendly if not modified extensively.
+
+- Add Screenshot
+- Add link to **Sprucebot Skill Deployment Guide - Cloud Foundry**
+
+## Other servers
+A Sprucebot skill should be able to be deployed to most web servers. Please see the below guide
+
+- Add link to **Sprucebot Skill Deployment Guide - Custom Server**
+
+# Support
+
+Call Randy Cotten
