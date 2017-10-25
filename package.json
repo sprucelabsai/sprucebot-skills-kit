@@ -2,13 +2,14 @@
   "name": "sprucebot-skills-kit",
   "scripts": {
     "start": "node ./server/server.js",
-    "lint": "./node_modules/.bin/eslint --fix '**/**/*{.js,.scss}'",
+    "lint": "./node_modules/.bin/eslint --fix '**/**/*{.js}'",
     "test": "./node_modules/.bin/jest --coverage",
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm run test"
   },
   "dependencies": {
     "config": "^1.27.0",
+    "dotenv": "^4.0.0",
     "eslint-plugin-react": "^7.4.0",
     "koa": "^2.3.0",
     "koa-router": "^7.2.1",
