@@ -64,5 +64,4 @@ typings/
 ecosystem.config.js
 
 # node-config
-config/*
-!config/Readme.md
+config/local.*

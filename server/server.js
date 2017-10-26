@@ -7,11 +7,11 @@ const Router = require('koa-router')
 const Sprucebot = require('../sprucebot')
 
 const config = require('config')
-const port = parseInt(process.env.PORT, 10) || 3000
-const dev = process.env.NODE_ENV !== 'production'
+const port = config.get('PORT')
 
 // Setup NextJS App
-const app = next({ dir: './interface', dev })
+const nextConfig = config.get('nextConfig')
+const app = next(nextConfig)
 const handle = app.getRequestHandler()
 
 // Construct new Sprucebot Class
