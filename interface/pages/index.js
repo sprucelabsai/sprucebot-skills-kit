@@ -1,8 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import Page from '../containers/Page'
+import Styleguide from '../containers/Styleguide'
 
-const DeveloperPage = ({ userAgent }) => (
+import Container from '../components/Container/Container'
+
+const DeveloperPage = ({ userAgent, getState }) => (
 	<div>
 		<h1>Hello Sprucebot Skills Developer!</h1>
 		<h2>I come pre-configured with a few different pages:</h2>
@@ -19,6 +22,7 @@ const DeveloperPage = ({ userAgent }) => (
 			<li>userAgent: {userAgent}</li>
 		</ul>
 		<h2>🌲 🤖</h2>
+		<Styleguide />
 	</div>
 )
 
