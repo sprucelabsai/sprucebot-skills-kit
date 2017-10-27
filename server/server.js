@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 const Koa = require('koa')
 const next = require('next')
 const Router = require('koa-router')
@@ -8,20 +6,20 @@ const Router = require('koa-router')
 // const Sprucebot = require('sprucebot') //once in NPM
 const Sprucebot = require('../sprucebot')
 
-const Config = require('../config/config')
-const port = parseInt(process.env.PORT, 10) || 3006
-const dev = process.env.NODE_ENV !== 'production'
+const config = require('config')
+const port = config.get('PORT')
 
 // Setup NextJS App
-const app = next({ dir: './interface', dev })
+const nextConfig = config.get('nextConfig')
+const app = next(nextConfig)
 const handle = app.getRequestHandler()
 
 // Construct new Sprucebot Class
 const sprucebot = new Sprucebot({
-	apiKey: Config.API_KEY,
-	host: Config.HOST || 'https://api.sprucebot.com',
-	skillId: Config.SKILL_ID,
-	skillName: Config.SKILL_NAME
+	apiKey: config.get('API_KEY'),
+	host: config.get('HOST'),
+	skillId: config.get('SKILL_ID'),
+	skillName: config.get('SKILL_NAME')
 })
 
 app.prepare().then(() => {
