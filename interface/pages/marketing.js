@@ -1,5 +1,5 @@
 import React from 'react'
-import Loader from '../sprucebot-react-components/Loader'
+import Page from '../containers/Page'
 
 const MarketingPage = () => (
 	<div>
@@ -7,4 +7,4 @@ const MarketingPage = () => (
 	</div>
 )
 
-export default MarketingPage
+export default Page(MarketingPage)

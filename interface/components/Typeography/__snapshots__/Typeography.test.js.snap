@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`h1 tag it renders 1`] = `
+<h1
+  className=""
+/>
+`;
+
+exports[`h1 tag it renders header and subheader 1`] = `
+<div>
+  <h1
+    className="with__subheader "
+  />
+  <h2
+    className="is__subheader "
+  />
+</div>
+`;
+
+exports[`p tag it fine prints 1`] = `
+<p
+  className="fine__print "
+/>
+`;
+
+exports[`p tag it renders 1`] = `
+<p
+  className=""
+/>
+`;

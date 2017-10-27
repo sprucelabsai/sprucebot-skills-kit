@@ -1,4 +1,5 @@
 import React from 'react'
+import Page from '../containers/Page'
 
 const OwnerPage = () => (
 	<div>
@@ -6,4 +7,4 @@ const OwnerPage = () => (
 	</div>
 )
 
-export default OwnerPage
+export default Page(OwnerPage)
