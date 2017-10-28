@@ -13,6 +13,9 @@ const port = config.get('PORT')
 const nextConfig = config.get('nextConfig')
 const app = next(nextConfig)
 const handle = app.getRequestHandler()
+const fs = require('fs')
+const glob = require('glob')
+const path = require('path')
 
 // Construct new Sprucebot Class
 const sprucebot = new Sprucebot({
@@ -26,14 +29,27 @@ app.prepare().then(() => {
 	const server = new Koa()
 	const router = new Router()
 
-	/*=========================================
-		=            Sprucebot Context          =
-		=======================================*/
+	/*=======================================
+	=            Sprucebot Context          =
+	=======================================*/
 	//server.context.sb = sprucebot.server.context
 
 	/*======================================
-		=            Custom Routes Idea        =
-		======================================*/
+	=            Custom Routes        	   =
+	======================================*/
+	try {
+		const controllerPath = path.join(__dirname, '/controllers/**/*.js')
+		const matches = glob.sync(controllerPath, {
+			ignore: ['**/cron.js']
+		})
+		matches.forEach(function(match) {
+			controller = require(match)
+			controller(router)
+		})
+	} catch (err) {
+		console.warn('Loading controllers failed')
+		console.warn(err)
+	}
 
 	// The below comment pattern could be used to identify blocks for file manipulation, just a thought... we'd want to figure out our own aytipical template string structure though, {}, <!-- -->, are too likely to be used so we wouldn't want those types of templates that we've seen before as the string sniff.
 
@@ -69,18 +85,18 @@ app.prepare().then(() => {
 	// x-response-time
 	server.use(async (ctx, next) => {
 		const start = Date.now()
+		await next()
 		const ms = Date.now() - start
 		ctx.set('X-Response-Time', `${ms}ms`)
-		await next()
 	})
 
 	// logger
 	server.use(async (ctx, next) => {
+		const start = Date.now()
 		await next()
 		// do stuff when the execution returns upstream, this will be last event in upstream
-		const start = Date.now()
 		const ms = Date.now() - start
-		console.log(`${ctx.method} ${ctx.url} - ${ms}`)
+		console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 	})
 
 	// Sprucebot Middleware

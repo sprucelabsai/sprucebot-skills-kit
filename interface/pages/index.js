@@ -6,6 +6,7 @@ import Styleguide from '../containers/Styleguide'
 import Container from '../components/Container/Container'
 import Card from '../components/Card/Card'
 import Pre from '../components/Pre/Pre'
+import BotText from '../components/BotText/BotText'
 import {
 	H1,
 	H2,
@@ -17,7 +18,7 @@ const DeveloperPage = props => (
 	<div>
 		<Container>
 			<H1>Hello Sprucebot Skills Developer!</H1>
-			<H2>I come pre-configured with a few different pages:</H2>
+			<BotText>I come pre-configured with a few different pages:</BotText>
 			<ul>
 				<li>
 					<Link href="/marketing">Marketing Page</Link>
