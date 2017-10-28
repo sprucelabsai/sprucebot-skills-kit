@@ -1,4 +1,5 @@
 import React from 'react'
+import config from 'config'
 import {
 	createStore as createRedux,
 	applyMiddleware,
@@ -22,7 +23,7 @@ export function configureStore(initialState) {
 		(typeof window !== 'undefined' &&
 			window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
 		compose
-	const client = apiClient('https://local-api.sprucebot.com/api/1.0')
+	const client = apiClient(config.HOST)
 	const enhancer = composeEnhancers(
 		applyMiddleware(thunk, clientApiMiddleware(client), loggerMiddleware())
 	)
