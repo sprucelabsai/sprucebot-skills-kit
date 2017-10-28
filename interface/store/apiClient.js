@@ -36,7 +36,8 @@ class ApiClient {
 							method,
 							headers,
 							body: JSON.stringify(body),
-							agent
+							agent,
+							credentials: 'include'
 						})
 
 						const json = await response.json()
