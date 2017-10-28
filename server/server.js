@@ -6,20 +6,25 @@ const Router = require('koa-router')
 // const Sprucebot = require('sprucebot') //once in NPM
 const Sprucebot = require('../sprucebot')
 
-const config = require('config')
-const port = config.get('PORT')
+const {
+	PORT,
+	API_KEY,
+	HOST,
+	SKILL_ID,
+	SKILL_NAME,
+	nextConfig
+} = require('config')
 
 // Setup NextJS App
-const nextConfig = config.get('nextConfig')
 const app = next(nextConfig)
 const handle = app.getRequestHandler()
 
 // Construct new Sprucebot Class
 const sprucebot = new Sprucebot({
-	apiKey: config.get('API_KEY'),
-	host: config.get('HOST'),
-	skillId: config.get('SKILL_ID'),
-	skillName: config.get('SKILL_NAME')
+	apiKey: API_KEY,
+	host: HOST,
+	skillId: SKILL_ID,
+	skillName: SKILL_NAME
 })
 
 app.prepare().then(() => {
@@ -105,8 +110,8 @@ app.prepare().then(() => {
 	// Synchronous Middleware
 	server.use(router.routes())
 
-	server.listen(port, err => {
+	server.listen(PORT, err => {
 		if (err) throw err
-		console.log(` 🌲  Sprucebot Skills Kit Ready on http://localhost:${port}`)
+		console.log(` 🌲  Sprucebot Skills Kit Ready on http://localhost:${PORT}`)
 	})
 })

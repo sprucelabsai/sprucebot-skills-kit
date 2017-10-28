@@ -65,3 +65,4 @@ ecosystem.config.js
 
 # node-config
 config/local.*
+client.json
