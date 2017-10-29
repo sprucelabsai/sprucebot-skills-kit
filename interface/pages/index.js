@@ -5,7 +5,7 @@ import Sprucebot from 'sprucebot-react'
 import Page from '../containers/Page'
 import Styleguide from '../containers/Styleguide'
 import { components } from 'sprucebot-react'
-const { Container, H1, H2, H3, BotText, Pre, Card, P } = components
+const { Container, H1, H2, H3, BotText, Pre, Card, Paragraph } = components
 
 const DeveloperPage = props => (
 	<div>
@@ -14,10 +14,14 @@ const DeveloperPage = props => (
 			<BotText>I come pre-configured with a few different pages:</BotText>
 			<ul>
 				<li>
-					<Link href="/marketing">Marketing Page</Link>
+					<Link href="/marketing">
+						<a>Marketing Page</a>
+					</Link>
 				</li>
 				<li>
-					<Link href="/owner">Owner Page</Link>
+					<Link href="/owner">
+						<a>Owner Page</a>
+					</Link>
 				</li>
 			</ul>
 			<H2>Getting Started</H2>
@@ -50,10 +54,10 @@ export default Page(MyCustomPage)
 	`}
 			</Pre>
 			<H3>Available Props</H3>
-			<P>
+			<Paragraph>
 				Try adding query string ?userId=1 to the url and watch how these props
 				change
-			</P>
+			</Paragraph>
 			<ul>
 				{Object.keys(props).map(key => (
 					<Pre key={key}>
