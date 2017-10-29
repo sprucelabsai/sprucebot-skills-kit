@@ -1,4 +1,5 @@
-module.exports = {
-	// runs every day at 8am
-	'0 8 * * *': sb => {}
+module.exports = cron => {
+	// cron.schedule('0 8 * * *', () => {
+	// 	console.log('running every day at 8am')
+	// })
 }
