@@ -12,7 +12,8 @@ module.exports = {
 		fs.writeFileSync(jsonPath, JSON.stringify(clientConfig))
 		webpack.resolve = {
 			alias: {
-				config: jsonPath
+				config: jsonPath,
+				sprucebot: 'sprucebot-react'
 			}
 		}
 		return webpack

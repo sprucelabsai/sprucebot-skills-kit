@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
-
-import Container from '../components/Container/Container'
-import Card from '../components/Card/Card'
-import {
+import { components } from 'sprucebot-react'
+console.log(components)
+const {
+	Container,
+	Card,
 	H1,
 	H2,
 	H3,
 	H4,
 	H5,
 	H6,
-	Paragraph as P,
-	A
-} from '../components/Typeography/Typeography'
-import Avatar from '../components/Avatar/Avatar'
-import BotText from '../components/BotText/BotText'
-import Button from '../components/Button/Button'
-import Loader from '../components/Button/Loader'
-import Switch from '../components/Switch/Switch'
+	P,
+	A,
+	Avatar,
+	Button,
+	Switch
+} = components
 
 export default class Styleguide extends Component {
 	render() {

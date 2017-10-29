@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`BotText Component it renders 1`] = `
-<div
-  className="bot__text "
->
-  Bottext children
-</div>
-`;

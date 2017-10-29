@@ -72,9 +72,9 @@ If your skill connects two people, we consider it a win. If you can manage to st
 The best way to work with [sprucebot-cli](https://github.com/sprucelabsai/sprucebot-cli).
 
 # First, about the Skills Kit
-This is a highly opinionated approach on how to rapidly build skills for the Sprucebot platform.  Ultimately, you could build a skill on any stack. This particular kit uses NodeJS + ReactJS with Next and Koa as supporting frameworks... Ultimately, that's your choice - may the force be with you.
+This is a highly opinionated approach on how to rapidly build skills for Sprucebot.  Ultimately, you could build a skill on any stack. 🤘🏼 This particular kit uses NodeJS + ReactJS with Next and Koa as supporting frameworks... May the force be with you.
 
-- Add a diagram of the skills architecture
+- ~~Diagram of the skills architecture~~
 
 # What Skills Kit is Built on...
 
@@ -100,7 +100,7 @@ A Koa application is an object containing an array of middleware functions which
 This includes methods for common tasks like content-negotiation, cache freshness, proxy support, and redirection among others. Despite supplying a reasonably large number of helpful methods Koa maintains a small footprint, as no middleware are bundled.
 
 ### Getting Started
-Koa is on the bleeding edge of Javascript development.  Koa uses generators. If you are not familiar with generators, simply put... they offer a way to play and pause making software execution usually execute in a top-down order following a single-way model of computing.  Much easier to debug, and much faster to develop.
+Koa is on the bleeding edge of Javascript development.  Koa uses generators. If you are not familiar with generators, [check this out](https://davidwalsh.name/es6-generators). They are much easier to debug, and much faster to develop.
 
 # Skill Requirements
 
