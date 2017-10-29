@@ -5476,7 +5476,7 @@ sprintf-js@~1.0.2:
   version "0.0.1"
 
 "sprucebot-react@file:../sprucebot-react":
-  version "0.0.4"
+  version "0.0.10"
   dependencies:
     styled-components "^2.2.2"
 

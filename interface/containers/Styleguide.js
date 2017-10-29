@@ -3,6 +3,8 @@ import { components } from 'sprucebot-react'
 console.log(components)
 const {
 	Container,
+	BotText,
+	Loader,
 	Card,
 	H1,
 	H2,
@@ -10,12 +12,13 @@ const {
 	H4,
 	H5,
 	H6,
-	P,
+	Paragraph,
 	A,
 	Avatar,
 	Button,
 	Switch
 } = components
+const P = Paragraph
 
 export default class Styleguide extends Component {
 	render() {
