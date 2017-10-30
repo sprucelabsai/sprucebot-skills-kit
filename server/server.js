@@ -32,7 +32,9 @@ const sprucebot = new Sprucebot({
 	host: API_HOST,
 	skillId: SKILL_ID,
 	name: SKILL_NAME,
-	description: SKILL_DESCRIPTION
+	description: SKILL_DESCRIPTION,
+	svgIcon: SKILL_ICON,
+	webhookUrl: SKILL_SERVER_HOST + '/hook'
 })
 
 app.prepare().then(() => {

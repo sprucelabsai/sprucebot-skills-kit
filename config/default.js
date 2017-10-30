@@ -20,9 +20,7 @@ module.exports = {
 		.toString(),
 	SKILL_DESCRIPTION: process.env.SKILL_DESCRIPTION,
 	SKILL_SERVER_HOST: process.env.SKILL_SERVER_HOST,
-	SKILL_SERVER_PORT: process.env.SKILL_SERVER_PORT,
 	SKILL_INTERFACE_HOST: process.env.SKILL_INTERFACE_HOST,
-	SKILL_INTERFACE_PORT: process.env.SKILL_INTERFACE_PORT,
 	log_colors: {
 		error: 'red',
 		warn: 'orange',
