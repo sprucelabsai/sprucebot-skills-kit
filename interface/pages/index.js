@@ -1,11 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
-import Sprucebot from 'sprucebot-react'
+import {
+	Container,
+	H1,
+	H2,
+	H3,
+	BotText,
+	Pre,
+	Card,
+	Paragraph
+} from 'react-sprucebot'
 
 import Page from '../containers/Page'
 import Styleguide from '../containers/Styleguide'
-import { components } from 'sprucebot-react'
-const { Container, H1, H2, H3, BotText, Pre, Card, Paragraph } = components
 
 const DeveloperPage = props => (
 	<div>

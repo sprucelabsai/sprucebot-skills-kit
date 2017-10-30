@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
 						href="https://hello.sprucebot.com/skills.css"
 						rel="stylesheet"
 						type="text/css"
-						charset="UTF-8"
+						charSet="UTF-8"
 					/>
 					{this.props.styleTags}
 				</Head>
