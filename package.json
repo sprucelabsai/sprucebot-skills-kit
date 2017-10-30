@@ -1,10 +1,12 @@
 {
   "name": "sprucebot-skills-kit",
+  "version": "0.0.1",
   "scripts": {
     "start": "node ./server/server.js",
-    "local": "node --inspect=4006 ./server/server.js",
+    "local": "npm run icon && node --inspect=4006 ./server/server.js",
     "lint": "./node_modules/.bin/eslint --fix '**/**/*{.js,.scss}'",
     "test": "./node_modules/.bin/jest --coverage",
+    "icon": "./node_modules/.bin/svgo icon/icon.svg",
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm run test"
   },
@@ -23,11 +25,11 @@
     "react-dom": "^16.0.0",
     "react-emojione": "^5.0.0",
     "react-redux": "^5.0.6",
+    "react-sprucebot": "sprucelabsai/react-sprucebot#dev",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.17.2",
     "sprucebot-node": "sprucelabsai/sprucebot-node#dev",
-    "react-sprucebot": "sprucelabsai/react-sprucebot#dev",
     "styled-components": "^2.2.2"
   },
   "devDependencies": {
@@ -43,6 +45,7 @@
     "jest-styled-components": "^4.9.0",
     "prettier": "^1.7.4",
     "react-test-renderer": "^16.0.0",
-    "sinon": "^3.3.0"
+    "sinon": "^3.3.0",
+    "svgo": "^0.7.2"
   }
 }

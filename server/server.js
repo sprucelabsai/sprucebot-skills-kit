@@ -7,27 +7,32 @@ const cron = require('node-cron')
 const Sprucebot = require('sprucebot-node')
 
 const {
-	PORT,
 	API_KEY,
-	HOST,
+	API_HOST,
 	SKILL_ID,
 	SKILL_NAME,
+	SKILL_ICON,
+	SKILL_DESCRIPTION,
+	SKILL_SERVER_HOST,
+	SKILL_SERVER_PORT,
+	SKILL_INTERFACE_HOST,
+	SKILL_INTERFACE_PORT,
 	nextConfig
 } = require('config')
 
 // Setup NextJS App
 const app = next(nextConfig)
 const handle = app.getRequestHandler()
-const fs = require('fs')
 const glob = require('glob')
 const path = require('path')
 
-// Construct new Sprucebot Class
+// Construct a new Sprucebot
 const sprucebot = new Sprucebot({
 	apiKey: API_KEY,
-	host: HOST,
+	host: API_HOST,
 	skillId: SKILL_ID,
-	skillName: SKILL_NAME
+	name: SKILL_NAME,
+	description: SKILL_DESCRIPTION
 })
 
 app.prepare().then(() => {
