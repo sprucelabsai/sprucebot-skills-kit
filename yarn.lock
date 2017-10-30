@@ -4819,6 +4819,12 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
+react-sprucebot@sprucelabsai/react-sprucebot#dev:
+  version "0.0.10"
+  resolved "https://codeload.github.com/sprucelabsai/react-sprucebot/tar.gz/a74021c505dd3d7935eb533ba02924d65f7ce1e2"
+  dependencies:
+    styled-components "^2.2.2"
+
 react-test-renderer@^16.0.0:
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.0.0.tgz#9fe7b8308f2f71f29fc356d4102086f131c9cb15"
@@ -5472,13 +5478,11 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
-"sprucebot-node@file:../sprucebot-node":
+sprucebot-node@sprucelabsai/sprucebot-node#dev:
   version "0.0.1"
-
-"sprucebot-react@file:../sprucebot-react":
-  version "0.0.10"
+  resolved "https://codeload.github.com/sprucelabsai/sprucebot-node/tar.gz/8a3a5d2b65c8cabd6811ce4b7c889629d97dcdc3"
   dependencies:
-    styled-components "^2.2.2"
+    glob "^7.1.2"
 
 sshpk@^1.7.0:
   version "1.13.1"

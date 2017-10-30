@@ -26,8 +26,8 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.17.2",
-    "sprucebot-node": "file:../sprucebot-node",
-    "sprucebot-react": "file:../sprucebot-react",
+    "sprucebot-node": "sprucelabsai/sprucebot-node#dev",
+    "react-sprucebot": "sprucelabsai/react-sprucebot#dev",
     "styled-components": "^2.2.2"
   },
   "devDependencies": {
