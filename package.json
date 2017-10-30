@@ -3,6 +3,7 @@
   "scripts": {
     "start": "node ./server/server.js",
     "local": "node --inspect=4006 ./server/server.js",
+    "interface": "next ./interface -p 3006",
     "lint": "./node_modules/.bin/eslint --fix '**/**/*{.js,.scss}'",
     "test": "./node_modules/.bin/jest --coverage",
     "precommit": "npm run lint",

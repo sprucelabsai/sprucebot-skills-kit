@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { components } from 'sprucebot-react'
-console.log(components)
-const {
+import {
 	Container,
 	BotText,
 	Loader,
@@ -12,13 +10,12 @@ const {
 	H4,
 	H5,
 	H6,
-	Paragraph,
+	Paragraph as P,
 	A,
 	Avatar,
 	Button,
 	Switch
-} = components
-const P = Paragraph
+} from 'react-sprucebot'
 
 export default class Styleguide extends Component {
 	render() {
