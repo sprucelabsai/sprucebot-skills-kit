@@ -43,12 +43,12 @@ app.prepare().then(() => {
 	=            Utilites/Services          =
 	=======================================*/
 	try {
-		sprucebot.skillskit.contextFactory(
+		sprucebot.skillskit.factories.context(
 			path.join(__dirname, 'services'),
 			'services',
 			server.context
 		)
-		sprucebot.skillskit.contextFactory(
+		sprucebot.skillskit.factories.context(
 			path.join(__dirname, 'utilities'),
 			'utilities',
 			server.context
@@ -67,7 +67,7 @@ app.prepare().then(() => {
 	/*=========================================
 	=            	Middleware	              =
 	=========================================*/
-	sprucebot.skillskit
+	sprucebot.skillskit.factories
 		.wares(path.join(__dirname, 'middleware'))
 		.forEach(ware => server.use(ware))
 
@@ -89,7 +89,10 @@ app.prepare().then(() => {
 	=          Server Side Routes          =
 	======================================*/
 	try {
-		sprucebot.skillskit.routes(path.join(__dirname, 'controllers'), router)
+		sprucebot.skillskit.factories.routes(
+			path.join(__dirname, 'controllers'),
+			router
+		)
 		server.use(router.routes())
 	} catch (err) {
 		console.error('Loading controllers failed.')
@@ -107,7 +110,7 @@ app.prepare().then(() => {
 	/*======================================
 	=              Afterware        	   =
 	======================================*/
-	sprucebot.skillskit
+	sprucebot.skillskit.factories
 		.wares(path.join(__dirname, 'afterware'))
 		.forEach(ware => server.use(ware))
 
@@ -129,6 +132,6 @@ app.prepare().then(() => {
 	======================================*/
 	server.listen(PORT, err => {
 		if (err) throw err
-		console.log(` 🌲  Skill ready at http://localhost:${PORT}`)
+		console.log(` 🌲  Skill launched at http://localhost:${PORT}`)
 	})
 })

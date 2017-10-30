@@ -2,9 +2,9 @@ import {
 	GET_USER_REQUEST,
 	GET_USER_REPSONSE,
 	GET_USER_ERROR
-} from '../actions/getUser'
+} from '../actions/user'
 
-export default function userReducer(state = null, action) {
+export default function reducer(state = null, action) {
 	switch (action.type) {
 		case GET_USER_REQUEST:
 			return {

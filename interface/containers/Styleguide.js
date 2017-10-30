@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { components } from 'sprucebot-react'
-console.log(components)
+import { components } from 'react-sprucebot'
 const {
 	Container,
 	BotText,

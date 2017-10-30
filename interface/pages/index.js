@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import Sprucebot from 'sprucebot-react'
+import Sprucebot from 'react-sprucebot'
 
 import Page from '../containers/Page'
 import Styleguide from '../containers/Styleguide'
-import { components } from 'sprucebot-react'
+import { components } from 'react-sprucebot'
 const { Container, H1, H2, H3, BotText, Pre, Card, Paragraph } = components
 
 const DeveloperPage = props => (
@@ -21,6 +21,16 @@ const DeveloperPage = props => (
 				<li>
 					<Link href="/owner">
 						<a>Owner Page</a>
+					</Link>
+				</li>
+				<li>
+					<Link href="/teammate">
+						<a>Teammate</a>
+					</Link>
+				</li>
+				<li>
+					<Link href="/guest">
+						<a>Guest</a>
 					</Link>
 				</li>
 			</ul>
@@ -42,7 +52,7 @@ function codeExample({ actions, ...props }) {
 				{`
 import React from 'react'
 import Page from 'sprucebot/Page'
-import Container from 'sprucebot/Container'
+import { Container } from 'react-sprucebot'
 
 const MyCustomPage = props => (
   <Container>
@@ -69,7 +79,13 @@ export default Page(MyCustomPage)
 				))}
 			</ul>
 
-			<H3>Available Actions</H3>
+			<H3>Built-in Actions</H3>
+			<Paragraph>
+				All client side requests are routed through the Skill's server API. The
+				kit comes with these basics since every skill needs them. To start
+				creating your own actions that makes calls to your Skill's API, [read
+				the guide]().
+			</Paragraph>
 			<ul>
 				{Object.keys(actions).map(key => (
 					<Pre key={key}>{key} : function()</Pre>

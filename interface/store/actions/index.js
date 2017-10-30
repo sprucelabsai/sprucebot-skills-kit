@@ -1,7 +1,7 @@
-import getUser from './getUser'
-import getLocation from './getLocation'
+import * as user from './user'
+import * as location from './location'
 
 module.exports = {
-	getUser,
-	getLocation
+	...user,
+	...location
 }

@@ -14,7 +14,12 @@ export default class MyDocument extends Document {
 		return { ...page, styleTags }
 	}
 
+	componentWillMount() {
+		console.log('will mount')
+	}
+
 	render() {
+		console.log('rending _document')
 		return (
 			<html>
 				<Head>
