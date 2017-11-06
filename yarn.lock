@@ -4932,11 +4932,10 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-sprucebot@sprucelabsai/react-sprucebot#dev:
-  version "0.0.1"
-  resolved "https://codeload.github.com/sprucelabsai/react-sprucebot/tar.gz/6789620f21b224bfbf57fbb962eaede10d5e30cb"
+react-sprucebot@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.1.1.tgz#f5826e2a56691524a661e415e46849cf3741112d"
   dependencies:
-    react-emojione "^5.0.0"
     styled-components "^2.2.2"
 
 react-test-renderer@^16.0.0:
