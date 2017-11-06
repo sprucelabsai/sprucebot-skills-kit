@@ -2,9 +2,9 @@ import {
 	GET_LOCATION_REQUEST,
 	GET_LOCATION_SUCCESS,
 	GET_LOCATION_ERROR
-} from '../actions/getLocation'
+} from '../actions/locations'
 
-export default function locationReducer(state = null, action) {
+export default function reducer(state = null, action) {
 	switch (action.type) {
 		case GET_LOCATION_REQUEST:
 			return {

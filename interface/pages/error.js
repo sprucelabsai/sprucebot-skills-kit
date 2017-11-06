@@ -1,10 +1,10 @@
 import React from 'react'
 import Page from '../containers/Page'
 
-const OwnerPage = () => (
+const ErrorPage = () => (
 	<div>
-		<h1>Hello Owner!</h1>
+		<h1>Oh Shoot!</h1>
 	</div>
 )
 
-export default Page(OwnerPage)
+export default Page(ErrorPage)

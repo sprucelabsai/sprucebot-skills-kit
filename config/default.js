@@ -1,17 +1,32 @@
 // https://github.com/lorenwest/node-config/wiki/Configuration-Files
 const path = require('path')
-const { omit } = require('lodash')
+const { omit, pick } = require('lodash')
+const fs = require('fs')
+const errors = require('./errors')
+
+// Check for .env
 try {
 	require('dotenv').config()
 } catch (e) {
 	console.error('Missing .env file for this project')
 }
+
 module.exports = {
-	API_KEY: process.env.API_KEY || '62a22141-fb9d-48b3-8a5b-e27b374f60b4',
-	HOST: process.env.HOST || 'https://api.sprucebot.com/api/1.0',
-	SKILL_ID: process.env.SKILL_ID || '62a22141-fb9d-48b3-8a5b-e27b374f60b4',
-	SKILL_NAME: process.env.SKILL_NAME || 'Base Sprucebot Skill',
-	PORT: process.env.PORT || 3006,
+	DEV_MODE: process.env.DEV_MODE,
+	API_HOST: process.env.API_HOST,
+	API_KEY: process.env.API_KEY,
+	ID: process.env.ID,
+	NAME: process.env.NAME,
+	DESCRIPTION: process.env.DESCRIPTION,
+	ICON: fs.readFileSync(path.join(__dirname, '../icon/icon.svg')).toString(),
+	PORT: process.env.PORT,
+	SERVER_HOST: process.env.SERVER_HOST,
+	VIMEO_ID: process.env.VIMEO_ID,
+	INTERFACE_HOST: process.env.INTERFACE_HOST,
+	ENABLE_STYLE_GUIDE: process.env.ENABLE_STYLE_GUIDE,
+	INTERFACE_SSL_ALLOW_SELF_SIGNED:
+		process.env.INTERFACE_SSL_ALLOW_SELF_SIGNED === 'true',
+	API_SSL_ALLOW_SELF_SIGNED: process.env.API_SSL_ALLOW_SELF_SIGNED === 'true',
 	log_colors: {
 		error: 'red',
 		warn: 'orange',
@@ -24,7 +39,19 @@ module.exports = {
 		dir: path.resolve(__dirname, '../interface'),
 		dev: true // next.js development mode
 	},
+	// Error responses
+	errors,
 	// Omit keys from client.json config
 	sanitizeClientConfig: config =>
-		omit(config, ['API_KEY', 'sanitizeClientConfig'])
+		pick(config, [
+			'NAME',
+			'ICON',
+			'DESCRIPTION',
+			'SERVER_HOST',
+			'INTERFACE_SSL_ALLOW_SELF_SIGNED',
+			'ENABLE_STYLE_GUIDE',
+			'VIMEO_ID',
+			'log_colors',
+			'nextConfig'
+		])
 }

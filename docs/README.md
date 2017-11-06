@@ -200,7 +200,7 @@ try {
         role, // optional (owner,teammate,guest,ownerteammate)
         status, // optional (online, offline)
         page, // optional (defaults to 0)
-        limit, // optional (default to 20)
+        limit, // optional (default to 10, max 200)
     })
 
     console.log(teammates) // [{},{},{}] or []
@@ -210,59 +210,56 @@ try {
 
     console.log(location) // {} or null
 
-    const locations = await sb.locations()
+    const locations = await sb.locations({
+        page, // optional (defaults to 0)
+        limit // optional (defaults to 10, max 200)
+    }) // all locations where this skill is installed
 
     console.log(locations) // [{},{}] or []
 
     // MESSAGING API
-    const message = sb.message(userId, body, {
+    const message = sb.message(locationId, userId, message, {
         linksToWebView, // optional (true|false)
-        webViewQueryData // optional (query string sent to skill)
+        webViewQueryData // optional (query string sent to skill when user taps it)
     });
 
     // META API
-    let response = await sb.getMeta({
+    let response = await sb.metas({
         locationId, // optional
         userId, // optional
-        key, // required
-        sortBy, // createdAt|updatedAt
-		limit
+        sortBy, // createdAt|updatedAt,
+        key, // optional
+        page, // optional (defaults to 0)
+		limit // optional (defaults to 10, max 200)
     })
 
     console.log(response) // [{}, {}, {}] or []
 
-    let response = await sb.getOneMeta({
+    let response = sb.createMeta(key, value, {
         locationId, // optional
         userId, // optional
-        key // required
+    })
+
+    console.log(response) // {}
+
+    let response = await sb.meta(key, {
+        locationId, // optional
+        userId, // optional
+        sortBy // createdAt|updatedAt,
     })
 
     console.log(response) // {} or null
 
-    let response = await sb.getOneMetaOrCreate({
+    let response = await sb.metaOrCreate(key, value, {
         locationId, // optional
         userId, // optional
-        key, // required
-        value // optional
     });
 
     console.log(response) // {}
 
-    let response = sb.saveMeta({
-        locationId, // optional
-        userId, // optional
-        key, // required
-        value, // required
-        id // optional (updates if exists)
-    })
+    let response = sb.deleteMeta(id)
 
-    console.log(response) // {...}
-
-    let response = sb.deleteMeta({
-        id // required
-    })
-
-    console.log(response) // {...}
+    console.log(response) // {??}
 
 } catch (err) {
     console.log(err);

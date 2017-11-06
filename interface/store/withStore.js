@@ -23,7 +23,10 @@ export function configureStore(initialState) {
 		(typeof window !== 'undefined' &&
 			window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
 		compose
-	const client = apiClient(config.HOST)
+
+	const client = apiClient(config.SERVER_HOST, {
+		allowSelfSignedCerts: config.INTERFACE_SSL_ALLOW_SELF_SIGNED
+	})
 	const enhancer = composeEnhancers(
 		applyMiddleware(thunk, clientApiMiddleware(client), loggerMiddleware())
 	)
@@ -41,10 +44,25 @@ export function configureStore(initialState) {
 	return store
 }
 
-const mapStateToProps = state => state
-const mapDispatchToProps = dispatch => ({
-	actions: bindActionCreators(unboundActions, dispatch)
-})
+const mapStateToProps = state => {
+	let map = {}
+
+	for (let k in state) {
+		map[k] = state[k] || {}
+	}
+
+	return map
+}
+const mapDispatchToProps = dispatch => {
+	let map = {}
+	for (let k in unboundActions) {
+		map[k] = bindActionCreators(unboundActions[k], dispatch)
+	}
+
+	return {
+		actions: map
+	}
+}
 
 /**
  * Higher order component
