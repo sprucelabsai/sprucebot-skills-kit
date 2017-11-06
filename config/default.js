@@ -23,7 +23,6 @@ module.exports = {
 	SERVER_HOST: process.env.SERVER_HOST,
 	VIMEO_ID: process.env.VIMEO_ID,
 	INTERFACE_HOST: process.env.INTERFACE_HOST,
-	ENABLE_STYLE_GUIDE: process.env.ENABLE_STYLE_GUIDE,
 	INTERFACE_SSL_ALLOW_SELF_SIGNED:
 		process.env.INTERFACE_SSL_ALLOW_SELF_SIGNED === 'true',
 	API_SSL_ALLOW_SELF_SIGNED: process.env.API_SSL_ALLOW_SELF_SIGNED === 'true',
@@ -49,7 +48,6 @@ module.exports = {
 			'DESCRIPTION',
 			'SERVER_HOST',
 			'INTERFACE_SSL_ALLOW_SELF_SIGNED',
-			'ENABLE_STYLE_GUIDE',
 			'VIMEO_ID',
 			'log_colors',
 			'nextConfig'

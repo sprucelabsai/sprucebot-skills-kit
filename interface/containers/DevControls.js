@@ -4,22 +4,39 @@ import styled from 'styled-components'
 import { Select } from 'react-sprucebot'
 
 class DevControls extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			loaded: false
+		}
+	}
 	onChangeRole(role) {
 		window.location.href = `/dev/${role}/redirect`
 	}
+	componentDidMount() {
+		this.setState({
+			loaded: true
+		})
+	}
 	render() {
+		// don't render until loaded
+		if (!this.state.loaded) {
+			return null
+		}
+
 		const props = Object.assign({}, this.props)
 		let { auth } = props
 
 		// cleanup props
 		delete props.auth
 
-		// // easy bail if not auth'ed
-		if (!auth) {
+		//easy bail if not auth'ed
+		if (!auth || auth.error) {
 			return (
 				<div {...props}>
 					<div className="error">
-						You must view your skill through Sprucebot to start dev'ing.
+						Your skill must be enabled and viewed through Sprucebot to get
+						dev'ing.
 					</div>
 				</div>
 			)

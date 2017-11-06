@@ -18,14 +18,14 @@ import Styleguide from '../containers/Styleguide'
 class DeveloperPage extends React.Component {
 	static getInitialProps(props) {
 		return {
-			public: config.ENABLE_STYLE_GUIDE
+			public: config.DEV_MODE
 		}
 	}
 
 	componentDidMount() {
 		this.props.skill.ready()
 		console.warn(
-			'YOUR DEVELOPER PAGE IS PUBLICLY AVAILABLE. WHEN YOU ARE READY MAKE SURE YOU SET PUBLIC=FALSE'
+			'YOUR DEVELOPER PAGE IS PUBLICLY AVAILABLE. WHEN YOU ARE READY MAKE SURE YOU SET DEV_MODE=FALSE'
 		)
 	}
 

@@ -52,7 +52,13 @@ const Page = Wrapped => {
 		},
 		ready: function() {
 			this.resized()
-			window.parent.postMessage('Skill:Loaded', '*')
+			window.parent.postMessage(
+				{
+					name: 'Skill:Loaded',
+					url: window.location.href
+				},
+				'*'
+			)
 			this.resizedInterval = setInterval(this.resized.bind(this), 50)
 		}
 	}
@@ -92,13 +98,16 @@ const Page = Wrapped => {
 			}
 
 			let redirect = false
-			if (props.auth) {
+			if (props.auth && !props.auth.error) {
 				props.auth.role =
 					(config.DEV_MODE && cookies.get('devRole')) || props.auth.role
 			}
 
 			// make sure we have a user AND a location if we are not flagged as public
-			if (!props.public && (!props.auth || !props.auth.role)) {
+			if (
+				!props.public &&
+				(!props.auth || !props.auth.role || props.auth.error)
+			) {
 				redirect = '/unauthorized'
 			} else if (!props.public) {
 				// check role against first part of path

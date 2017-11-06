@@ -23,7 +23,7 @@ module.exports = router => {
 		await next()
 	}
 
-	router.use(auth)
+	router.use('*.json', auth)
 	router.param('jwt', auth)
 
 	// authorize paths for team, owner, and guest

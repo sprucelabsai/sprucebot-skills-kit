@@ -40,6 +40,7 @@ export default class MyDocument extends Document {
 						type="text/css"
 						charSet="UTF-8"
 					/>
+					{this.props.styleTags}
 					{this.props.whitelabel && (
 						<link
 							href={this.props.whitelabel}
@@ -48,7 +49,6 @@ export default class MyDocument extends Document {
 							charSet="UTF-8"
 						/>
 					)}
-					{this.props.styleTags}
 				</Head>
 				<body>
 					<Main />
