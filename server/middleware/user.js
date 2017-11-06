@@ -1,6 +1,11 @@
-module.exports = async (ctx, next) => {
-	if (ctx.request.locationId && ctx.request.userId) {
-		console.log('load the user')
-	}
-	await next()
+module.exports = router => {
+	router.param('userId', async (id, ctx, next) => {
+		try {
+			ctx.user = await ctx.sb.user(ctx.location.id, id)
+		} catch (err) {
+			console.error('user middleware failed with error', err)
+			ctx.throw('USER_NOT_FOUND')
+		}
+		await next()
+	})
 }

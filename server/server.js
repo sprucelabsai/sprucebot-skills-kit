@@ -2,59 +2,70 @@ const Koa = require('koa')
 const next = require('next')
 const Router = require('koa-router')
 const cron = require('node-cron')
+const { version } = require('../package.json')
 
 // Main Sprucebot Module
 const Sprucebot = require('sprucebot-node')
 
 const {
-	PORT,
 	API_KEY,
-	HOST,
-	SKILL_ID,
-	SKILL_NAME,
-	nextConfig
+	API_HOST,
+	ID,
+	NAME,
+	ICON,
+	DESCRIPTION,
+	PORT,
+	SERVER_HOST,
+	INTERFACE_HOST,
+	API_SSL_ALLOW_SELF_SIGNED,
+	nextConfig,
+	errors
 } = require('config')
 
 // Setup NextJS App
 const app = next(nextConfig)
 const handle = app.getRequestHandler()
-const fs = require('fs')
 const glob = require('glob')
 const path = require('path')
 
-// Construct new Sprucebot Class
+// Construct a new Sprucebot
 const sprucebot = new Sprucebot({
 	apiKey: API_KEY,
-	host: HOST,
-	skillId: SKILL_ID,
-	skillName: SKILL_NAME
+	skillId: ID,
+	host: API_HOST,
+	name: NAME,
+	description: DESCRIPTION,
+	skillUrl: SERVER_HOST,
+	svgIcon: ICON,
+	allowSelfSignedCerts: API_SSL_ALLOW_SELF_SIGNED
 })
 
-app.prepare().then(() => {
-	const server = new Koa()
+// Kick off sync with platform
+sprucebot.sync().catch(err => {
+	console.error(`Failed to sync your skill's settings with ${API_HOST}`)
+	console.error(err)
+})
+
+app.prepare().then(async () => {
+	const koa = new Koa()
 	const router = new Router()
 
 	/*=======================================
-	=            Sprucebot Context          =
-	=======================================*/
-	server.context.sb = sprucebot
-
-	/*=======================================
-	=            Utilites/Services          =
+	=            Utilities/Services          =
 	=======================================*/
 	try {
-		sprucebot.skillskit.contextFactory(
+		sprucebot.skillskit.factories.context(
 			path.join(__dirname, 'services'),
 			'services',
-			server.context
+			koa.context
 		)
-		sprucebot.skillskit.contextFactory(
+		sprucebot.skillskit.factories.context(
 			path.join(__dirname, 'utilities'),
 			'utilities',
-			server.context
+			koa.context
 		)
 	} catch (err) {
-		console.error('Leading services & utilites failed.')
+		console.error('Leading services & utilities failed.')
 		console.error(err)
 	}
 
@@ -67,30 +78,67 @@ app.prepare().then(() => {
 	/*=========================================
 	=            	Middleware	              =
 	=========================================*/
-	sprucebot.skillskit
-		.wares(path.join(__dirname, 'middleware'))
-		.forEach(ware => server.use(ware))
-
-	// x-response-time
-	server.use(async (ctx, next) => {
-		ctx.start = new Date()
+	koa.use(async (ctx, next) => {
+		ctx.sb = sprucebot
 		await next()
 	})
 
-	// logger
-	server.use(async (ctx, next) => {
+	// Error Handling
+	koa.use(async (ctx, next) => {
+		try {
+			await next()
+		} catch (err) {
+			const errorResponse = errors[err.message] || errors['UNKNOWN']
+			ctx.status = errorResponse.code
+			ctx.body = errorResponse
+		}
+	})
+
+	// custom
+	try {
+		sprucebot.skillskit.factories.wares(
+			path.join(__dirname, 'middleware'),
+			router
+		)
+	} catch (err) {
+		console.error('Failed to boot middleware', err)
+	}
+
+	// Response headers
+	koa.use(async (ctx, next) => {
+		const date = Date.now()
 		await next()
-		// do stuff when the execution returns upstream, this will be last event in upstream
-		const ms = Date.now() - ctx.start
-		console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+		const ms = Date.now() - date
+		// console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+
+		// On a redirect, headers have already been sent
+		if (!ctx.res.headersSent) {
+			ctx.set('X-Response-Time', `${ms}ms`)
+			ctx.set('X-Powered-By', `Sprucebot v${version}`)
+		}
+	})
+
+	// Response Code Handling
+	koa.use(async (ctx, next) => {
+		// default response code
+		ctx.res.statusCode = 200
+		await next()
+
+		// If this is an API call with no body (no controller answered), respond with a 404 and a json body
+		if (ctx.path.search('/api') === 0 && !ctx.body) {
+			ctx.throw('ROUTE_NOT_FOUND')
+		}
 	})
 
 	/*======================================
 	=          Server Side Routes          =
 	======================================*/
 	try {
-		sprucebot.skillskit.routes(path.join(__dirname, 'controllers'), router)
-		server.use(router.routes())
+		sprucebot.skillskit.factories.routes(
+			path.join(__dirname, 'controllers'),
+			router
+		)
+		koa.use(router.routes())
 	} catch (err) {
 		console.error('Loading controllers failed.')
 		console.error(err)
@@ -99,36 +147,50 @@ app.prepare().then(() => {
 	/*======================================
 	=          Client Side Routes          =
 	======================================*/
+
+	// The logic before handle() is to suppress nextjs from responding and letting koa finish the request
+	// This allows our middleware to fire even after
 	router.get('*', async ctx => {
-		await handle(ctx.req, ctx.res)
-		ctx.respond = false
-	})
+		// if a controller already responded or we are making an API call, don't let next run at all
+		if (ctx.body || ctx.path.search('/api') === 0) {
+			return
+		}
+		ctx.body = await new Promise(resolve => {
+			const _end = ctx.res.end
+			ctx.res._end = _end
 
-	/*======================================
-	=              Afterware        	   =
-	======================================*/
-	sprucebot.skillskit
-		.wares(path.join(__dirname, 'afterware'))
-		.forEach(ware => server.use(ware))
+			// Hijack stream to set ctx.body
+			const pipe = stream => {
+				ctx.res.end = _end
+				stream.unpipe(ctx.res)
+				resolve(stream)
+			}
+			ctx.res.once('pipe', pipe)
 
-	// Default Response Code
-	server.use(async (ctx, next) => {
-		ctx.res.statusCode = 200
-		await next()
-	})
+			// Monkey patch res.end to set ctx.body
+			ctx.res.end = body => {
+				ctx.res.end = _end
+				ctx.res.removeListener('pipe', pipe)
+				if (ctx.res.redirect) {
+					ctx.redirect(ctx.res.redirect)
+					body = `Redirecting to ${ctx.res.redirect}`
+					ctx.res.end()
+				}
+				resolve(body)
+			}
 
-	// x-response-time
-	server.use(async (ctx, next) => {
-		const ms = Date.now() - ctx.start
-		ctx.set('X-Response-Time', `${ms}ms`)
-		await next()
+			handle(ctx.req, ctx.res)
+		})
 	})
 
 	/*======================================
 	=              	Serve            	   =
 	======================================*/
-	server.listen(PORT, err => {
+	// TODO better handling hosting only server or interface
+	koa.listen(PORT, err => {
 		if (err) throw err
-		console.log(` 🌲  Skill ready at http://localhost:${PORT}`)
+		console.log(
+			` 🌲  Skill launched at ${SERVER_HOST ? SERVER_HOST : INTERFACE_HOST}`
+		)
 	})
 })

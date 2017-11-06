@@ -1,4 +1,4 @@
-const loggingEnabled = true
+const loggingEnabled = false
 
 export default function loggerMiddleware() {
 	return () => {

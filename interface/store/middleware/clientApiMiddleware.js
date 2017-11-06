@@ -6,17 +6,14 @@ export default function clientMiddleware(client) {
 				return next(action)
 			}
 
-			console.group('Using client API middleware')
-			console.dir(action)
-			console.dir(rest)
-			console.groupEnd()
 			const [REQUEST, SUCCESS, FAILURE] = types
 			next({
 				...rest,
 				type: REQUEST
 			})
 
-			const actionPromise = promise(client)
+			const { auth } = getState()
+			const actionPromise = promise(client, auth)
 
 			actionPromise
 				.then(
