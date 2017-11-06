@@ -2,6 +2,7 @@
 const path = require('path')
 const { omit, pick } = require('lodash')
 const fs = require('fs')
+const errors = require('./errors')
 
 // Check for .env
 try {
@@ -11,16 +12,21 @@ try {
 }
 
 module.exports = {
-	API_KEY: process.env.API_KEY,
+	DEV_MODE: process.env.DEV_MODE,
 	API_HOST: process.env.API_HOST,
-	SKILL_ID: process.env.SKILL_ID,
-	SKILL_NAME: process.env.SKILL_NAME,
-	SKILL_ICON: fs
-		.readFileSync(path.join(__dirname, '../icon/icon.svg'))
-		.toString(),
-	SKILL_DESCRIPTION: process.env.SKILL_DESCRIPTION,
-	SKILL_SERVER_HOST: process.env.SKILL_SERVER_HOST,
-	SKILL_INTERFACE_HOST: process.env.SKILL_INTERFACE_HOST,
+	API_KEY: process.env.API_KEY,
+	ID: process.env.ID,
+	NAME: process.env.NAME,
+	DESCRIPTION: process.env.DESCRIPTION,
+	ICON: fs.readFileSync(path.join(__dirname, '../icon/icon.svg')).toString(),
+	PORT: process.env.PORT,
+	SERVER_HOST: process.env.SERVER_HOST,
+	VIMEO_ID: process.env.VIMEO_ID,
+	INTERFACE_HOST: process.env.INTERFACE_HOST,
+	ENABLE_STYLE_GUIDE: process.env.ENABLE_STYLE_GUIDE,
+	INTERFACE_SSL_ALLOW_SELF_SIGNED:
+		process.env.INTERFACE_SSL_ALLOW_SELF_SIGNED === 'true',
+	API_SSL_ALLOW_SELF_SIGNED: process.env.API_SSL_ALLOW_SELF_SIGNED === 'true',
 	log_colors: {
 		error: 'red',
 		warn: 'orange',
@@ -33,11 +39,18 @@ module.exports = {
 		dir: path.resolve(__dirname, '../interface'),
 		dev: true // next.js development mode
 	},
+	// Error responses
+	errors,
 	// Omit keys from client.json config
 	sanitizeClientConfig: config =>
 		pick(config, [
-			'SKILL_SERVER_HOST',
-			'SKILL_SERVER_PORT',
+			'NAME',
+			'ICON',
+			'DESCRIPTION',
+			'SERVER_HOST',
+			'INTERFACE_SSL_ALLOW_SELF_SIGNED',
+			'ENABLE_STYLE_GUIDE',
+			'VIMEO_ID',
 			'log_colors',
 			'nextConfig'
 		])

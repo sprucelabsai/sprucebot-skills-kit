@@ -2,7 +2,7 @@ import {
 	GET_LOCATION_REQUEST,
 	GET_LOCATION_SUCCESS,
 	GET_LOCATION_ERROR
-} from '../actions/location'
+} from '../actions/locations'
 
 export default function reducer(state = null, action) {
 	switch (action.type) {

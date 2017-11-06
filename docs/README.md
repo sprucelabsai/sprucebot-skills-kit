@@ -229,6 +229,7 @@ try {
         userId, // optional
         sortBy, // createdAt|updatedAt,
         key, // optional
+        page, // optional (defaults to 0)
 		limit // optional (defaults to 10, max 200)
     })
 

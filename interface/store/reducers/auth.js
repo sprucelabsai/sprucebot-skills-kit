@@ -1,27 +1,28 @@
 import {
-	GET_USER_REQUEST,
-	GET_USER_REPSONSE,
-	GET_USER_ERROR
-} from '../actions/user'
+	GO_AUTH_REQUEST,
+	GO_AUTH_SUCCESS,
+	GO_AUTH_ERROR,
+	AUTH_REMEMBER
+} from '../actions/auth'
 
 export default function reducer(state = null, action) {
 	switch (action.type) {
-		case GET_USER_REQUEST:
+		case GO_AUTH_REQUEST:
 			return {
 				...state,
-				loading: true
+				authing: true
 			}
-		case GET_USER_REPSONSE:
+		case GO_AUTH_SUCCESS:
 			return {
 				...state,
-				user: action.result,
-				loading: false
+				...action.result,
+				authing: false
 			}
-		case GET_USER_ERROR:
+		case GO_AUTH_ERROR:
 			return {
 				...state,
 				error: action.error,
-				loading: false
+				authing: false
 			}
 		default:
 			return state

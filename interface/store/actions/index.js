@@ -1,7 +1,9 @@
-import * as user from './user'
-import * as location from './location'
+import * as users from './users'
+import * as locations from './locations'
+import * as auth from './auth'
 
 module.exports = {
-	...user,
-	...location
+	users,
+	locations,
+	auth
 }
