@@ -1,11 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
-import Sprucebot from 'react-sprucebot'
+import {
+	Container,
+	H1,
+	H2,
+	H3,
+	BotText,
+	Pre,
+	Card,
+	Paragraph as P
+} from 'react-sprucebot'
 
 import Page from '../containers/Page'
 import Styleguide from '../containers/Styleguide'
-import { components } from 'react-sprucebot'
-const { Container, H1, H2, H3, BotText, Pre, Card, Paragraph } = components
 
 const DeveloperPage = props => (
 	<div>
@@ -64,10 +71,10 @@ export default Page(MyCustomPage)
 	`}
 			</Pre>
 			<H3>Available Props</H3>
-			<Paragraph>
+			<P>
 				Try adding query string ?userId=1 to the url and watch how these props
 				change
-			</Paragraph>
+			</P>
 			<ul>
 				{Object.keys(props).map(key => (
 					<Pre key={key}>
@@ -80,12 +87,12 @@ export default Page(MyCustomPage)
 			</ul>
 
 			<H3>Built-in Actions</H3>
-			<Paragraph>
+			<P>
 				All client side requests are routed through the Skill's server API. The
 				kit comes with these basics since every skill needs them. To start
 				creating your own actions that makes calls to your Skill's API, [read
 				the guide]().
-			</Paragraph>
+			</P>
 			<ul>
 				{Object.keys(actions).map(key => (
 					<Pre key={key}>{key} : function()</Pre>
