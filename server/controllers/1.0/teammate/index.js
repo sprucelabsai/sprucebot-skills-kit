@@ -23,12 +23,12 @@ module.exports = router => {
 	}
 
 	/**
-     * List of teammates (including owners)
-     */
+	 * List of teammates (including owners)
+	 */
 	router.get('/api/1.0/teammate/teammates.json', list('ownerteammate'))
 
 	/**
-     * List of guests
-     */
+	 * List of guests
+	 */
 	router.get('/api/1.0/teammate/guests.json', list('guest'))
 }

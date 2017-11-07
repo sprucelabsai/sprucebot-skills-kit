@@ -4,11 +4,16 @@ import { Container, H1, BotText } from 'react-sprucebot'
 import config from 'config'
 
 class MarketingPage extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {}
+	}
+
 	static getInitialProps() {
 		return {
 			name: config.NAME,
 			description: config.DESCRIPTION,
-			videoId: config.VIMEO_ID,
+			vimeoId: config.VIMEO_ID,
 			public: true // does not require the user to be of a certain role
 		}
 	}
