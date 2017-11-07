@@ -1,1 +1,3 @@
-modules.export = async (sb, req, res) => {}
+module.exports = async (ctx, next) => {
+	console.log('**vip:will-send')
+}

@@ -2,6 +2,8 @@ const Koa = require('koa')
 const next = require('next')
 const Router = require('koa-router')
 const cron = require('node-cron')
+const { kebabCase } = require('lodash')
+var bodyParser = require('koa-bodyparser')
 const { version } = require('../package.json')
 
 // Main Sprucebot Module
@@ -75,6 +77,9 @@ app.prepare().then(async () => {
 	const cronController = require('./controllers/cron')
 	cronController(cron)
 
+	// POST support
+	koa.use(bodyParser())
+
 	/*=========================================
 	=            	Middleware	              =
 	=========================================*/
@@ -143,6 +148,27 @@ app.prepare().then(async () => {
 		console.error('Loading controllers failed.')
 		console.error(err)
 	}
+
+	/*======================================
+	=         		Event Listeners          =
+	======================================*/
+	let listenersByEventName
+	try {
+		listenersByEventName = sprucebot.skillskit.factories.listeners(
+			path.join(__dirname, 'events')
+		)
+	} catch (err) {
+		console.error('Loading event listeners failed.')
+		console.error(err)
+	}
+
+	router.post('/hook', async (ctx, next) => {
+		const body = ctx.request.body
+		ctx.event = await ctx.sb.user(body.locationId, body.userId)
+
+		await listenersByEventName[body.eventType](ctx, next)
+		next()
+	})
 
 	/*======================================
 	=          Client Side Routes          =
