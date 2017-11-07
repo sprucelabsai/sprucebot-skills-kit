@@ -13,6 +13,9 @@ export default function clientMiddleware(client) {
 			})
 
 			const { auth } = getState()
+			if (auth && auth.jwt) {
+				client.setJwt(auth.jwt)
+			}
 			const actionPromise = promise(client, auth)
 
 			actionPromise
