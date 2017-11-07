@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
 				<Head>
 					<title>{this.props.name}</title>
 					<link
-						href="https://local.sprucebot.com/skills.css"
+						href="https://hello.sprucebot.com/skills.css"
 						rel="stylesheet"
 						type="text/css"
 						charSet="UTF-8"
