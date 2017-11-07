@@ -1468,6 +1468,13 @@ config@^1.27.0:
     json5 "0.4.0"
     os-homedir "1.0.2"
 
+config@^1.28.0:
+  version "1.28.0"
+  resolved "https://registry.yarnpkg.com/config/-/config-1.28.0.tgz#666740053a81489905f26087c8656394c193507d"
+  dependencies:
+    json5 "0.4.0"
+    os-homedir "1.0.2"
+
 console-browserify@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-browserify/-/console-browserify-1.1.0.tgz#f0241c45730a9fc6323b206dbf38edc741d0bb10"
@@ -5656,10 +5663,14 @@ sprucebot-node@sprucelabsai/sprucebot-node#dev:
   dependencies:
     glob "^7.1.2"
 
-"sprucebot-skills-kit-server@file:../sprucebot-skills-kit-server":
-  version "0.0.1"
+sprucebot-skills-kit-server@sprucelabsai/sprucebot-skills-kit-server#dev:
+  version "0.0.2"
+  resolved "https://codeload.github.com/sprucelabsai/sprucebot-skills-kit-server/tar.gz/ee62e139cc2f8b69f2e60aa8e0817ab93ced7898"
   dependencies:
+    config "^1.28.0"
+    cookies "^0.7.1"
     glob "^7.1.2"
+    jsonwebtoken "^8.1.0"
     koa "^2.4.1"
     koa-bodyparser "^4.2.0"
     koa-router "^7.2.1"
