@@ -68,10 +68,10 @@ const mapDispatchToProps = dispatch => {
  * Higher order component
  * Decorates Component with props
  *  {store, client}
- * 
+ *
  * @export
- * @param {any} Component 
- * @returns 
+ * @param {any} Component
+ * @returns
  */
 
 export default function withStore(Component) {
