@@ -44,29 +44,29 @@
 
 Skills are programs with a purpose: help [small business](https://vimeo.com/204933933).
 
-They accomplish this in one two ways:
+They accomplish this in one of two ways:
 
-1. Automation - tech runs the show, poeple enable
+1. Automation - tech runs the show, people enable
 2. Augmentation - people run the show, tech enables
 
 ## Automation
-Lets say there is a lady named Becca. She nerds the f\*\*k out over fashion. So, she decided to open a menswear boutique. She loves it. But, do you know what she didn't expect? That she'd be spending all her f\*\*king time doing boring ass `backend` work. There are so many aspects of running a business that neet to be automated, it literally warranted this document being created.
+Lets say there is a lady named Becca. She nerds the f\*\*k out over fashion. So, she decided to open a menswear boutique. She loves it. But, do you know what she didn't expect? That she'd be spending all her f\*\*king time doing boring ass `backend` work. There are so many aspects of running a business that need to be automated, it literally warranted this document being created.
 
 ## Augmentation
-Good augmentation is much harder to acheive than good automation. Automation comes natural. You think, "What processes can I get rid of?" Augmentation is the opposite. The question becomes, "What processes can I make better?" It turns out it's much easier to point at something and say, "eliminate that" than it is to imagine something that does not yet exist.
+Good augmentation is much harder to achieve than good automation. Automation comes natural. You think, "What processes can I get rid of?" Augmentation is the opposite. The question becomes, "What processes can I make better?" It turns out it's much easier to point at something and say, "eliminate that" than it is to imagine something that does not yet exist.
 
 ## Making Small Business Successful
 This two pronged approach is the crux of our small business strategy. We want Becca to be able to focus on fashion, not all that other sh\*t. But, Becca's boutique needs more than good automation to succeed. She needs to be:
 
 ## Un-Amazon'able
-Amazon rocks, doesn't it? Pretty much everything you need, basement bargain products, delivered right to your door. If Becca tried to compete with Amazon, she'd get smoked. She's gotta focus on the things that make brick-and-mortar unique. This means she needs to be building human-to-human relationships.
+Amazon rocks, doesn't it? Pretty much everything you need, bargain basement prices, delivered right to your door. If Becca tried to compete with Amazon, she'd get smoked. She's gotta focus on the things that make brick-and-mortar unique. This means she needs to be building human-to-human relationships.
 
 You've never logged into Amazon, had it say, "Welcome back ${firstName}" and thought to yourself, "Wow, that was nice!" But, when you walk into your favorite boutique, coffeeshop, outdoor shop, barbershop, or salon and are welcomed by name, everything changes.
 
 ## Promote Human-to-Human Connection
-If your skill connects two people, we consider it a win. If you can manage to start a conversation, the small business wins. See, in order for Becca to beat amazon, she's gotta build relationships. Relationships, true relationships, are built face-to-face.
+If your skill connects two people, we consider it a win. If you can manage to start a conversation, the small business wins. See, in order for Becca to beat Amazon, she's gotta build relationships. Relationships, true relationships, are built face-to-face.
 
-*"Remember that a person's name is to that person the sweetest and most important sound in any language"* - Dale Carnegie
+*"Remember that a person's name is, to that person, the sweetest and most important sound in any language."* - Dale Carnegie
 
 # Using the CLI
 The best way to work with [sprucebot-cli](https://github.com/sprucelabsai/sprucebot-cli).

@@ -119,7 +119,7 @@ export default class Styleguide extends Component {
 					<SectionHeading>Section Heading</SectionHeading>
 					<Pre>{`<SectionHeading>Section Heading</SectionHeading>`}</Pre>
 					<BotText>
-						User SectionHeading to break up sections of your page and to label
+						Use SectionHeading to break up sections of your page and to label
 						forms, similar to a fieldset.
 					</BotText>
 				</Container>

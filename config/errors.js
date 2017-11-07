@@ -4,7 +4,7 @@ module.exports = {
 		status: 'failure',
 		reason: 'A server side error occurred.',
 		friendlyReason:
-			"I honestly have no idea what went wrong, but I'v let the humans know and they are on it!"
+			"I honestly have no idea what went wrong, but I've let the humans know and they are on it!"
 	},
 	ROUTE_NOT_FOUND: {
 		code: 404,
