@@ -25,7 +25,8 @@ const sprucebot = new Sprucebot({
 	host: API_HOST,
 	name: NAME,
 	description: DESCRIPTION,
-	skillUrl: SERVER_HOST,
+	interfaceUrl: INTERFACE_HOST,
+	serverUrl: SERVER_HOST,
 	svgIcon: ICON,
 	allowSelfSignedCerts: API_SSL_ALLOW_SELF_SIGNED
 })
