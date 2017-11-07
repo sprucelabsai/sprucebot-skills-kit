@@ -8,7 +8,7 @@ class MarketingPage extends React.Component {
 		return {
 			name: config.NAME,
 			description: config.DESCRIPTION,
-			videoId: config.VIMEO_ID,
+			vimeoId: config.VIMEO_ID,
 			public: true // does not require the user to be of a certain role
 		}
 	}
