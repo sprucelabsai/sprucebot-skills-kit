@@ -36,7 +36,8 @@ module.exports = {
 	},
 	nextConfig: {
 		dir: path.resolve(__dirname, '../interface'),
-		dev: true // next.js development mode
+		dev: true, // next.js development mode
+		quiet: false
 	},
 	// Error responses
 	errors,
