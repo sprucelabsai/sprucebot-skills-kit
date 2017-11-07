@@ -1,12 +1,4 @@
-module.exports = ctx => {
-	const user = ctx.user
-	const location = ctx.location
-
-	ctx.sb.sendMessage(
-		lid,
-		uid,
-		`Welcome baeck to ${location.name}, ${user.firstName}!`
-	)
-
-	ctx.next()
+module.exports = (ctx, next) => {
+	console.log('****did-enter', event.Location.name, event.User.name)
+	next()
 }
