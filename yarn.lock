@@ -4245,6 +4245,10 @@ netrc@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/netrc/-/netrc-0.1.4.tgz#6be94fcaca8d77ade0a9670dc460914c94472444"
 
+next-redux-wrapper@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/next-redux-wrapper/-/next-redux-wrapper-1.3.4.tgz#62de1fbf09d99310ba3d8499cba30816f51b9ecf"
+
 next@^4.1.4:
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/next/-/next-4.1.4.tgz#75ab0dd17e843bae0bdcdc9da8f1b3edb5ef5437"
@@ -4994,10 +4998,18 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-sprucebot@sprucelabsai/react-sprucebot#dev:
-  version "0.1.1"
-  resolved "https://codeload.github.com/sprucelabsai/react-sprucebot/tar.gz/ec7e2c774bf0753c4058634f0ece7abb39f46d2a"
+react-sprucebot@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.2.0.tgz#767fd505750e4a0a5ba97d5437d5158e37c99d15"
   dependencies:
+    cookies "^0.7.1"
+    next "^4.1.4"
+    next-redux-wrapper "^1.3.4"
+    prop-types "^15.6.0"
+    react "^16.0.0"
+    react-redux "^5.0.6"
+    redux "^3.7.2"
+    redux-thunk "^2.2.0"
     styled-components "^2.2.2"
 
 react-test-renderer@^16.0.0:
@@ -5659,9 +5671,9 @@ sprucebot-node@sprucelabsai/sprucebot-node#dev:
   dependencies:
     glob "^7.1.2"
 
-sprucebot-skills-kit-server@sprucelabsai/sprucebot-skills-kit-server#dev:
-  version "0.0.2"
-  resolved "https://codeload.github.com/sprucelabsai/sprucebot-skills-kit-server/tar.gz/ee62e139cc2f8b69f2e60aa8e0817ab93ced7898"
+sprucebot-skills-kit-server@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-0.0.5.tgz#1543cdabc40c4873b1578caa86b997966eaca184"
   dependencies:
     config "^1.28.0"
     cookies "^0.7.1"
