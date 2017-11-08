@@ -1,6 +1,7 @@
 import React from 'react'
 import config from 'config'
 import Link from 'next/link'
+import Page from '../containers/Page'
 import {
 	Container,
 	H1,
@@ -12,7 +13,6 @@ import {
 	Paragraph as P
 } from 'react-sprucebot'
 
-import Page from '../containers/Page'
 import Styleguide from '../containers/Styleguide'
 
 class DeveloperPage extends React.Component {
