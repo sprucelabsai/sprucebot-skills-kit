@@ -1,10 +1,7 @@
-import { combineReducers } from 'redux'
 import users from './users'
 import locations from './locations'
-import auth from './auth'
 
-export default combineReducers({
+module.exports = {
 	users,
-	locations,
-	auth
-})
+	locations
+}
