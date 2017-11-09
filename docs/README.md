@@ -194,7 +194,7 @@ try {
     // USER API
     const guest = await sb.user(locationId, userId)
 
-    console.log(guest) // {} or null
+    console.log(guest) // {status: "offline", User: {}, Location: {}} or null
 
     const teammates = await sb.users(locationId, {
         role, // optional (owner,teammate,guest,ownerteammate)
@@ -204,6 +204,12 @@ try {
     })
 
     console.log(teammates) // [{},{},{}] or []
+
+    const guest = await sb.updateUser(userId, {
+        firstName: 'Taylor'
+    })
+
+    console.log(guest) // {}
 
     // LOCATION API
     const location = await sb.location(locationId)
