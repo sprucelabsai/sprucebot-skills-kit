@@ -44,6 +44,8 @@ setTimeout(() => {
 		controllersDir: path.join(__dirname, 'controllers'),
 		listenersDir: path.join(__dirname, 'events'),
 		middlewareDir: path.join(__dirname, 'middleware'),
+		staticDir: path.join(__dirname, 'static'),
+		langDir: path.join(__dirname, '..', 'lang'),
 		errors
 	})
 }, 2000)
