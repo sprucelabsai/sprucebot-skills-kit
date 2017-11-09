@@ -3,13 +3,15 @@ const path = require('path')
 const { omit, pick } = require('lodash')
 const fs = require('fs')
 const errors = require('./errors')
-
+const { lang } = require('react-sprucebot')
 // Check for .env
 try {
 	require('dotenv').config()
 } catch (e) {
 	console.error('Missing .env file for this project')
 }
+
+lang.configure(path.join(__dirname, '../lang'))
 
 module.exports = {
 	DEV_MODE: process.env.DEV_MODE,
@@ -34,6 +36,10 @@ module.exports = {
 		debug: 'white',
 		silly: 'pink'
 	},
+	lang: {
+		default: lang.lang,
+		overrides: lang.overrides || {}
+	},
 	nextConfig: {
 		dir: path.resolve(__dirname, '../interface'),
 		dev: true, // next.js development mode
@@ -50,6 +56,7 @@ module.exports = {
 			'SERVER_HOST',
 			'INTERFACE_SSL_ALLOW_SELF_SIGNED',
 			'VIMEO_ID',
+			'lang',
 			'log_colors',
 			'nextConfig'
 		])

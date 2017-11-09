@@ -1,6 +1,6 @@
 {
   "name": "sprucebot-skills-kit",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "start": "node ./server/server.js",
     "local": "npm run icon && node --inspect=4006 ./server/server.js",
