@@ -194,7 +194,7 @@ try {
     // USER API
     const guest = await sb.user(locationId, userId)
 
-    console.log(guest) // {status: "offline", User: {}, Location: {}} or null
+    console.log(guest) // {status: "offline", role: "guest", User: {}, Location: {}} or null
 
     const teammates = await sb.users(locationId, {
         role, // optional (owner,teammate,guest,ownerteammate)
