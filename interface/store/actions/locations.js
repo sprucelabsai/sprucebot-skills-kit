@@ -5,6 +5,6 @@ export const GET_LOCATION_ERROR = 'locations/GET_LOCATION_ERROR'
 export function get(locationId) {
 	return {
 		types: [GET_LOCATION_REQUEST, GET_LOCATION_SUCCESS, GET_LOCATION_ERROR],
-		promise: client => client.get(`/api/v1/user/locations/${locationId}.json`)
+		promise: client => client.get(`/api/1.0/user/locations/${locationId}.json`)
 	}
 }

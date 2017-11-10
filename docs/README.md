@@ -172,7 +172,7 @@ For example, to create `/owner/:someVariable/save` that allows an owner to POST,
 ```js
 // controllers/owner.js
 
-modules.export = {
+module.export = {
     'post /owner/:someVariable/save': async (sb, req, res) => {
         const someVariable = req.someVariable;
         return {
@@ -233,7 +233,9 @@ try {
     let response = await sb.metas({
         locationId, // optional
         userId, // optional
+        value, // optional (can search against key in object)
         sortBy, // createdAt|updatedAt,
+        order, // ASC|DESC (defaults to DESC)
         key, // optional
         page, // optional (defaults to 0)
 		limit // optional (defaults to 10, max 200)
@@ -251,12 +253,20 @@ try {
     let response = await sb.meta(key, {
         locationId, // optional
         userId, // optional
-        sortBy // createdAt|updatedAt,
+        sortBy, // createdAt|updatedAt
+        order // ASC|DESC (defaults to DESC)
     })
 
     console.log(response) // {} or null
 
-    let response = await sb.metaOrCreate(key, value, {
+    let response = await sb.metaOrCreate(key, value, { // find or create
+        locationId, // optional
+        userId, // optional
+    });
+
+    console.log(response) // {}
+   
+   let response = await sb.upsertMeta(key, value, { // update or insert
         locationId, // optional
         userId, // optional
     });

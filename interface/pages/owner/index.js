@@ -4,13 +4,8 @@ import TeamDashboard from '../../components/TeamDashboard'
 import { Container } from 'react-sprucebot'
 
 class OwnerDashboard extends React.Component {
-	static getInitialProps({ store }) {
-		const auth = store.getState().auth || {}
-		return {
-			user: auth.User,
-			location: auth.Location,
-			status: auth.status
-		}
+	static getInitialProps({ props }) {
+		return {}
 	}
 
 	componentDidMount() {
@@ -23,6 +18,7 @@ class OwnerDashboard extends React.Component {
 
 	render() {
 		let {
+			auth,
 			users: {
 				guestsLoading = true,
 				guestsError,
@@ -40,9 +36,9 @@ class OwnerDashboard extends React.Component {
 			teammatesLoading,
 			teammatesError,
 			teammates,
-			user: this.props.user,
-			status: this.props.status,
-			location: this.props.location
+			user: auth.User,
+			status: auth.status,
+			location: auth.Location
 		}
 
 		return (

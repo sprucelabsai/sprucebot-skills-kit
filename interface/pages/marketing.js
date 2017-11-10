@@ -1,7 +1,6 @@
 import React from 'react'
 import Page from '../containers/Page'
 import { Container, H1, BotText } from 'react-sprucebot'
-import config from 'config'
 
 class MarketingPage extends React.Component {
 	constructor(props) {
@@ -9,11 +8,8 @@ class MarketingPage extends React.Component {
 		this.state = {}
 	}
 
-	static getInitialProps() {
+	static getInitialProps(props) {
 		return {
-			name: config.NAME,
-			description: config.DESCRIPTION,
-			vimeoId: config.VIMEO_ID,
 			public: true // does not require the user to be of a certain role
 		}
 	}
@@ -51,15 +47,15 @@ class MarketingPage extends React.Component {
 	render() {
 		return (
 			<Container className="marketing">
-				<H1>{this.props.name}</H1>
-				<BotText>{this.props.description}</BotText>
-				{this.props.vimeoId && (
+				<H1>{this.props.config.NAME}</H1>
+				<BotText>{this.props.config.DESCRIPTION}</BotText>
+				{this.props.config.VIMEO_ID && (
 					<iframe
 						width={this.state.videoWidth}
 						height={this.state.videoHeight}
 						className="vimeo"
 						title="Marketing"
-						src={`https://player.vimeo.com/video/${this.props.vimeoId}`}
+						src={`https://player.vimeo.com/video/${this.props.config.VIMEO_ID}`}
 						frameBorder="0"
 						allowFullScreen
 					/>
