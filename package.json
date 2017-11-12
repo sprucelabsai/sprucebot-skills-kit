@@ -1,6 +1,6 @@
 {
   "name": "sprucebot-skills-kit",
-  "version": "0.0.8",
+  "version": "0.1.1",
   "scripts": {
     "start": "node ./server/server.js",
     "local": "npm run icon && node --inspect=4006 ./server/server.js",
@@ -25,11 +25,11 @@
     "react-dom": "^16.0.0",
     "react-emojione": "^5.0.0",
     "react-redux": "^5.0.6",
-    "react-sprucebot": "^0.2.3",
+    "react-sprucebot": "^0.4.1",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.17.2",
-    "sprucebot-node": "^0.0.10",
+    "sprucebot-node": "^0.2.1",
     "sprucebot-skills-kit-server": "^0.1.0",
     "styled-components": "^2.2.2",
     "universal-cookie": "^2.1.0"

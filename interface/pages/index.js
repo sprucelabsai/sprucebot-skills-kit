@@ -1,5 +1,4 @@
 import React from 'react'
-import config from 'config'
 import Link from 'next/link'
 import Page from '../containers/Page'
 import {
@@ -18,7 +17,7 @@ import Styleguide from '../containers/Styleguide'
 class DeveloperPage extends React.Component {
 	static getInitialProps(props) {
 		return {
-			public: config.DEV_MODE
+			public: props.config.DEV_MODE
 		}
 	}
 

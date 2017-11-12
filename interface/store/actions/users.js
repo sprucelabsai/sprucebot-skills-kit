@@ -1,6 +1,3 @@
-import config from 'config'
-const skillId = config.ID
-
 export const GET_USER_REQUEST = 'users/GET_USER_REQUEST'
 export const GET_USER_RESPONSE = 'users/GET_USER_RESPONSE'
 export const GET_USER_ERROR = 'users/GET_USER_ERROR'
