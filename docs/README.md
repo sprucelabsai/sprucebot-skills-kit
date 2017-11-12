@@ -72,7 +72,7 @@ If your skill connects two people, we consider it a win. If you can manage to st
 The best way to work with [sprucebot-cli](https://github.com/sprucelabsai/sprucebot-cli).
 
 # First, about the Skills Kit
-This is a highly opinionated approach on how to rapidly build skills for Sprucebot.  Ultimately, you could build a skill on any stack. 🤘🏼 This particular kit uses NodeJS + ReactJS with Next and Koa as supporting frameworks... May the force be with you.
+This is a highly opinionated approach on how to rapidly build skills for Sprucebot.  Ultimately, you could build a skill on any stack. 🤘🏼 This particular kit uses NodeJS + ReactJS with Next + Koa as supporting frameworks... May the force be with you.
 
 - ~~Diagram of the skills architecture~~
 
@@ -100,7 +100,6 @@ A Koa application is an object containing an array of middleware functions which
 This includes methods for common tasks like content-negotiation, cache freshness, proxy support, and redirection among others. Despite supplying a reasonably large number of helpful methods Koa maintains a small footprint, as no middleware are bundled.
 
 ### Getting Started
-Koa is on the bleeding edge of Javascript development.  Koa uses generators. If you are not familiar with generators, [check this out](https://davidwalsh.name/es6-generators). They are much easier to debug, and much faster to develop.
 
 # Skill Requirements
 
@@ -122,7 +121,7 @@ Add rules about building skills...
 
 ### Event Simulator (didEnter/didLeave)
 
-The Sprucebot CLI ships with an event simulator.  With the CLI running, press the UP arrow to simmulate a `didEnter` event.  Press the DOWN arrow to simulate a `didLeave` event.
+The Sprucebot CLI ships with an event simulator.  With the CLI running, press the UP arrow to simulate a `didEnter` event.  Press the DOWN arrow to simulate a `didLeave` event.
 
 (Add some notes on how these are configured and their payloads)
 
@@ -131,29 +130,15 @@ The Sprucebot CLI ships with an event simulator.  With the CLI running, press th
 With NextJS, client-side routing becomes super simple... it's the file system based on the `pages` directory you find here.
 
 ```bash
-sprucebot skill create route /owner/settings
+sprucebot skill create page /owner/settings
 ```
 
 Winds up scaffolding a page (i.e. a React component)
 
-Routes are stored in `routes.js` to setup all your client side routes.
-
-
 ```js
-// routes.js
-module.exports = {
-    '/owner/:someVariable/settings': 'pages/owner/settings'
-}
-
-```
-
-Once your routes are configured, create the corresponding page.
-
-
-```js
-// pages/owner/settings.js
+// interface/pages/owner/settings.js
 import React, { Component } from 'react'
-import BotText from '../sprucebot/BotText'
+import { BotText } from 'react-sprucebot'
 
 export default class OwnerSettings extends Component {
     render() {
@@ -169,12 +154,16 @@ Routes are automatically setup based on the controllers you create and the keys 
 
 For example, to create `/owner/:someVariable/save` that allows an owner to POST, you would simply create the following:
 
-```js
-// controllers/owner.js
+```bash
+sprucebot skill create post /owner/:someVariable/save.json
+```
 
-module.export = {
-    'post /owner/:someVariable/save': async (sb, req, res) => {
-        const someVariable = req.someVariable;
+```js
+// /server/controllers/1.0/owner/index.js
+
+module.exports = router => {
+    router.post('/api/1.0/owner/:someVariable/save.json': async (ctx, next) => {
+        const someVariable = ctx.params.someVariable;
         return {
             success: true,
             message: 'Your variable was saved, happy now?' // always include a message with your response
@@ -426,7 +415,7 @@ So, if you want to listen to `vip:will-send` you'd create:
 
 ```js
 // events/vip/will-send.js
-modules.export = async (sb, req, res) => {
+module.exports = async (sb, req, res) => {
 
     const attachments = req.params.data;
 

@@ -18,7 +18,7 @@ module.exports = router => {
 
 			const users = await ctx.sb.users(ctx.auth.Location.id, params)
 			ctx.body = JSON.stringify(users)
-			next()
+			await next()
 		}
 	}
 

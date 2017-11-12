@@ -1,5 +1,5 @@
 // TODO Populate from API
-modules.exports = {
+module.exports = {
 	botName: 'Sprucebot',
 	botNamePlural: 'Sprucebots'
 }
