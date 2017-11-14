@@ -6,6 +6,7 @@
     "npm":"^5.4.2"
   },
   "scripts": {
+    "build": "next build interface",
     "start": "node ./server/server.js",
     "local": "npm run icon && node --inspect=4006 ./server/server.js",
     "interface": "next ./interface -p 3006",
@@ -13,7 +14,8 @@
     "test": "./node_modules/.bin/jest --coverage",
     "icon": "./node_modules/.bin/svgo icon/icon.svg",
     "precommit": "npm run lint",
-    "prepush": "npm run lint && npm run test"
+    "prepush": "npm run lint && npm run test",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "config": "^1.27.0",
@@ -29,7 +31,7 @@
     "react-dom": "^16.0.0",
     "react-emojione": "^5.0.0",
     "react-redux": "^5.0.6",
-    "react-sprucebot": "^0.4.2",
+    "react-sprucebot": "^0.4.3",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.17.2",
