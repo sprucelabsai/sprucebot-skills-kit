@@ -36,9 +36,7 @@ class OwnerDashboard extends React.Component {
 			teammatesLoading,
 			teammatesError,
 			teammates,
-			user: auth.User,
-			status: auth.status,
-			location: auth.Location
+			auth
 		}
 
 		return (

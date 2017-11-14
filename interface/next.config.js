@@ -10,6 +10,14 @@ module.exports = {
 		const clientConfig = config.sanitizeClientConfig({ ...config })
 		// Export our whitelisted config for the client bundle
 		fs.writeFileSync(jsonPath, JSON.stringify(clientConfig))
+		webpack.plugins = webpack.plugins.filter(plugin => {
+			if (plugin.constructor.name === 'UglifyJsPlugin') {
+				return false
+			} else {
+				return true
+			}
+		})
+
 		webpack.resolve = {
 			alias: {
 				config: jsonPath

@@ -34,16 +34,17 @@ export default class TeamDashboard extends Component {
 	render() {
 		return (
 			<div>
-				<H1>Welcome Back {this.props.user.firstName}!</H1>
-				{this.props.status === 'online' && (
+				<H1>Welcome Back {this.props.auth.User.firstName}!</H1>
+				{this.props.auth.status === 'online' && (
 					<BotText>
-						You are at {this.props.location.name} as we speak! That's so cool!
+						You are at {this.props.auth.Location.name} as we speak! That's so
+						cool!
 					</BotText>
 				)}
-				{this.props.status !== 'online' && (
+				{this.props.auth.status !== 'online' && (
 					<BotText>
-						Next time you get to {this.props.location.name}, you should join the
-						wifi!
+						Next time you get to {this.props.auth.Location.name}, you should
+						join the wifi!
 					</BotText>
 				)}
 				<SectionHeading>Who's Online</SectionHeading>
@@ -79,9 +80,7 @@ TeamDashboard.propTypes = {
 	teammatesLoading: PropTypes.bool,
 	teammatesError: PropTypes.object,
 	teammates: PropTypes.array,
-	user: PropTypes.object.isRequired,
-	status: PropTypes.string.isRequired,
-	location: PropTypes.object.isRequired
+	auth: PropTypes.object.isRequired
 }
 
 TeamDashboard.defaultProps = {

@@ -3541,6 +3541,10 @@ jest@^21.2.1:
   dependencies:
     jest-cli "^21.2.1"
 
+js-cookies@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/js-cookies/-/js-cookies-1.0.4.tgz#d46e576c420ff6d5542c0f52b6d4ef7d637e754e"
+
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
@@ -5026,11 +5030,12 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-sprucebot@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.2.3.tgz#d9a6945469a7fa49f5fe8c03c8eb066bd72a2782"
+react-sprucebot@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.4.2.tgz#4964b26eb0755a3b478e1dd2afe75bb7d6257167"
   dependencies:
     cookies "^0.7.1"
+    js-cookies "^1.0.4"
     next "^4.1.4"
     next-redux-wrapper "^1.3.4"
     prop-types "^15.6.0"
@@ -5705,15 +5710,15 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
-sprucebot-node@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/sprucebot-node/-/sprucebot-node-0.0.10.tgz#7ef02530eb291c9992d5d6031489596a541e24d0"
+sprucebot-node@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/sprucebot-node/-/sprucebot-node-0.2.2.tgz#9a203a4bb979beaf44c17b5e95cc09bdc6af7934"
   dependencies:
     glob "^7.1.2"
 
-sprucebot-skills-kit-server@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-0.1.0.tgz#a33006e9d6211effe247f9bdd9a28d27909d4450"
+sprucebot-skills-kit-server@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-0.2.0.tgz#390de48b6fc10955d34d4e929572add6f6f27eb3"
   dependencies:
     "@koa/cors" "2"
     config "^1.28.0"

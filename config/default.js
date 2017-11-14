@@ -11,9 +11,10 @@ try {
 }
 
 module.exports = {
-	DEV_MODE: process.env.DEV_MODE,
+	DEV_MODE: process.env.DEV_MODE === 'true',
 	API_HOST: process.env.API_HOST,
 	API_KEY: process.env.API_KEY,
+	SKILL_STYLESHEET: process.env.SKILL_STYLESHEET,
 	ID: process.env.ID,
 	NAME: process.env.NAME,
 	DESCRIPTION: process.env.DESCRIPTION,
@@ -35,7 +36,7 @@ module.exports = {
 	},
 	nextConfig: {
 		dir: path.resolve(__dirname, '../interface'),
-		dev: true, // next.js development mode
+		dev: process.env.DEV_MODE === 'true', // next.js development mode
 		quiet: false
 	},
 	// Error responses
@@ -47,6 +48,7 @@ module.exports = {
 			'ICON',
 			'DESCRIPTION',
 			'SERVER_HOST',
+			'SKILL_STYLESHEET',
 			'INTERFACE_SSL_ALLOW_SELF_SIGNED',
 			'VIMEO_ID',
 			'log_colors',
