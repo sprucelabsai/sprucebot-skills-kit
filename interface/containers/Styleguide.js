@@ -35,7 +35,6 @@ import {
 const Pre = styled.pre`
 	font-size: 0.8em;
 	text-align: left;
-	white-space: nowrap;
 	width: 100%;
 	overflow-x: scroll;
 	background-color: black;
@@ -310,6 +309,11 @@ export default class Styleguide extends Component {
 		<option value="uno">Test 1</option>
 		<option value="dos">Test 2</option>
 	</Select>
+	<Input
+		multiline
+		label="Growing multiline input"
+		defaultValue="You can type in here and I'll auto-size to match the height. How easy and simple and cool and taking up more space now is that?"
+	/>
 	<SubmitWrapper>
 		<Button alt href="http://hello.sprucebot.com">
 			Back to Dashboard
