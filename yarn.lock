@@ -5030,9 +5030,9 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-sprucebot@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.4.2.tgz#4964b26eb0755a3b478e1dd2afe75bb7d6257167"
+react-sprucebot@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.4.3.tgz#41e58ae1122b0cb13d4d1109a9a4dd944ca5bd90"
   dependencies:
     cookies "^0.7.1"
     js-cookies "^1.0.4"

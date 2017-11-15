@@ -268,6 +268,11 @@ export default class Styleguide extends Component {
 							<option value="uno">Test 1</option>
 							<option value="dos">Test 2</option>
 						</Select>
+						<Input
+							multiline
+							label="Growing multiline input"
+							defaultValue="You can type in here and I'll auto-size to match the height. How easy and simple and cool and taking up more space now is that?"
+						/>
 						<SubmitWrapper>
 							<Button alt href="http://hello.sprucebot.com">
 								Back to Dashboard
@@ -474,8 +479,7 @@ export default class Styleguide extends Component {
 					<Pager
 						totalPages={5}
 						titles={page =>
-							['Page 1', 'Custom', 'What the?', 'You know', 'What'][page]
-						}
+							['Page 1', 'Custom', 'What the?', 'You know', 'What'][page]}
 						onChange={(page, e) => {
 							console.log('page:', page, 'event:', e)
 						}}
