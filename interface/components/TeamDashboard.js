@@ -18,7 +18,7 @@ export default class TeamDashboard extends Component {
 		return users.map((user, idx) => (
 			<ListItem
 				key={`item-${idx}`}
-				online={user.status === 'connected'}
+				online={user.status === 'online'}
 				title={user.User.name}
 				subtitle={moment(new Date(user.lastRecordedVisit)).fromNow()}
 				rightTitle={`${user.visits} visit${user.visits === 1 ? '' : 's'}`}
@@ -34,34 +34,33 @@ export default class TeamDashboard extends Component {
 	render() {
 		return (
 			<div>
-				<H1>Welcome Back {this.props.auth.User.firstName}!</H1>
-				{this.props.auth.status === 'online' && (
-					<BotText>
-						You are at {this.props.auth.Location.name} as we speak! That's so
-						cool!
-					</BotText>
-				)}
-				{this.props.auth.status !== 'online' && (
-					<BotText>
-						Next time you get to {this.props.auth.Location.name}, you should
-						join the wifi!
-					</BotText>
-				)}
-				<SectionHeading>Who's Online</SectionHeading>
+				<H1>
+					{this.props.getText('teamDashboardWelcome', {
+						user: this.props.auth
+					})}
+				</H1>
+				<BotText>
+					{this.props.getText('teamDashboardBotText', {
+						user: this.props.auth
+					})}
+				</BotText>
+				<SectionHeading>
+					{this.props.getText('teammateDashboardHeading')}
+				</SectionHeading>
 				<Tabs>
-					<TabPane title="Guests">
+					<TabPane title={this.props.getText('guestsTabTitle')}>
 						{this.props.guestsLoading && <Loader />}
 						{this.props.guestsError && (
-							<BotText>Oh no! I could not load guests! </BotText>
+							<BotText>{this.props.getText('errorLoadingGuests')}</BotText>
 						)}
 						{this.props.guests && (
 							<List>{this.userListItems(this.props.guests)}</List>
 						)}
 					</TabPane>
-					<TabPane title="Teammates">
+					<TabPane title={this.props.getText('teammatesTabTitle')}>
 						{this.props.teammatesLoading && <Loader />}
 						{this.props.teammatesError && (
-							<BotText>Oh no! I could not load teammates! </BotText>
+							<BotText>{this.props.getText('errorLoadingTeammates')}</BotText>
 						)}
 						{this.props.teammates && (
 							<List>{this.userListItems(this.props.teammates)}</List>

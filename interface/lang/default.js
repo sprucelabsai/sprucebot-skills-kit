@@ -1,5 +1,16 @@
 // TODO Populate from API
 module.exports = {
 	botName: 'Sprucebot',
-	botNamePlural: 'Sprucebots'
+	botNamePlural: 'Sprucebots',
+	teamDashboardWelcome: ({ user }) => `Welcome back ${user.User.firstName}!`,
+	teamDashboardBotText: ({ user }) =>
+		user.status === 'online'
+			? `You are at ${user.Location.name} as we speak! That's so cool! 🙌🏼`
+			: `Next time you get into ${user.Location
+					.name}, don't forget to join the wifi! 👊🏼`,
+	teammateDashboardHeading: `Who's Online`,
+	errorLoadingGuests: `Oh no! I could not load guests!`,
+	errorLoadingTeammates: `Oh no! I could not load teammates!`,
+	guestsTabTitle: `Guests`,
+	teammatesTabTitle: `Teammates`
 }

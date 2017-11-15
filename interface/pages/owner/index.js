@@ -36,7 +36,8 @@ class OwnerDashboard extends React.Component {
 			teammatesLoading,
 			teammatesError,
 			teammates,
-			auth
+			auth,
+			getText: this.props.getText
 		}
 
 		return (
