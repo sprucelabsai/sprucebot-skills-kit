@@ -1,44 +1,8 @@
 # 🌲  Sprucebot Skills Kit 🌲
 
-### Table of Contents
-<!-- MarkdownTOC depth=3 -->
-
-- Sprucebot Skills Manifesto
-    - Automation
-    - Augmentation
-    - Making Small Business Successful
-    - Un-Amazon'able
-    - Promote Human-to-Human Connection
-- Using the CLI
-- First, about the Skills Kit
-- What Skills Kit is Built on...
-    - NextJS
-        - Why?
-    - Koa
-        - Why?
-        - Getting Started
-- Skill Requirements
-    - Know the rules
-    - Technical Requirements
-- Getting Started
-- Development Guide
-    - Tools
-        - Event Simulator \(didEnter/didLeave\)
-    - Setting Up Client Side Routes
-    - Setting Up Server Side Routes
-    - Sprucebot API
-    - Sending a message to a teammate when a guest arrives
-    - Emitting a Custom Event
-    - Listening to Someone's Custom Event
-- Deployment
-    - Heroku
-    - AWS
-    - IBM Bluemix
-    - Other servers
-- Support
-
-<!-- /MarkdownTOC -->
-
+# TLDR;
+ * [Meta](meta.md)
+ * [User](user.md)
 
 # Sprucebot Skills Manifesto
 
@@ -181,24 +145,7 @@ These are calls your skill makes from event listeners, REST endpoints, etc.
 try {
 
     // USER API
-    const guest = await sb.user(locationId, userId)
-
-    console.log(guest) // {status: "offline", role: "guest", User: {}, Location: {}} or null
-
-    const teammates = await sb.users(locationId, {
-        role, // optional (owner,teammate,guest,ownerteammate)
-        status, // optional (online, offline)
-        page, // optional (defaults to 0)
-        limit, // optional (default to 10, max 200)
-    })
-
-    console.log(teammates) // [{},{},{}] or []
-
-    const guest = await sb.updateUser(userId, {
-        firstName: 'Taylor'
-    })
-
-    console.log(guest) // {}
+    
 
     // LOCATION API
     const location = await sb.location(locationId)
@@ -218,60 +165,14 @@ try {
         webViewQueryData // optional (query string sent to skill when user taps it)
     });
 
-    // META API
-    let response = await sb.metas({
-        locationId, // optional
-        userId, // optional
-        value, // optional (can search against key in object)
-        sortBy, // createdAt|updatedAt,
-        order, // ASC|DESC (defaults to DESC)
-        key, // optional
-        page, // optional (defaults to 0)
-		limit // optional (defaults to 10, max 200)
-    })
-
-    console.log(response) // [{}, {}, {}] or []
-
-    let response = sb.createMeta(key, value, {
-        locationId, // optional
-        userId, // optional
-    })
-
-    console.log(response) // {}
-
-    let response = await sb.meta(key, {
-        locationId, // optional
-        userId, // optional
-        sortBy, // createdAt|updatedAt
-        order // ASC|DESC (defaults to DESC)
-    })
-
-    console.log(response) // {} or null
-
-    let response = await sb.metaOrCreate(key, value, { // find or create
-        locationId, // optional
-        userId, // optional
-    });
-
-    console.log(response) // {}
-   
-   let response = await sb.upsertMeta(key, value, { // update or insert
-        locationId, // optional
-        userId, // optional
-    });
-
-    console.log(response) // {}
-
-    let response = sb.deleteMeta(id)
-
-    console.log(response) // {??}
+    
+    
 
 } catch (err) {
     console.log(err);
 }
 
 ```
-
 
 ## Sending a message to a teammate when a guest arrives
 

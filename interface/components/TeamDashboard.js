@@ -35,32 +35,34 @@ export default class TeamDashboard extends Component {
 		return (
 			<div>
 				<H1>
-					{this.props.getText('teamDashboardWelcome', {
+					{this.props.lang.getText('teamDashboardWelcome', {
 						user: this.props.auth
 					})}
 				</H1>
 				<BotText>
-					{this.props.getText('teamDashboardBotText', {
+					{this.props.lang.getText('teamDashboardBotText', {
 						user: this.props.auth
 					})}
 				</BotText>
 				<SectionHeading>
-					{this.props.getText('teammateDashboardHeading')}
+					{this.props.lang.getText('teammateDashboardHeading')}
 				</SectionHeading>
 				<Tabs>
-					<TabPane title={this.props.getText('guestsTabTitle')}>
+					<TabPane title={this.props.lang.getText('guestsTabTitle')}>
 						{this.props.guestsLoading && <Loader />}
 						{this.props.guestsError && (
-							<BotText>{this.props.getText('errorLoadingGuests')}</BotText>
+							<BotText>{this.props.lang.getText('errorLoadingGuests')}</BotText>
 						)}
 						{this.props.guests && (
 							<List>{this.userListItems(this.props.guests)}</List>
 						)}
 					</TabPane>
-					<TabPane title={this.props.getText('teammatesTabTitle')}>
+					<TabPane title={this.props.lang.getText('teammatesTabTitle')}>
 						{this.props.teammatesLoading && <Loader />}
 						{this.props.teammatesError && (
-							<BotText>{this.props.getText('errorLoadingTeammates')}</BotText>
+							<BotText>
+								{this.props.lang.getText('errorLoadingTeammates')}
+							</BotText>
 						)}
 						{this.props.teammates && (
 							<List>{this.userListItems(this.props.teammates)}</List>
