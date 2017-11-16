@@ -1,5 +1,5 @@
 # Your Skill's `Server`
-A Skill is comprised of a `Server` and an `Interface`. The `Server` is powered by [`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server), which depends heavily on [koa](http://koajs.com) for handling requests to the `Server`.
+A Skill is comprised of a `Server` and an `Interface`. The `Server` is powered by [`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server), which depends heavily on [koa](http://koajs.com) for handling requests.
 
 Your Skill's `Interface` can never talk directly to `Sprucebot`. The `Server` proxies all request.
 
@@ -8,7 +8,7 @@ Your Skill's `Interface` can never talk directly to `Sprucebot`. The `Server` pr
 Your `Server` does a lot more than just proxy request. It also houses your Skill's business logic using utilities, services, data models, and event listeners.
 
 # Controllers
-Inside `server/controllers/1.0` you'll see 3 folders; `guest`, `owner`, & `teammate`. The controller system is pretty dumb; simply putting a `controller.js` inside of `teammate` does not make all the routes defined in it only available to teammates.
+Inside `server/controllers/1.0` you'll see 3 folders; `guest`, `owner`, & `teammate`. The controller system is pretty dumb; Simply putting a `.js` file inside of `controllers` will cause it to load. A `controller` is a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router). Note,putting a `controller` in side the `teammate` folder does not make all the routes defined in it only available to teammates.
 
 ## Routes
 Each `controller.js` must return a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router).
@@ -56,7 +56,7 @@ Access to an endpoint is restricted by role **only** by looking at the start of 
 
 
 ## `Auth` Object
-[`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server) has comes with built in `middleware` for ensuring requests are being made by a properly authenticated and authorized [`User`](user.md). In fact, the `Auth` object is simply just a [`User`](user.md).
+[`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server) comes with built-in `middleware` for ensuring requests are being made by a properly authenticated and authorized [`User`](user.md). In fact, the `Auth` object is simply a [`User`](user.md).
 
 ```js
 // server/controllers/1.0/owner/index.js
@@ -107,7 +107,12 @@ Any work that can be done `synchronously` should be done in a `utility`. It is s
 
 ***Required reading***:
 * [User](user.md)
+* [Meta](meta.md)
+* [Lang](lang.md)
 * [Events](events.md)
+
+#### Start with `middleware`.
+We want to have the `shopify-node-api` object available in every request and event listener. We do that by configuring it in the `middleware` for each request. We'll make it available as `ctx.shopify`.
 
 ```js
 // server/middleware/shopify.js
@@ -132,6 +137,7 @@ module.exports = (router) => {
 
             if (settings) {
                 
+                // instantiate a new Shopify using settings saved by owner
                 ctx.shopify = new Shopify({
                     shop: settings.value.shopName,
                     shopify_api_key: settings.value.apiKey,
@@ -146,6 +152,64 @@ module.exports = (router) => {
 }
 
 ```
+
+### Saving Shopify Settings
+We won't cover the `interface` for this example, but assume we're `POST`ing the 3 fields we determined we needed above, `shopName`, `apiKey`, and `accessToken`, for Shopify to work.
+
+```js
+// server/controllers/1.0/owner/index.js
+module.exports = (router) => {
+
+    router.post('/api/1.0/owner/shopify/save.json', async (ctx, next) => {
+
+        const { shopName, apiKey, accessToken } = ctx.body
+
+        // make sure required vars are set
+        ctx.assert(typeof(shopName) === 'string', 'INVALID_PARAMETERS')
+        ctx.assert(typeof(apiKey) === 'string', 'INVALID_PARAMETERS')
+        ctx.assert(typeof(accessToken) === 'string', 'INVALID_PARAMETERS')
+
+        const waitKey = `save-shopify-${ctx.auth.Location.id}`
+
+        try {
+            
+            // stop race conditions (hitting submit 100 times too fast)
+            await ctx.sb.wait(waitKey)
+
+            // save the shopify settings to this location
+            await ctx.sb.upsertMeta('shopify', {
+                shopName,
+                apiKey,
+                accessToken
+            }, {
+                locationId: ctx.auth.Location.id
+            })
+
+            // responde with something friends
+            ctx.body = JSON.stringify({
+                status: 'success',
+                message: ctx.utilities.lang.getText('saveShopifyResponseMessage')
+            })
+
+        } catch (err) {
+
+            console.error(err)
+            ctx.throw('FAILED_TO_SAVE_SHOPIFY_SETTINGS')
+
+        } finally {
+            
+            ctx.sb.go(waitKey)
+            await next()
+
+        }
+
+    })
+
+}
+```
+
+### Sync on arrival
+Rather than trying to batch sync users, it's much easier to have them sync when they visit. Because we've broken out all the syncing goodness into a `server`, we can do it super fast. We simply create a `did-enter` `listener` and call our `service`. See the [event docs](events) for more deets on events.
 
 ```js
 // server/events/did-enter.js
@@ -162,18 +226,24 @@ module.exports = async (ctx, next) => {
 }
 ```
 
+### Allowing an owner to force sync a guest
+Maybe an owner is browsing through past guests and realizes one is out of sync. Perhaps the first name is still `friend`. We'll give the `owner` a way to force sync. No `interface` is shown here, but assume a `<List>` of users with a 'Sync' `<Button>` as the `rightControl`. Hitting it `POST`s to the new `route` we're adding to `server/controllers/1.0/owner/index.js`.
 
 ```js
 // server/controllers/1.0/owner/index.js
 module.exports = (router) => {
 
+    router.post('/api/1.0/owner/shopify/save.json', async (ctx, next) => {...}
+
+    // New route for handling force sync
     router.post('/api/1.0/owner/sync/guest/:userId.json', async (ctx, next) => {
 
         // force sync guest
-        await ctx.services.shopify.sync(ctx.shopify, ctx.guest)
+        await ctx.services.shopify.sync(ctx.shopify, ctx.user)
 
         ctx.body = JSON.stringify({
-            success
+            status: 'success',
+            message: ctx.utilities.lang.getText('forceSyncResponseMessage')
         })
 
         await next()
@@ -183,6 +253,8 @@ module.exports = (router) => {
 }
 ```
 
+### Actually syncing the guest with Shopify
+Since Sprucebot only really cares about `firstName` and `profilePhotos`, there isn't that much to keep in sync. We won't show the syncing logic here, but assume it does a check on `updatedAt` in both systems (Sprucebot & Shopify) and uses the `firstName` and `profilePhoto` of the newer one.
 
 ```js
 // server/services/shopify.js
@@ -198,6 +270,9 @@ module.exports = {
         // access `server/utilities/loyalty.js`
         const loyaltyCode = this.utilities.loyalty.code(guest)
 
+        // access sb meta 
+        const meta = await this.sb.meta('shopify-id', { locationId, userId })
+
         // return whatever you want
 		return { reward, loyaltyCode, response }
         
@@ -205,20 +280,3 @@ module.exports = {
 }
 
 ```
-
-```js
-// server/utilities/loyalty.js
-module.exports = {
-	code: guest => {
-
-        // some special logic to generate a loyalty code
-        const code = ... 
-
-        return code
-
-	}
-}
-
-```
-
-
