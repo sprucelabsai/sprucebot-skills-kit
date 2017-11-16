@@ -6,9 +6,21 @@
  * [Core API](api.md)
  * [Meta](meta.md)
  * [User](user.md)
+ * [Events](events.md)
 
 # WTF?
 This is a highly opinionated approach on how to rapidly build skills for Sprucebot.  Ultimately, you could build a skill on any stack. 🤘🏼 This particular kit uses NodeJS + ReactJS with Next + Koa as supporting frameworks... May the force be with you.
+
+# Getting Started
+- Clone this repository
+- Rename the `sprucebot-skills-kit` directory to your new `slug`
+    - Slug is the hyphen separated name of your skill
+    - VIP Alerts -> vip-alerts
+    - Scratch & Win -> scratch-win
+- Delete `.git` folder
+- Run `yarn install`
+- Run `yarn run local`
+
 
 # Sprucebot Skills Manifesto
 
@@ -41,38 +53,3 @@ If your skill connects two people, it is considered a win. See, in order for Bec
 ## Technical Requirements
 - node v7.6+ : Koa requires node v7.6.0 or higher for ES2015 and async function support.
 - Yarn is installed (you can use NPM if you really want)
-
-# Getting Started
-- Clone this repository
-- Run `yarn install`
-- Run `yarn start`
-
-# Deployment
-
-## Heroku
-Simply configure your environmental variables in your Heroku control pannel and push your app.  This skillskit is very Heroku friendly if not modified extensively.
-
-- Add Screenshot
-- Add link to **Sprucebot Skill Deployment Guide - Heroku**
-
-## AWS
-Skills built on this kit are easily deployed to EC2. You will need to start the application process.  The Spruce team recommends managing your node processes with PM2.  Hint hint, PM2 has some nifty power tools for AWS deployments.  Just configure the provided `sample.ecosystem.js` file and run `pm2 deploy`
-
-Simply configure your environmental variables in your Heroku control pannel and push your app.  This skillskit is very Heroku friendly if not modified extensively.
-
-- Add link to **Sprucebot Skill Deployment Guide - AWS**
-
-## IBM Bluemix
-Simply configure your environmental variables in your Cloud Foundry control pannel and push your app.  This skillskit is very Cloud Foundry friendly if not modified extensively.
-
-- Add Screenshot
-- Add link to **Sprucebot Skill Deployment Guide - Cloud Foundry**
-
-## Other servers
-A Sprucebot skill should be able to be deployed to most web servers. Please see the below guide
-
-- Add link to **Sprucebot Skill Deployment Guide - Custom Server**
-
-# Support
-
-Call Randy Cotten

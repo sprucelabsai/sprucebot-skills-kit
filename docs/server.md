@@ -80,18 +80,18 @@ module.exports = router => {
 See [events](events.md).
 
 # Middleware
-Any file in `server/middleware` should return a function that receives a `koa-router`. Middleware is a where you put `router.use()` and `router.params()`. Do **not** put any http verbs (get,post,put,delete) inside `server/middleware`.
+Any file in `server/middleware`. Should return a function that receives a `koa-router`. Middleware is a where you put `router.use()` and `router.params()`. Do **not** put any http verbs (get,post,put,delete) inside `server/middleware`.
 
 # Models
 Coming soon...
 
 # Services
-Any operation that uses `I/O` should be put in a `service`. A `service.js` should export an object with methods. It's expected that every method in a `service` is `async`.
+Any file in `server/services`. Should return an object with `async` methods(). Any operation that uses `I/O` should be put in a `service`.
 
 A `service` is accessed like `ctx.services.${fileName}.${methodName}()`. `Services` has access to `services` and `utilities` as properties on themselves, e.g. `this.services` and `this.utilities`.
 
 # Utilities
-Any work that can be done `synchronously` should be done in a `utility`. It is structured exactly the same as a `service` in that it's a simple object with methods. `Utilities` can also access other `utilities` and `services` off `this`.
+Any file in `server/utilities`. Should return an object with methods that are synchronous. Access a `utility` using `ctx.utilities.${fileName}.${methodName}()`. `Utilities` can also access other `utilities` and `services` off `this`.
 
 # Gotchya's
  * `sb` is attached to `ctx`. That is how you'll make calls back to Sprucebot, e.g. `ctx.sb.message(locationId, userId, 'How are you?')`.
@@ -103,7 +103,7 @@ Any work that can be done `synchronously` should be done in a `utility`. It is s
 ### Sync with Shopify
 **Difficulty level**: Medium
 
-***Description***: This scenario will assume we want to sync with Shopify, though it could be any API. We won't write all the logic, but will demo a `listener`, `utility`, `service`, `middleware` and `controller` to demonstrate how they all communicate. Lets sync the guest every time they visit, but also give an owner a way to manually sync them. We'll be acting as a Shared App through Shopify.
+***Description***: We want to sync with Shopify, though it could be any API. We won't write all the logic, but will generate a `listener`, `utility`, `service`, `middleware` and `controller` to demonstrate how they all communicate. Lets sync the guest every time they visit, but also give an owner a way to manually sync them.
 
 ***Required reading***:
 * [User](user.md)
