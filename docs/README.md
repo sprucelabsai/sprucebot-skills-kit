@@ -1,8 +1,13 @@
 # 🌲  Sprucebot Skills Kit 🌲
 
 # TLDR;
+ * [Server](server.md)
+ * [Interface](interface.md)
  * [Meta](meta.md)
  * [User](user.md)
+
+# WTF?
+This is a highly opinionated approach on how to rapidly build skills for Sprucebot.  Ultimately, you could build a skill on any stack. 🤘🏼 This particular kit uses NodeJS + ReactJS with Next + Koa as supporting frameworks... May the force be with you.
 
 # Sprucebot Skills Manifesto
 
@@ -34,36 +39,6 @@ If your skill connects two people, we consider it a win. If you can manage to st
 
 # Using the CLI
 The best way to work with [sprucebot-cli](https://github.com/sprucelabsai/sprucebot-cli).
-
-# First, about the Skills Kit
-This is a highly opinionated approach on how to rapidly build skills for Sprucebot.  Ultimately, you could build a skill on any stack. 🤘🏼 This particular kit uses NodeJS + ReactJS with Next + Koa as supporting frameworks... May the force be with you.
-
-- ~~Diagram of the skills architecture~~
-
-# What Skills Kit is Built on...
-
-## NextJS
-Next.js is a minimalistic framework for server-rendered React applications. Visit [learnnextjs.com](https://learnnextjs.com/basics/getting-started) to get started with Next.js.
-
-### Why?
-- Server-rendered by default
-- Automatic code splitting for faster page loads
-- Simple client-side routing (page based)
-- Webpack-based dev environment which supports Hot Module Replacement (HMR)
-- Able to implement with Express or any other Node.js HTTP server
-- Customizable with your own Babel and Webpack configurations
-
-## Koa
-[Koa](http://koajs.com/) is a next generation web framework for NodeJS designed by the team behind Express, which aims to be a smaller, more expressive, and more robust foundation for web applications and APIs.
-
-### Why?
-Through leveraging generators Koa allows you to ditch callbacks and greatly increase error-handling. Koa does not bundle any middleware within core, and provides an elegant suite of methods that make writing servers fast and enjoyable.
-
-A Koa application is an object containing an array of middleware functions which are composed and executed in a stack-like manner upon request. Koa is similar to many other middleware systems that you may have encountered such as Ruby's Rack, Connect, and so on - however a key design decision was made to provide high level "sugar" at the otherwise low-level middleware layer. This improves interoperability, robustness, and makes writing middleware much more enjoyable.
-
-This includes methods for common tasks like content-negotiation, cache freshness, proxy support, and redirection among others. Despite supplying a reasonably large number of helpful methods Koa maintains a small footprint, as no middleware are bundled.
-
-### Getting Started
 
 # Skill Requirements
 

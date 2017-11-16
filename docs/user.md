@@ -1,5 +1,5 @@
-# The user object
-A Skill cannot access a user directly. It's gotta go through a location. So, when a user is retrieved, it comes with more than just firstName.
+# The Sprucebot User
+A Skill cannot access a user directly. It's gotta go through a location. So, when a user is retrieved, it comes with more than just firstName. It includes the `Location` as well as things like `role`, `status`, number of `visits`.
 
 ### User data model
 
