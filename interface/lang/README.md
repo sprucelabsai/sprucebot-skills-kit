@@ -8,5 +8,5 @@ const botName = cxt.getText('botName')
 
 Client
 ```js
-const botName = this.props.getText('botName')
+const botName = this.props.lang.getText('botName')
 ```
