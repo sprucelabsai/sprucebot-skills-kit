@@ -4,7 +4,7 @@ A way to store any JSON.stringify'able object and query against it.
 ### For when you don't quite need a database
 
 There will come a time when you need to store some data about a guest, teammate, owner, location, or even your own skill.
-
+****
 The `Meta API` is a basic key/value store. As such, it can run no aggregate operations (avg, sum, etc.) on the data.
 
 # Meta data model

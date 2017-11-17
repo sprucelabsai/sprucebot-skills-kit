@@ -1,4 +1,4 @@
-# Your Skill's `Server`
+# Your Skill's Server
 A Skill is comprised of a `Server` and an `Interface`. The `Server` is powered by [`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server), which depends heavily on [koa](http://koajs.com) for handling requests.
 
 Your Skill's `Interface` can never talk directly to `Sprucebot`. The `Server` proxies all request.
@@ -185,7 +185,7 @@ module.exports = (router) => {
                 locationId: ctx.auth.Location.id
             })
 
-            // responde with something friends
+            // respond with something friendly
             ctx.body = JSON.stringify({
                 status: 'success',
                 message: ctx.utilities.lang.getText('saveShopifyResponseMessage')
@@ -209,7 +209,7 @@ module.exports = (router) => {
 ```
 
 ### Sync on arrival
-Rather than trying to batch sync users, it's much easier to have them sync when they visit. Because we've broken out all the syncing goodness into a `server`, we can do it super fast. We simply create a `did-enter` `listener` and call our `service`. See the [event docs](events) for more deets on events.
+Rather than trying to batch sync users, it's much easier to have them sync when they visit. Because we've broken out all the syncing goodness into a `service`, we can do it super fast. We simply create a `did-enter` `listener` and call our `service`. See the [event docs](events) for more deets on events.
 
 ```js
 // server/events/did-enter.js

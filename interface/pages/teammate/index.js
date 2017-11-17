@@ -19,6 +19,7 @@ class TeammateDashboard extends React.Component {
 	render() {
 		let {
 			auth,
+			lang,
 			users: {
 				guestsLoading = true,
 				guestsError,
@@ -30,6 +31,7 @@ class TeammateDashboard extends React.Component {
 		} = this.props
 
 		const dashboardProps = {
+			lang,
 			guestsLoading,
 			guestsError,
 			guests,

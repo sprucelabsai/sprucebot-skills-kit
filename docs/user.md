@@ -74,9 +74,13 @@ console.log(guest) // {User}
 
 ```
 # Gotchya's
- * A 'User` isn't just a user, so pay attention to what you are accessing.
- * You will rarely have to call `user()` since it's attached as `ctx.auth` for the currently logged in `User`
- * A user doesn't have much besides a `firstName` and `profilePhotos`, mostly everything you need to save can be done using `Meta`.
+ * A `User` isn't just a user, so pay attention to what you are accessing.  ~~`user.firstName`~~ ->  `user.User.firstName`
+ * A `User` always comes with a `Location`, so access it via `user.User.Location`
+ * `user.User.name` is "Friend" or "${firstName} ${lastInitial}.". 
+ * Use `user.User.name` when sending one person's name to another (to help identify)
+ * Use ``${`user.User.firstName || user.User.name`}`` when sending a person's name to themselves, e.g. "Welcome back Anthony!" vs ~~"Welcome back Anthony C.!"~~
+ * You will rarely have to call `ctx.sb.user()` since it's attached as `ctx.auth` for the currently logged in `User`
+ * A user doesn't have much besides a `firstName` and `profilePhotos`, everything you need to store beyond that can be done using `Meta`.
  * To search for both teammates and owners, search against `role=ownerteammate`
 
 # Examples
