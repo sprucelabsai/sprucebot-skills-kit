@@ -4,5 +4,9 @@
         "**/bower_components": true,
         "**/.next": true
     },
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "cSpell.words": [
+        "stringify'able",
+        "uploader"
+    ]
 }

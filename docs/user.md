@@ -1,13 +1,13 @@
 # The Sprucebot User
-A Skill cannot access a user directly. It's gotta go through a location. So, when a user is retrieved, it comes with more than just firstName. It includes the `Location` as well as things like `role`, `status`, number of `visits`.
+A Skill cannot access a user directly. It's gotta go through a `Location`. So, when a `user` is retrieved, it comes with more than just `firstName`. It includes the `Location` as well as things like `role`, `status`, and number of `visits`.
 
-### User data model
+## User object
 
 ```js
 {
     id: UUID4,
-    createdAt: Date,
-    updatedAt: Date,
+    createdAt: Date, // date the user joined the location
+    updatedAt: Date, // date the user changed their subscription to the location
     role: String, // owner|teammate|guest
     status: String, // offline|online
     visits: Number, // how many visits to this location
@@ -47,33 +47,38 @@ A Skill cannot access a user directly. It's gotta go through a location. So, whe
     }
 }
 ```
-# API
-```js
+## Roles
+There are only 3 roles in Sprucebot, `owner`, `teammate`, and `guest`. These roles are tied to a `Location`. Here is how each role functions in core.
 
+ * `owner` - Can enable/disable skills, manage `teammates` and `guests`. All done from the `Biz Dashboard`.
+ * `teammate` - Can manage `guests`. Also has access to `Biz Dashboard`. Tends to get a more restricted view of a skill.
+ * `guest` - Can only see their `Dashboard`.
+
+## API
+```js
 // Fetch a single user
-const guest = await sb.user(locationId, userId)
+const guest = await ctx.sb.user(locationId: UUID4, userId: UUID4)
 
 console.log(guest) // {User} or null
 
 // Fetch a bunch of users
-const teammates = await sb.users(locationId, {
-    role, // optional (owner|teammate|guest|ownerteammate)
-    status, // optional (online|offline)
-    page, // optional (defaults to 0)
-    limit, // optional (default to 10, max 200)
+const teammates = await ctx.sb.users(locationId: UUID4, {
+    role: String, // optional (owner|teammate|guest|ownerteammate)
+    status: String, // optional (online|offline)
+    page: Number, // optional (defaults to 0)
+    limit: Number, // optional (default to 10, max 200)
 })
 
 console.log(teammates) // [{User},{User},{User}] or []
 
 // Update a user
-const guest = await sb.updateUser(userId, {
-    firstName: 'Taylor'
+const guest = await ctx.sb.updateUser(userId: UUID4, {
+    firstName: String
 })
 
 console.log(guest) // {User}
-
 ```
-# Gotchya's
+## Gotchya's
  * A `User` isn't just a user, so pay attention to what you are accessing.  ~~`user.firstName`~~ ->  `user.User.firstName`
  * A `User` always comes with a `Location`, so access it via `user.User.Location`
  * `user.User.name` is "Friend" or "${firstName} ${lastInitial}.". 
@@ -85,10 +90,10 @@ console.log(guest) // {User}
 
 # Examples
 
-### Sending a message to all teammates at the shop when a guest enters
+## Sending a message to all teammates at the shop when a guest enters
 **Difficulty level**: Easy
 
-**Description**: You run a VIP service and want to make sure to let teammates know when a guest arrives. No interface will be covered in this example.
+**Description**: You run a Vip service and want to make sure to let `teammates` know when a `guest` arrives. No interface will be covered in this example.
 
 **Required Reading**:
 * [Server](server.md)
@@ -96,25 +101,36 @@ console.log(guest) // {User}
 * [Lang](lang.md)
 * [Events](events.md)
 
+### Setup listener
+Since we want to send a message when a `guest` arrives, we'll create a `did-enter` listener. We'll check `ctx.event.User.role` to make sure the `user` entering is a `guest`.
+
 ```js
 // server/events/did-enter.js
 module.exports = async (ctx, next) => {
 
+    // only notify about guests arriving
     if (ctx.event.User.role === 'guest') {
 
+        next() // Core can move on to whatever it was gonna do
+
+        // load all teammates and owners whe are currently logged onto the wifi
         const teammates = ctx.sb.users(ctx.event.Location.id, {
             role: 'ownerteammate',
             status: 'online'
         })
 
+        // message everyone, one at a time
         await Promise.all(teammates.map((teammate) => 
             ctx.sb.message(
                 ctx.event.Location.id, 
-                ctx.event.User.id, 
-                ctx.utilities.lang.getText('didEnterMessage', { event, teammate })
+                teammate.User.id, 
+                ctx.utilities.lang.getText('didEnterMessage', { guest: event, teammate })
             )
         )
+    } else {
 
+        // pass control back to server
+        await next()
 
     }
 
@@ -126,7 +142,7 @@ module.exports = async (ctx, next) => {
 ```js
 // interface/lang/default.js
 module.exports = {
-    didEnterMessage: ({ event, teammate }) => `${event.User.name} just showed up!`
+    didEnterMessage: ({ guest, teammate }) => `${event.User.name} just showed up!`
 }
 
 ```

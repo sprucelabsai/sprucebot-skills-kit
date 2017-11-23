@@ -1,0 +1,2 @@
+# Models
+We have not implemented an `ORM` yet. But, the plan is to use [Sequelize](http://docs.sequelizejs.com). If you would like to get started here, email `scientists@sprucelabs.ai` and we'll get jamming on it!

@@ -1,30 +1,25 @@
 # 🌲  Sprucebot Skills Kit 🌲
 
 # TLDR;
+A Skill is a "micro-app". That is, a bit of functionality hyper focused on a single use-case. It consists of a `server` and an `interface`. Together, with `events` and `messages`, Skills can connect people in whole new ways.
+
+ * [Skills](skills.md) <- Start here after reading below
  * [Server](server.md)
  * [Interface](interface.md)
  * [Core API](api.md)
  * [Meta](meta.md)
  * [User](user.md)
  * [Events](events.md)
+ * [Errors](errors.md)
+ * [Messages](messages.md)
+ * [Uploading Files](uploads.md)
 
 # WTF?
 This is a highly opinionated approach on how to rapidly build skills for Sprucebot.  Ultimately, you could build a skill on any stack. 🤘🏼 This particular kit uses NodeJS + ReactJS with Next + Koa as supporting frameworks... May the force be with you.
 
-# Getting Started
-- Clone this repository
-- Rename the `sprucebot-skills-kit` directory to your new `slug`
-    - Slug is the hyphen separated name of your skill
-    - VIP Alerts -> vip-alerts
-    - Scratch & Win -> scratch-win
-- Delete `.git` folder
-- Run `yarn install`
-- Run `yarn run local`
+# Sprucebot skills manifesto
 
-
-# Sprucebot Skills Manifesto
-
-Skills are programs with a purpose: help [small business](https://vimeo.com/204933933).
+Skills are programs with a purpose: [human-to-human connection](https://vimeo.com/204933933).
 
 They accomplish this in one of two ways:
 
@@ -37,7 +32,7 @@ Lets say there is a lady named Becca. She nerds the f\*\*k out over fashion. So,
 ## Augmentation
 Good augmentation is much harder to achieve than good automation. Automation comes natural. You think, "What processes can I get rid of?" Augmentation is the opposite. The question becomes, "What processes can I make better?" It turns out it's much easier to point at something and say, "eliminate that" than it is to imagine something that does not yet exist.
 
-## Making Small Business Successful
+## Making small business successful
 This two pronged approach is the crux of our small business strategy. We want Becca to be able to focus on fashion, not all that other sh\*t. But, Becca's boutique needs more than good automation to succeed. She needs to be:
 
 ## Un-Amazon'able
@@ -45,11 +40,11 @@ Amazon rocks, doesn't it? Pretty much everything you need, bargain basement pric
 
 You've never logged into Amazon, had it say, "Welcome back ${firstName}" and thought to yourself, "Wow, that was nice!" But, when you walk into your favorite boutique, coffeeshop, outdoor shop, barbershop, or salon and are welcomed by name, everything changes.
 
-## Promote Human-to-Human Connection
-If your skill connects two people, it is considered a win. See, in order for Becca to beat Amazon, she's gotta build relationships. Relationships, true relationships, are built face-to-face.
+## Promote human-to-human connection
+If your skill connects two people, it is considered a win. See, in order for Becca to beat Amazon, she's gotta build relationships. Relationships, true relationships, are built without a middleman.
 
 *"Remember that a person's name is, to that person, the sweetest and most important sound in any language."* - Dale Carnegie
 
-## Technical Requirements
+## Technical requirements
 - node v7.6+ : Koa requires node v7.6.0 or higher for ES2015 and async function support.
 - Yarn is installed (you can use NPM if you really want)

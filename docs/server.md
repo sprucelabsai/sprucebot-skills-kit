@@ -7,8 +7,8 @@ Your Skill's `Interface` can never talk directly to `Sprucebot`. The `Server` pr
 
 Your `Server` does a lot more than just proxy request. It also houses your Skill's business logic using utilities, services, data models, and event listeners.
 
-# Controllers
-Inside `server/controllers/1.0` you'll see 3 folders; `guest`, `owner`, & `teammate`. The controller system is pretty dumb; Simply putting a `.js` file inside of `controllers` will cause it to load. A `controller` is a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router). Note,putting a `controller` in side the `teammate` folder does not make all the routes defined in it only available to teammates.
+## Controllers
+Inside `server/controllers/1.0` you'll see 3 folders; `guest`, `owner`, & `teammate`. The controller system is pretty dumb; Simply put a `.js` file inside of `controllers` and it'll be loaded. A `controller` is a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router). Note, putting a `controller` in side the `teammate` folder does not make all the routes defined in it only available to teammates. You must start the route with `/api/1.0/teammate/*` to restrict by role.
 
 ## Routes
 Each `controller.js` must return a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router).
@@ -24,10 +24,10 @@ module.exports = router => {
         console.log('Teammate name', teammate.User.name)
         console.log('Location name', teammate.Location.name)
 
-        ctx.body = JSON.stringify({
+        ctx.body = {
             favoriteColor: 'blue',
             birthday: new Date()
-        })
+        }
 
         await next();
 
@@ -39,9 +39,9 @@ module.exports = router => {
 
         ctx.assert(typeof(ctx.body.favoriteColor) === 'string', 'INVALID_PARAMETERS')
 
-        ctx.body = JSON.stringify({
+        ctx.body = {
             favoriteColor: ctx.body.favoriteColor
-        })
+        }
 
     })
 
@@ -69,36 +69,114 @@ module.exports = router => {
         console.log('Teammate name', teammate.User.name)
         console.log('Location name', teammate.Location.name)
 
-        ctx.body = JSON.stringify(teammate)
+        const reviews = await ctx.services.reviews(teammate)
+
+        ctx.body = reviews
 
         await next()
     })
 }
 
 ```
-# Events
+## Events
 See [events](events.md).
 
-# Middleware
-Any file in `server/middleware`. Should return a function that receives a `koa-router`. Middleware is a where you put `router.use()` and `router.params()`. Do **not** put any http verbs (get,post,put,delete) inside `server/middleware`.
+## Errors
+See [errors](errors.md)
 
-# Models
+## Middleware
+Any file in `server/middleware`. Should return a function that receives a `koa-router`. Middleware is a where you put `router.use()` and `router.param()`. Do **not** put any http verbs (get,post,put,delete) inside `server/middleware`.
+
+```js
+// server/middleware/user.js
+module.exports = router => {
+
+    // comes built into this kit
+	router.param('userId', async (id, ctx, next) => {
+		try {
+
+            // searching against the auth'ed user's location 
+			ctx.user = await ctx.sb.user(ctx.auth.Location.id, id)
+		} catch (err) {
+
+            // log a helpful description
+            console.error('user middleware failed with error', err)
+            
+            // will throw an error defined in config/errors.js
+			ctx.throw('USER_NOT_FOUND')
+		}
+		await next()
+	})
+}
+
+
+```
+
+## Models
 Coming soon...
 
-# Services
+## Services
 Any file in `server/services`. Should return an object with `async` methods(). Any operation that uses `I/O` should be put in a `service`.
 
 A `service` is accessed like `ctx.services.${fileName}.${methodName}()`. `Services` has access to `services` and `utilities` as properties on themselves, e.g. `this.services` and `this.utilities`.
 
-# Utilities
+## Utilities
 Any file in `server/utilities`. Should return an object with methods that are synchronous. Access a `utility` using `ctx.utilities.${fileName}.${methodName}()`. `Utilities` can also access other `utilities` and `services` off `this`.
 
-# Gotchya's
+## Configuring Services + Utilities
+Inside `config/default.js` you'll see `utilities` and `services` blocks. Any options you pass there will be passed through to your `service` or `utility` through a call to `init(options)`.
+
+```js
+// config/default.js
+module.exports = {
+    ...
+    utilities: {
+        rewards: {
+            foo: 'bar',
+            hello: 'world'
+        }
+    },
+    services: {
+        twilio: {
+            fromNumber: '+1 123-123-1234'
+        }
+    }
+    ...
+}
+
+```
+
+### Passed to rewards utility
+`options` are pulled from `utilities.rewards` in the config above.
+
+```js
+// server/utilities/rewards.js
+module.exports = {
+    init(options) {
+        console.log(options) // { foo: 'bar', hello: 'world' }
+    }
+}
+```
+
+### Passed to Twilio service
+`options` are pulled from `utilities.twilio` in the config above.
+```js
+// server/services/twilio.js
+module.exports = {
+    init(options) {
+        console.log(options) // { fromNumber: '+1 123-123-1234' }
+    }
+}
+```
+
+## Gotchya's
  * `sb` is attached to `ctx`. That is how you'll make calls back to Sprucebot, e.g. `ctx.sb.message(locationId, userId, 'How are you?')`.
  * Routes must start with `/api/1.0/${role}/*`
- * [`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server) comes with built-in `middleware`, `controllers`, and `utilities` - Make sure you are familar with them.
+ * [`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server) comes with built-in `middleware`, `controllers`, and `utilities` - Make sure you are familiar with them.
+ * `Services` and `utilities` are **not** loaded recursively, so `server/utilities/messaging/twilio.js` will not be automatically loaded, but `server/utilities/twilio.js` will.
+ * At the moment, you cannot listen to any `route` that has an `interface` page, e.g. `router.get('/owner')` will never get called.
 
-# Examples
+## Examples
 
 ### Sync with Shopify
 **Difficulty level**: Medium
@@ -153,7 +231,7 @@ module.exports = (router) => {
 
 ```
 
-### Saving Shopify Settings
+#### Saving Shopify Settings
 We won't cover the `interface` for this example, but assume we're `POST`ing the 3 fields we determined we needed above, `shopName`, `apiKey`, and `accessToken`, for Shopify to work.
 
 ```js
@@ -186,10 +264,10 @@ module.exports = (router) => {
             })
 
             // respond with something friendly
-            ctx.body = JSON.stringify({
+            ctx.body = {
                 status: 'success',
                 message: ctx.utilities.lang.getText('saveShopifyResponseMessage')
-            })
+            }
 
         } catch (err) {
 
@@ -208,7 +286,7 @@ module.exports = (router) => {
 }
 ```
 
-### Sync on arrival
+#### Sync on arrival
 Rather than trying to batch sync users, it's much easier to have them sync when they visit. Because we've broken out all the syncing goodness into a `service`, we can do it super fast. We simply create a `did-enter` `listener` and call our `service`. See the [event docs](events) for more deets on events.
 
 ```js
@@ -226,7 +304,7 @@ module.exports = async (ctx, next) => {
 }
 ```
 
-### Allowing an owner to force sync a guest
+#### Allowing an owner to force sync a guest
 Maybe an owner is browsing through past guests and realizes one is out of sync. Perhaps the first name is still `friend`. We'll give the `owner` a way to force sync. No `interface` is shown here, but assume a `<List>` of users with a 'Sync' `<Button>` as the `rightControl`. Hitting it `POST`s to the new `route` we're adding to `server/controllers/1.0/owner/index.js`.
 
 ```js
@@ -241,10 +319,10 @@ module.exports = (router) => {
         // force sync guest
         await ctx.services.shopify.sync(ctx.shopify, ctx.user)
 
-        ctx.body = JSON.stringify({
+        ctx.body = {
             status: 'success',
             message: ctx.utilities.lang.getText('forceSyncResponseMessage')
-        })
+        }
 
         await next()
 
@@ -253,8 +331,8 @@ module.exports = (router) => {
 }
 ```
 
-### Actually syncing the guest with Shopify
-Since Sprucebot only really cares about `firstName` and `profilePhotos`, there isn't that much to keep in sync. We won't show the syncing logic here, but assume it does a check on `updatedAt` in both systems (Sprucebot & Shopify) and uses the `firstName` and `profilePhoto` of the newer one.
+#### Actually syncing the guest with Shopify
+Since Sprucebot only really cares about `firstName` and `profilePhotos`, there isn't that much to keep in sync. We won't show the syncing logic here, but assume it does a check on `updatedAt` in both systems (Sprucebot & Shopify) and uses the `firstName` and `profilePhoto` of the newer one. Below is just a myriad of examples of things you can invoke.
 
 ```js
 // server/services/shopify.js
@@ -273,7 +351,7 @@ module.exports = {
         // access sb meta 
         const meta = await this.sb.meta('shopify-id', { locationId, userId })
 
-        // return whatever you want
+        // return whatever you want, yo
 		return { reward, loyaltyCode, response }
         
 	}

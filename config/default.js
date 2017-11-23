@@ -26,6 +26,21 @@ module.exports = {
 	INTERFACE_SSL_ALLOW_SELF_SIGNED:
 		process.env.INTERFACE_SSL_ALLOW_SELF_SIGNED === 'true',
 	API_SSL_ALLOW_SELF_SIGNED: process.env.API_SSL_ALLOW_SELF_SIGNED === 'true',
+	utilities: {}, // Settings for any utilities.
+	services: {
+		'uploads.disabled': {
+			uploader: './uploads/s3',
+			options: {
+				Bucket: 'some-bucket-name',
+				accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+				secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+			}
+		}
+	}, // Settings for any services.
+	bodyParserOptions: {
+		// passthrough to https://github.com/koajs/bodyparser
+		jsonLimit: '1mb'
+	},
 	log_colors: {
 		error: 'red',
 		warn: 'orange',
