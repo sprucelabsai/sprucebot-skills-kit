@@ -83,6 +83,27 @@ module.exports = router => {
 
 ```
 
+## Rendering errors client side
+You can safely render `friendlyReason` whenever an error occurs on the `server`. Your `reducer` will 
+
+```js
+render() {
+
+	const { shopify } = this.props
+
+	return (
+		<Container className="owner-settings">
+
+			{shopify.fetchError && (
+				<BotText>{shopify.fetchError.friendlyReason}</BotText>
+			)}
+
+		</Container>
+	)
+}
+```
+
+## Defining your errors
 Then, all we have to do is define the errors.
 
 ```js
@@ -104,3 +125,10 @@ module.exports = {
 }
 
 ```
+
+## Gotchya's
+ * There is no way (or need) to throw errors in the `interface`. Almost all your logic should be contained in `services` and `utilities` on the `server`. The `interface` is just that, the interface.
+ * You can render `friendlyMessage` right in your `interface`, but you don't have to.
+
+# What's next?
+We're done with the essentials! Lets get started on something very specific, [uploads](uploads.md)!

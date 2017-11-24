@@ -7,11 +7,12 @@ A Skill is a "micro-app". That is, a bit of functionality hyper focused on a sin
  * [Server](server.md)
  * [Interface](interface.md)
  * [Core API](api.md)
- * [Meta](meta.md)
  * [User](user.md)
+ * [Meta](meta.md)
  * [Events](events.md)
- * [Errors](errors.md)
+ * [Lang](lang.md)
  * [Messages](messages.md)
+ * [Errors](errors.md)
  * [Uploading Files](uploads.md)
 
 # WTF?

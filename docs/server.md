@@ -1,14 +1,14 @@
 # Your Skill's Server
-A Skill is comprised of a `Server` and an `Interface`. The `Server` is powered by [`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server), which depends heavily on [koa](http://koajs.com) for handling requests.
+A Skill is comprised of a `server` and an `interface`. The `server` is powered by [`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server), which depends heavily on [koa](http://koajs.com) for handling requests.
 
-Your Skill's `Interface` can never talk directly to `Sprucebot`. The `Server` proxies all request.
+Your Skill's `interface` can never talk directly to Sprucebot. The `server` proxies all request.
 
 ### `Server` is more than just a proxy
 
-Your `Server` does a lot more than just proxy request. It also houses your Skill's business logic using utilities, services, data models, and event listeners.
+Your `server` does a lot more than just proxy request. It also houses your Skill's business logic using utilities, services, data models, and event listeners.
 
 ## Controllers
-Inside `server/controllers/1.0` you'll see 3 folders; `guest`, `owner`, & `teammate`. The controller system is pretty dumb; Simply put a `.js` file inside of `controllers` and it'll be loaded. A `controller` is a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router). Note, putting a `controller` in side the `teammate` folder does not make all the routes defined in it only available to teammates. You must start the route with `/api/1.0/teammate/*` to restrict by role.
+Inside `server/controllers/1.0` you'll see 3 folders; `guest`, `owner`, & `teammate`. The controller system is pretty dumb; Simply put a `.js` file inside of `controllers` and it'll be loaded. A `controller` is a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router). Note, putting a `controller` in side the `teammate` folder does **not** make all the routes defined in it only available to teammates. You must start the route with `/api/1.0/teammate/*` to restrict by role.
 
 ## Routes
 Each `controller.js` must return a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router).
@@ -50,13 +50,15 @@ module.exports = router => {
 ## Restricting by role
 Access to an endpoint is restricted by role **only** by looking at the start of the `path`, ie `/api/1.0/${role}` Throws a `403` if access is denied.
 
- * `/api/1.0/owner/*` - must be an owner
- * `/api/1.0/teammate/*` - must be an owner or teammate
- * `/api/1.0/guest/*` - must be an owner or teammate or guest
+ * `/api/1.0/owner/*` - must be an `owner`
+ * `/api/1.0/teammate/*` - must be an `owner` or `teammate`
+ * `/api/1.0/guest/*` - must be an `owner` or `teammate` or `guest`
 
 
-## `Auth` Object
-[`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server) comes with built-in `middleware` for ensuring requests are being made by a properly authenticated and authorized [`User`](user.md). In fact, the `Auth` object is simply a [`User`](user.md).
+## `Auth` object
+[`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server) comes with built-in `middleware` for ensuring requests are being made by a properly authenticated and authorized [`User`](user.md). When the built-in `auth` middleware detects the appropriate tokens in the request, it'll load the `user` and attach them to `ctx.auth`. If no `user` is found or a `user` is trying to access a route they do not have permission to access, a `NOT_AUTHORIZED` error is thrown. 
+
+The `auth` object is simply a [`user`](user.md) object, so you'll get pretty used to working with it. Once you get the to the [`user` docs](user.md), it'll all start to click =).
 
 ```js
 // server/controllers/1.0/owner/index.js
@@ -82,7 +84,7 @@ module.exports = router => {
 See [events](events.md).
 
 ## Errors
-See [errors](errors.md)
+See [errors](errors.md).
 
 ## Middleware
 Any file in `server/middleware`. Should return a function that receives a `koa-router`. Middleware is a where you put `router.use()` and `router.param()`. Do **not** put any http verbs (get,post,put,delete) inside `server/middleware`.
@@ -92,36 +94,50 @@ Any file in `server/middleware`. Should return a function that receives a `koa-r
 module.exports = router => {
 
     // comes built into this kit
-	router.param('userId', async (id, ctx, next) => {
+    router.param('userId', async (id, ctx, next) => {
 		try {
 
             // searching against the auth'ed user's location 
-			ctx.user = await ctx.sb.user(ctx.auth.Location.id, id)
-		} catch (err) {
+            ctx.user = await ctx.sb.user(ctx.auth.Location.id, id)
+
+        
+        } catch (err) {
 
             // log a helpful description
             console.error('user middleware failed with error', err)
             
             // will throw an error defined in config/errors.js
-			ctx.throw('USER_NOT_FOUND')
-		}
-		await next()
-	})
+            ctx.throw('USER_NOT_FOUND')
+
+        }
+        
+        await next() // pass control back to koa
+
+    })
 }
 
 
 ```
 
 ## Models
-Coming soon...
+See [models](models.md).
 
 ## Services
 Any file in `server/services`. Should return an object with `async` methods(). Any operation that uses `I/O` should be put in a `service`.
 
-A `service` is accessed like `ctx.services.${fileName}.${methodName}()`. `Services` has access to `services` and `utilities` as properties on themselves, e.g. `this.services` and `this.utilities`.
+A `service` is accessed like `ctx.services.${fileName}.${methodName}()`. `Services` have access to `services` and `utilities` as properties on themselves, e.g. `this.services` and `this.utilities`.
+
+```js
+const didSend = await ctx.services.vip.send()
+const reward = await ctx.services.rewards.generate()
+```
 
 ## Utilities
 Any file in `server/utilities`. Should return an object with methods that are synchronous. Access a `utility` using `ctx.utilities.${fileName}.${methodName}()`. `Utilities` can also access other `utilities` and `services` off `this`.
+
+```js
+const randomNumber = ctx.utilities.random.generate()
+```
 
 ## Configuring Services + Utilities
 Inside `config/default.js` you'll see `utilities` and `services` blocks. Any options you pass there will be passed through to your `service` or `utility` through a call to `init(options)`.
@@ -170,7 +186,8 @@ module.exports = {
 ```
 
 ## Gotchya's
- * `sb` is attached to `ctx`. That is how you'll make calls back to Sprucebot, e.g. `ctx.sb.message(locationId, userId, 'How are you?')`.
+ * Put as much logic as you can in `services` and `utilities`. If you put most your logic in a `controller`, you're gonna have a bad time (especially once you start hooking into events and want to reuse that logic).
+ * `sb` is attached to `ctx` passed to each route. That is how you'll make calls back to Sprucebot, e.g. `ctx.sb.message(locationId, userId, 'How are you?')`.
  * Routes must start with `/api/1.0/${role}/*`
  * [`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server) comes with built-in `middleware`, `controllers`, and `utilities` - Make sure you are familiar with them.
  * `Services` and `utilities` are **not** loaded recursively, so `server/utilities/messaging/twilio.js` will not be automatically loaded, but `server/utilities/twilio.js` will.
@@ -190,12 +207,11 @@ module.exports = {
 * [Events](events.md)
 
 #### Start with `middleware`.
-We want to have the `shopify-node-api` object available in every request and event listener. We do that by configuring it in the `middleware` for each request. We'll make it available as `ctx.shopify`.
+We want to have the `shopify-node-api` object available in every request and event listener. We do that by configuring it in the `middleware` for each request. We'll make it available as `ctx.shopify`. 
 
 ```js
 // server/middleware/shopify.js
 const Shopify = require('shopify-node-api')
-const config = require('config')
 
 module.exports = (router) => {
 
@@ -235,10 +251,10 @@ module.exports = (router) => {
 We won't cover the `interface` for this example, but assume we're `POST`ing the 3 fields we determined we needed above, `shopName`, `apiKey`, and `accessToken`, for Shopify to work.
 
 ```js
-// server/controllers/1.0/owner/index.js
+// server/controllers/1.0/owner/shopify.js
 module.exports = (router) => {
 
-    router.post('/api/1.0/owner/shopify/save.json', async (ctx, next) => {
+    router.post('/api/1.0/owner/shopify/settings.json', async (ctx, next) => {
 
         const { shopName, apiKey, accessToken } = ctx.body
 
@@ -305,10 +321,10 @@ module.exports = async (ctx, next) => {
 ```
 
 #### Allowing an owner to force sync a guest
-Maybe an owner is browsing through past guests and realizes one is out of sync. Perhaps the first name is still `friend`. We'll give the `owner` a way to force sync. No `interface` is shown here, but assume a `<List>` of users with a 'Sync' `<Button>` as the `rightControl`. Hitting it `POST`s to the new `route` we're adding to `server/controllers/1.0/owner/index.js`.
+Maybe an owner is browsing through past guests and realizes one is out of sync. Perhaps the first name is still `friend`. We'll give the `owner` a way to force sync. No `interface` is shown here, but assume a `<List>` of users with a 'Sync' `<Button>` as the `rightControl`. Hitting it `POST`s to the new `route` we're adding to `server/controllers/1.0/owner/index.js`. This is a perfect example of why we want to put our syncing logic in a `service`.
 
 ```js
-// server/controllers/1.0/owner/index.js
+// server/controllers/1.0/owner/shopify.js
 module.exports = (router) => {
 
     router.post('/api/1.0/owner/shopify/save.json', async (ctx, next) => {...}
@@ -334,6 +350,8 @@ module.exports = (router) => {
 #### Actually syncing the guest with Shopify
 Since Sprucebot only really cares about `firstName` and `profilePhotos`, there isn't that much to keep in sync. We won't show the syncing logic here, but assume it does a check on `updatedAt` in both systems (Sprucebot & Shopify) and uses the `firstName` and `profilePhoto` of the newer one. Below is just a myriad of examples of things you can invoke.
 
+**Callout:** NEVER SET STATE ON A SERVER/UTILITY. We attached `shopify` to the `ctx` and pass it to the `service` every time we use it because `services` & `utilities` are only created once when your skill boots. This means anything unique to the `user` currently using your skill must be put on the `ctx`. It also means you should rarely change the state of your `service` (e.g. `this.favoriteColor = 'blue'`) because it'll apply to every `user` and `location` using your skill.
+
 ```js
 // server/services/shopify.js
 module.exports = {
@@ -358,3 +376,5 @@ module.exports = {
 }
 
 ```
+# What's next?
+Now you have a feel for the `server`, lets start tinkering with the [`interface`](interface.md)!

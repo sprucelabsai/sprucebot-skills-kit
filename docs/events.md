@@ -158,7 +158,7 @@ module.exports = async (ctx, next) => {
 }
 ```
 #### Define the terms
-Please don't ever do this.
+Please don't ever make a message like this. It'll land you in hot water. ;)
 ```js
 // interface/lang/default.js
 module.exports = {
@@ -166,3 +166,6 @@ module.exports = {
 }
 
 ```
+
+# What's next?
+Sweet! Since we've been doing a lot with `lang`, lets learn some more about it in the [`lang` docs](lang.md).

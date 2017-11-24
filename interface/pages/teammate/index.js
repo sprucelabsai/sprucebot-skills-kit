@@ -4,7 +4,7 @@ import TeamDashboard from '../../components/TeamDashboard'
 import { Container } from 'react-sprucebot'
 
 class TeammateDashboard extends React.Component {
-	static getInitialProps({ props }) {
+	static getInitialProps(props) {
 		return {}
 	}
 

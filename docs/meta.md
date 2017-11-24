@@ -362,3 +362,5 @@ module.exports = {
 }
 
 ```
+# What's next?
+Cool, we're pretty ramped up on all the data passed to and from Sprucebot, lets dive into [`events`](events.md)!

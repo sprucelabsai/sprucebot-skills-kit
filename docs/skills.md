@@ -7,9 +7,10 @@ Before you can build a skill, you must email `scientists@sprucelabs.ai` to recei
     - VIP Alerts -> vip-alerts
     - Scratch & Win -> scratch-win
 - Delete `.git` folder
+- Modify `name` and `description` in `package.json`
 - Copy `.env.example` to `.env` and configure it
-- Run `yarn install`
-- Run `yarn run local`
+- `yarn install`
+- `yarn run local`
 
 ## Env
 Below is a description of every setting in your `.env` and a description of what each setting does.`
@@ -40,6 +41,8 @@ It'll output something like:
 Forwarding https://whatever.ngrok.io -> localhost:3006    
 ```
 
+Next, we would drop our ngrok url into our `.env.`. Notice the `PORT` should match (3006 in our case).
+
 * `PORT=3006` 
 * `SERVER_HOST=https://whatever.ngrok.io`
 * `INTERFACE_HOST=https://whatever.ngrok.io`
@@ -47,5 +50,47 @@ Forwarding https://whatever.ngrok.io -> localhost:3006
 
 Now you can visit `API_HOST` (https://hello.sprucebot.com) directly and navigate to your `Location` and enable your skill.
 
+## Debugging
+This kit comes with a `.vscode` folder with a `launch.json` configured for debugging with [Visual Studio Code](https://code.visualstudio.com). Simply open this project in VS Code and start launch the debugger.
+
+## File Structure
+ * `.vscode` - Settings for `Visual Studio Code`, our preferred IDE
+ * `config` - Per environment settings, managed via [config](https://github.com/lorenwest/node-config)
+ * `coverage` - Testing courtesy [Jest](https://facebook.github.io/jest/). No need to touch anything here.
+ * `docs` - All the docs you could ever want!
+ * [`interface`](interface.md) - Holds your React pages. Powered by [Nextjs](https://github.com/zeit/next.js/). 
+    * `.next` - Caching for Nextjs.
+    * `components` - Anything reusable that will not contain much (if any) logic.
+    * `.containers` - Logic containing `components`. Most of the time a `container` will render one or more `components`, passing `props` down.
+    * `lang` - Language control.
+    * `pages` - Each page of your `interface`. Rendered using Nextjs.
+    * `store` - `Actions` and `reducers`. Powered by [react-redux](https://github.com/reactjs/react-redux)
+        * `actions` - Where your `https` requests are made (or state is changed in any way).
+        * `reducers` - How your app handles those `https` requests (or state changes).
+ * `node_modules` - You know this one.
+ * [`server`](server.md) - Backend powered by [sprucebot-skills-kit-server](https://github.com/sprucelabsai/sprucebot-skills-kit-server) + [koajs](http://koajs.com).
+    * `controllers` - Where your routes are defined.
+        * `1.0` - Helps to version your controllers
+            * `guest` - All routes available to `guests`, `teammates`, and `owners`.
+            * `owner` - All routes only available to `owners`.
+            * `teammate` - Routes for `teammates` and `owners`
+        * `cron.js` - Drop in logic that runs on a schedule.
+    * `events` - All your event listeners.
+    * `middleware` - Koajs middleware.
+    * `models` - Models brought to you by [Sequelize](http://docs.sequelizejs.com).
+    * `services` - Anything that is a long running, or I/O based operation, drop it in a `service`.
+    * `static` - Host your flat files here. Available at `/${filename}`.
+    * `utilities` - Any bit of code you need to use often that is synchronous.
+    * `server.js` - Hands control over to `sprucebot-skills-kit-server`.
+* `.babelrc` - Transpiling code.
+* `.editorconfig` - Holds our formatting preferences.h
+* `.env.example` - Your starter `.env` file.
+* `.eslintrc` - Our [eslint](https://eslint.org) preferences. Formats code automatically!
+* `.gitignore` - Files we don't want included in version control.
+* `.nvmrc` - For user with [nvm](https://github.com/creationix/nvm) so we can always be using the same version of node.
+* `.travis.yml` - Continuous integration with [Travis CI](https://travis-ci.org).
+* `package.json` - Dependencies n' such.
+* `README.md` - Readme about your skill.
+
 # What's next?
-Now that you're up and running, dive into the [`server`](server.md) guide.
+Now that you're up and running, dive into the [`server`](server.md) guide to get yourself familiar with the backend.

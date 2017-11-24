@@ -26,3 +26,6 @@ const message = await ctx.sb.message(locationId: UUID4, userId: UUID4, message:
  * If you need to deliver a message to the `guest`, try notifying a `teammate` so they can deliver the message.
  * If you must message the `guest`, don't bombard them with messages (how much would you like to be spammed when you walk into a shop?)
  * DO NOT SPAM
+
+# What's next?
+Ok, lets dive into [error reporting](errors.md)!

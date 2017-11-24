@@ -146,4 +146,5 @@ module.exports = {
 }
 
 ```
-
+# What's next?
+We've had to pull in bits from all over to make these examples work, but now would be a good time to dive into the [`meta` object](meta.md).
