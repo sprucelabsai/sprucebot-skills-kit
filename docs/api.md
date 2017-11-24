@@ -45,6 +45,7 @@ console.log(locations) // [{},{}] or []
 ```
 
 ## Messaging API
+Good stuff about messaging [here](messages.md).
 ```js
 // Send a message
 const message = await ctx.sb.message(locationId: UUID4, userId: UUID4, message:
