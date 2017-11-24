@@ -66,7 +66,7 @@ const responses = await ctx.sb.emit(ctx.auth.Location.id, 'scratch-and-win:will-
         from: ctx.auth.User.id
     }),
     teammateId: ctx.auth.User.id,
-    sendToSelf: config.DEV_MODE
+    sendToSelf: config.DEV_MODE // this event will emit back to you (for testing)
 })
 
 console.log(responses) // [EventResponse, EventResponse]
@@ -109,7 +109,8 @@ module.exports = async (ctx, next) => {
 ```
 
 ## Gotchya's
- * Event listeners need to respond in 2 seconds or they will be ignored. That means you need to respond to Sprucebot right away and run your logic after.
+ * Event listeners need to respond in 2 seconds or they will be ignored. That means you may need to respond to Sprucebot right away and run your logic after.
+ * Custom events will not `emit` back to your skill unless you set `sendToSelf=true`. This makes testing way easier, but should def be off in production (why we tie it to `DEV_MODE=true`).
 
 ## Examples
 ### Modifying the Vip Alert 💥 message to something we like better
