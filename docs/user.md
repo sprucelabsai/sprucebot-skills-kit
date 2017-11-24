@@ -84,7 +84,7 @@ console.log(guest) // {User}
  * A `User` always comes with a `Location`, so access it via `user.User.Location`
  * `user.User.name` is "Friend" or "${firstName} ${lastInitial}.". 
  * When sending a `message` to a `user` about themselves (Hello Taylor!), use `${user.User.firstName || user.User.name}`. You don't need the last initial and want it to fall back to "Friend".
- * When sending a `message` to a `user` about someone else, simple use `${user.User.name}` so it includes the last initial.
+ * When sending a `message` to a `user` about someone else, use `${user.User.name}` so it includes the last initial.
  * Use `user.User.name` when sending one person's name to another (to help identify)
  * Use ``${`user.User.firstName || user.User.name`}`` when sending a person's name to themselves, e.g. "Welcome back Anthony!" vs ~~"Welcome back Anthony C.!"~~
  * You will rarely have to call `ctx.sb.user()` since it's attached as `ctx.auth` for the currently logged in `User`
