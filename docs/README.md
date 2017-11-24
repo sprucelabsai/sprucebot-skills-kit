@@ -28,10 +28,10 @@ They accomplish this in one of two ways:
 2. Augmentation - people run the show, tech enables
 
 ## Automation
-Lets say there is a lady named Becca. She nerds the f\*\*k out over fashion. So, she decided to open a menswear boutique. She loves it. But, do you know what she didn't expect? That she'd be spending all her f\*\*king time doing boring ass `backend` work. There are so many aspects of running a business that need to be automated, it literally warranted this document being created.
+Lets say there is a lady named Becca. She nerds the f\*\*k out over fashion. So, she decided to open a menswear boutique. She loves it. But, do you know what she didn't expect? That she'd be spending all her f\*\*king time doing boring ass admin work. There are so many aspects of running a business that need to be automated, it literally warranted this document being created.
 
 ## Augmentation
-Good augmentation is much harder to achieve than good automation. Automation comes natural. You think, "What processes can I get rid of?" Augmentation is the opposite. The question becomes, "What processes can I make better?" It turns out it's much easier to point at something and say, "eliminate that" than it is to imagine something that does not yet exist.
+Good augmentation is much harder to achieve than good automation. Automation comes natural. You think, "What processes can I get rid of?" Augmentation is the opposite. The question becomes, "What processes can I make better?" When considering augmentation, it helps to think about the things a human brain can't do well (e.g. remembering names or personal details of 100 people a day).
 
 ## Making small business successful
 This two pronged approach is the crux of our small business strategy. We want Becca to be able to focus on fashion, not all that other sh\*t. But, Becca's boutique needs more than good automation to succeed. She needs to be:
