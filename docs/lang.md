@@ -1,5 +1,5 @@
 # Language
-At the time of this writing, we do not have full multi-lingual support. But, we've setup the foundation for when the time comes. :D If you need multi-lingual support now, email `scientists@sprucelabs.ai` and we'll get it added ASAP!
+At the time of this writing, we do not have full multi-lingual support. But, we've setup the foundation for when the time comes. 😁 If you need multi-lingual support now, email `scientists@sprucelabs.ai` and we'll get it added ASAP!
 
 ## Defining `terms`
 All your `terms` go into `interface/lang/default.js`. A `term` can be a String or a Function that returns a String.

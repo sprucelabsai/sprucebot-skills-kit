@@ -82,13 +82,13 @@ All actions need 3 states, `REQUEST`, `SUCCESS`, `ERROR`. They are all used and 
 
 ```js
 // interface/store/actions/shopify.js
-export const GET_SHOPIFY_SETTINGS_REQUEST = 'locations/GET_SHOPIFY_SETTINGS_REQUEST'
-export const GET_SHOPIFY_SETTINGS_SUCCESS = 'locations/GET_SHOPIFY_SETTINGS_SUCCESS'
-export const GET_SHOPIFY_SETTINGS_ERROR = 'locations/GET_SHOPIFY_SETTINGS_ERROR'
+export const GET_SHOPIFY_SETTINGS_REQUEST = 'shopify/GET_SHOPIFY_SETTINGS_REQUEST'
+export const GET_SHOPIFY_SETTINGS_SUCCESS = 'shopify/GET_SHOPIFY_SETTINGS_SUCCESS'
+export const GET_SHOPIFY_SETTINGS_ERROR = 'shopify/GET_SHOPIFY_SETTINGS_ERROR'
 
-export const UPDATE_SHOPIFY_SETTINGS_REQUEST = 'locations/UPDATE_SHOPIFY_SETTINGS_REQUEST'
-export const UPDATE_SHOPIFY_SETTINGS_SUCCESS = 'locations/UPDATE_SHOPIFY_SETTINGS_SUCCESS'
-export const UPDATE_SHOPIFY_SETTINGS_ERROR = 'locations/UPDATE_SHOPIFY_SETTINGS_ERROR'
+export const UPDATE_SHOPIFY_SETTINGS_REQUEST = 'shopify/UPDATE_SHOPIFY_SETTINGS_REQUEST'
+export const UPDATE_SHOPIFY_SETTINGS_SUCCESS = 'shopify/UPDATE_SHOPIFY_SETTINGS_SUCCESS'
+export const UPDATE_SHOPIFY_SETTINGS_ERROR = 'shopify/UPDATE_SHOPIFY_SETTINGS_ERROR'
 
 export function get() {
     return {
@@ -147,7 +147,8 @@ export default function reducer(state = null, action) {
 		case GET_SHOPIFY_SETTINGS_SUCCESS:
 			return {
 				...state,
-				settings: action.result,
+                settings: action.result,
+                getError: false,
 				getting: false
 			}
 		case GET_SHOPIFY_SETTINGS_ERROR:
@@ -164,7 +165,8 @@ export default function reducer(state = null, action) {
 		case UPDATE_SHOPIFY_SETTINGS_SUCCESS:
 			return {
 				...state,
-				settings: action.result,
+                settings: action.result,
+                getError: false,
 				updating: false
 			}
 		case UPDATE_SHOPIFY_SETTINGS_ERROR:
@@ -330,6 +332,7 @@ When you first visit your skill, you'll be taken to the `Styleguide`. This guide
  * Dispatch actions `client` side and use a `<Loader />` so things load quickly.
  * **NEVER** `import config from 'config'` client side. It'll expose all your settings! Use `sanitizeClientConfig` && `this.props.config` instead.
  * Deving through a proxy (like ngrok) is really slow. One way to make development faster is to inspect the `iframe` in Sprucebot, copy the `src`, and paste it into a new window.  
+ * Make sure you set the `error` to `false` on `REQUEST_SUCCESS` so any previous error is removed.
 
 # What's next?
 Ok, we're almost end-to-end... but it's probably a good time to get more familiar with all the things you can do with the [api](api.md).

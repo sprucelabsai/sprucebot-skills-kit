@@ -7,7 +7,7 @@ Your Skill's `interface` can never talk directly to Sprucebot. The `server` prox
 
 Your `server` does a lot more than just proxy request. It also houses your Skill's business logic using utilities, services, data models, and event listeners.
 
-## Controllers
+## <a name="controllers">Controllers</a>
 Inside `server/controllers/1.0` you'll see 3 folders; `guest`, `owner`, & `teammate`. The controller system is pretty dumb; Simply put a `.js` file inside of `controllers` and it'll be loaded. A `controller` is a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router). Note, putting a `controller` in side the `teammate` folder does **not** make all the routes defined in it only available to teammates. You must start the route with `/api/1.0/teammate/*` to restrict by role.
 
 ## Routes
@@ -55,7 +55,7 @@ Access to an endpoint is restricted by role **only** by looking at the start of 
  * `/api/1.0/guest/*` - must be an `owner` or `teammate` or `guest`
 
 
-## `Auth` object
+## <a name="auth">`Auth` object</a>
 [`sprucebot-skills-kit-server`](https://github.com/sprucelabsai/sprucebot-skills-kit-server) comes with built-in `middleware` for ensuring requests are being made by a properly authenticated and authorized [`User`](user.md). When the built-in `auth` middleware detects the appropriate tokens in the request, it'll load the `user` and attach them to `ctx.auth`. If no `user` is found or a `user` is trying to access a route they do not have permission to access, a `NOT_AUTHORIZED` error is thrown. 
 
 The `auth` object is simply a [`user`](user.md) object, so you'll get pretty used to working with it. Once you get the to the [`user` docs](user.md), it'll all start to click =).
@@ -86,7 +86,7 @@ See [events](events.md).
 ## Errors
 See [errors](errors.md).
 
-## Middleware
+## <a name="middleware">Middleware</a>
 Any file in `server/middleware`. Should return a function that receives a `koa-router`. Middleware is a where you put `router.use()` and `router.param()`. Do **not** put any http verbs (get,post,put,delete) inside `server/middleware`.
 
 ```js
@@ -122,7 +122,7 @@ module.exports = router => {
 ## Models
 See [models](models.md).
 
-## Services
+## <a name="services">Services</a>
 Any file in `server/services`. Should return an object with `async` methods(). Any operation that uses `I/O` should be put in a `service`.
 
 A `service` is accessed like `ctx.services.${fileName}.${methodName}()`. `Services` have access to `services` and `utilities` as properties on themselves, e.g. `this.services` and `this.utilities`.
