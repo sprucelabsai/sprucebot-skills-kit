@@ -8,7 +8,7 @@ Your Skill's `interface` can never talk directly to Sprucebot. The `server` prox
 Your `server` does a lot more than just proxy request. It also houses your Skill's business logic using utilities, services, data models, and event listeners.
 
 ## <a name="controllers">Controllers</a>
-Inside `server/controllers/1.0` you'll see 3 folders; `guest`, `owner`, & `teammate`. The controller system is pretty dumb; Simply put a `.js` file inside of `controllers` and it'll be loaded. A `controller` is a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router). Note, putting a `controller` in side the `teammate` folder does **not** make all the routes defined in it only available to teammates. You must start the route with `/api/1.0/teammate/*` to restrict by role.
+Inside `server/controllers/1.0` you'll see 3 folders; `guest`, `owner`, & `teammate`. The controller system is pretty dumb; Simply put a `.js` file inside of `controllers` and it'll be loaded. A `controller` is a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router). Note, putting a `controller` inside the `teammate` folder does **not** make all the routes defined in it only available to teammates. You must start the route with `/api/1.0/teammate/*` to restrict by role.
 
 ## Routes
 Each `controller.js` must return a function that accepts a [koa-router](https://github.com/alexmingoia/koa-router).
@@ -138,7 +138,6 @@ Any file in `server/utilities`. Should return an object with methods that are sy
 ```js
 const randomNumber = ctx.utilities.random.generate()
 ```
-
 ## Configuring Services + Utilities
 Inside `config/default.js` you'll see `utilities` and `services` blocks. Any options you pass there will be passed through to your `service` or `utility` through a call to `init(options)`.
 
@@ -163,12 +162,14 @@ module.exports = {
 ```
 
 ### Passed to rewards utility
-`options` are pulled from `utilities.rewards` in the config above.
+`options` are pulled from `utilities.rewards` in the config above. **Note:** This is the **only** time you should be setting `state` on a `utility` or `service`. Any settings you need that are unique to the request, use `middelware` to populate the `ctx` and pass it to the `method()` you are invoking.
 
 ```js
 // server/utilities/rewards.js
 module.exports = {
-    init(options) {
+    init({ setting1, setting2 }) {
+        this.setting1 = setting1
+        this.setting2 = setting2
         console.log(options) // { foo: 'bar', hello: 'world' }
     }
 }
@@ -348,9 +349,9 @@ module.exports = (router) => {
 ```
 
 #### Actually syncing the guest with Shopify
-Since Sprucebot only really cares about `firstName` and `profilePhotos`, there isn't that much to keep in sync. We won't show the syncing logic here, but assume it does a check on `updatedAt` in both systems (Sprucebot & Shopify) and uses the `firstName` and `profilePhoto` of the newer one. Below is just a myriad of examples of things you can invoke.
+Since Sprucebot only really cares about `firstName` and `profilePhotos`, there isn't that much to keep in sync. We won't show the syncing logic here, but assume it does a check on `updatedAt` in both systems (Sprucebot & Shopify) and uses the `firstName` and `profilePhoto` of the newer one.
 
-**Callout:** NEVER SET STATE ON A SERVER/UTILITY. We attached `shopify` to the `ctx` and pass it to the `service` every time we use it because `services` & `utilities` are only created once when your skill boots. This means anything unique to the `user` currently using your skill must be put on the `ctx`. It also means you should rarely change the state of your `service` (e.g. `this.favoriteColor = 'blue'`) because it'll apply to every `user` and `location` using your skill.
+**Callout:** NEVER SET STATE ON A SERVER/UTILITY EXCEPT THROUGH `config/default.js`. We attached `shopify` to the `ctx` and pass it to the `service` every time we use it because `services` & `utilities` are only created once when your skill boots. This means anything unique to the `user` currently using your skill must be put on the `ctx`. It also means you should rarely change the state of your `service` (e.g. `this.favoriteColor = 'blue'`) because it'll apply to every `user` and `location` using your skill.
 
 ```js
 // server/services/shopify.js
