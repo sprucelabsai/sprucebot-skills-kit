@@ -10,13 +10,13 @@ Describe how your skill works for anyone who may need to come in and maintain or
 ### Utilities
  * `rewards` - Does something else.
 
-## Custom events
+### Custom events
 Describe any custom events your skill emits. Make sure you include whether or not it honors `preventDefault` and include the `payload`'s schema.
 
-### `vip-alerts:will-send` 
+#### `vip-alerts:will-send` 
 Just before a vip alert is triggered when a `guest` or `teammate` arrives. Honors `preventDefault`. Mutate `messages` to your heart's content. Whatever `messages` you return will be what is sent.
 
-#### Payload
+**Payload**
 
 ```js
 [
@@ -31,10 +31,10 @@ Just before a vip alert is triggered when a `guest` or `teammate` arrives. Honor
 ]
 ```
 
-### `my-slug:custom-event`
+#### `my-slug:custom-event`
 This is just a placeholder for now, put in yours! Honors `preventDefault`.
 
-#### Payload
+**Payload**
 ```js
 {
     hello: 'world'
