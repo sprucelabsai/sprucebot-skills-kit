@@ -326,6 +326,9 @@ componentDidMount() {
 ## Styleguide
 When you first visit your skill, you'll be taken to the `Styleguide`. This guide has every `Component` defined in `react-sprucebot` with examples on how they can be configured. As soon as you set `.env` `DEV_MODE=false`, this page goes away.
 
+## Custom styling
+Currently it is against Sprucebot rules to add custom styles to your Skill. If you find our control library is not sufficient, put your styles inline, take a screen, and shoot it to scientists (at) sprucelabs.ai and we'll see how we can enhance the kit to accommodate.
+
 ## Gotchya's
  * We say `interface` and not `client` because this code can render on the `server` as well.
  * `getInitialProps` can run both `server` side and `client` side, so check for `window` or anything else you expect to use.

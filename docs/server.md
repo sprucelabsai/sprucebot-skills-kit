@@ -37,10 +37,10 @@ module.exports = router => {
     // teammates and above (owners)
     router.post('/api/1.0/teammate/profile.json', async (ctx, next) => {
 
-        ctx.assert(typeof(ctx.body.favoriteColor) === 'string', 'INVALID_PARAMETERS')
+        ctx.assert(typeof(ctx.request.body.favoriteColor) === 'string', 'INVALID_PARAMETERS')
 
         ctx.body = {
-            favoriteColor: ctx.body.favoriteColor
+            favoriteColor: ctx.request.body.favoriteColor
         }
 
     })
@@ -257,7 +257,7 @@ module.exports = (router) => {
 
     router.post('/api/1.0/owner/shopify/settings.json', async (ctx, next) => {
 
-        const { shopName, apiKey, accessToken } = ctx.body
+        const { shopName, apiKey, accessToken } = ctx.request.body
 
         // make sure required vars are set
         ctx.assert(typeof(shopName) === 'string', 'INVALID_PARAMETERS')
@@ -292,11 +292,11 @@ module.exports = (router) => {
             ctx.throw('FAILED_TO_SAVE_SHOPIFY_SETTINGS')
 
         } finally {
-            
             ctx.sb.go(waitKey)
-            await next()
-
         }
+
+        // pass back to koa if no error
+        next()
 
     })
 

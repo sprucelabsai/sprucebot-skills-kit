@@ -176,7 +176,7 @@ module.exports = router => {
 
     router.post('/api/1.0/owner/save.json', async (ctx, next) {
 
-        ctx.assert(typeof(ctx.body.someValue) === 'string', 'MISSING_SOME_VALUE')
+        ctx.assert(typeof(ctx.request.body.someValue) === 'string', 'MISSING_SOME_VALUE')
 
         // because this setting is Location wide, we'll only lock for this location
         // the scenarios being same user hits submit too many times or two owners
@@ -200,10 +200,12 @@ module.exports = router => {
             console.error(err)
             ctx.throw('FAILED_TO_SAVE_SOME_VALUE')
         } finally {
-
             // unlock this request
             ctx.sb.go(waitKey)
         }
+
+        // pass back to koa
+        next() 
 
     })
 }
@@ -243,7 +245,7 @@ module.exports = router => {
     router.post('/api/1.0/teammate/color/save.json', async (ctx, next) => {
 
         // make sure favorite color is a string (our only required field)
-        ctx.assert(typeof(ctx.body.favoriteColor) === 'string', 'MISSING_FAVORITE_COLOR')
+        ctx.assert(typeof(ctx.request.body.favoriteColor) === 'string', 'MISSING_FAVORITE_COLOR')
 
         // get the currently authed [user](user.md)
         const user = ctx.auth
@@ -260,7 +262,7 @@ module.exports = router => {
 
             // upsert the meta data for this user, we save location and user so this teammate can
             // save a different favorite color at their "other" job
-            const meta = await ctx.sb.upsertMeta('favorite-color', ctx.body.favoriteColor, {
+            const meta = await ctx.sb.upsertMeta('favorite-color', ctx.request.body.favoriteColor, {
                 locationId: user.Location.id,
                 userId: user.User.id
             })
@@ -276,12 +278,12 @@ module.exports = router => {
             ctx.throw('FAILED_TO_SAVE_FAVORITE_COLOR')
 
         } finally() {
-
             ctx.sb.go(waitKey)
-            await next()
-
         }
 
+
+        // pass back to koa if no error
+        next()
     })
 }
 ```

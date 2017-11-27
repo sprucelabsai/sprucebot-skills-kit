@@ -69,9 +69,9 @@ module.exports = router => {
     router.post('/api/1.0/teammate/save.json', async (ctx, next) {
 
         // make sure someValue was POST'ed with this request
-        ctx.assert(typeof(ctx.body.favoriteColor) === 'string', 'MISSING_FAVORITE_COLOR')
+        ctx.assert(typeof(ctx.request.body.favoriteColor) === 'string', 'MISSING_FAVORITE_COLOR')
 
-        if (ctx.body.favoriteColor === 'blue') {
+        if (ctx.request.body.favoriteColor === 'blue') {
             ctx.throw('WRONG_COLOR_BRO')
         }
 
@@ -122,6 +122,33 @@ module.exports = {
         reason: 'Blue is not allowed',
         friendlyReason: 'You can\'t pick blue! Not sure why, but you CAN\'T!'
     }
+}
+
+```
+## Overriding friendlyReason
+```js
+// server/controllers/1.0/teammate/index.js
+module.exports = router => {
+
+    router.post('/api/1.0/teammate/save.json', async (ctx, next) {
+
+        // make sure someValue was POST'ed with this request
+        ctx.assert(typeof(ctx.request.body.favoriteColor1) === 'string', 'MISSING_FAVORITE_COLOR', {
+			friendlyReason: 'You forgot the first color'
+		})
+		
+        ctx.assert(typeof(ctx.request.body.favoriteColor2) === 'string', 'MISSING_FAVORITE_COLOR', {
+			friendlyReason: 'You forgot the second color'
+		})
+
+        if (ctx.request.body.favoriteColor === 'blue') {
+            ctx.throw('WRONG_COLOR_BRO')
+        }
+
+        ...
+
+    }
+
 }
 
 ```
