@@ -5013,6 +5013,10 @@ react-hot-loader@3.1.1:
     redbox-react "^1.3.6"
     source-map "^0.6.1"
 
+react-image-crop@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/react-image-crop/-/react-image-crop-3.0.7.tgz#8f7f1f03031c76c8b6306d11f7d1b8bf3007ab8c"
+
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-3.0.0-alpha.1.tgz#4400426bcfa80caa6724c7755695315209fa4b07"
@@ -5030,9 +5034,9 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-sprucebot@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.4.3.tgz#41e58ae1122b0cb13d4d1109a9a4dd944ca5bd90"
+react-sprucebot@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.8.0.tgz#c20583d0908cfde0965e40367f5baa80d8020c0b"
   dependencies:
     cookies "^0.7.1"
     js-cookies "^1.0.4"
@@ -5041,6 +5045,7 @@ react-sprucebot@^0.4.3:
     prop-types "^15.6.0"
     qs "^6.5.1"
     react "^16.0.0"
+    react-image-crop "^3.0.7"
     react-redux "^5.0.6"
     redux "^3.7.2"
     redux-thunk "^2.2.0"
@@ -5710,19 +5715,20 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
-sprucebot-node@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/sprucebot-node/-/sprucebot-node-0.2.2.tgz#9a203a4bb979beaf44c17b5e95cc09bdc6af7934"
+sprucebot-node@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/sprucebot-node/-/sprucebot-node-0.3.0.tgz#88dc726face67995af99730c597fc17c6cc6370f"
   dependencies:
-    glob "^7.1.2"
+    debug "^3.1.0"
 
-sprucebot-skills-kit-server@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-0.2.0.tgz#390de48b6fc10955d34d4e929572add6f6f27eb3"
+sprucebot-skills-kit-server@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-0.5.0.tgz#85b921966ed75e1399b48ac31c663217e2563aad"
   dependencies:
     "@koa/cors" "2"
     config "^1.28.0"
     cookies "^0.7.1"
+    debug "^3.1.0"
     glob "^7.1.2"
     jsonwebtoken "^8.1.0"
     koa "^2.4.1"

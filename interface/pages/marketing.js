@@ -1,6 +1,8 @@
 import React from 'react'
 import Page from '../containers/Page'
 import { Container, H1, BotText } from 'react-sprucebot'
+import config from 'config'
+import ReactDOM from 'react-dom'
 
 class MarketingPage extends React.Component {
 	constructor(props) {
@@ -8,19 +10,28 @@ class MarketingPage extends React.Component {
 		this.state = {}
 	}
 
-	static getInitialProps(props) {
+	static getInitialProps() {
 		return {
+			name: config.NAME,
+			description: config.DESCRIPTION,
+			vimeoId: config.VIMEO_ID,
 			public: true // does not require the user to be of a certain role
 		}
 	}
 
 	// track sizes for marketing video
 	sizes() {
+		const container = ReactDOM.findDOMNode(this.mainContainer)
+		const computed = window.getComputedStyle(container)
+		const width =
+			parseFloat(computed.width) -
+			parseFloat(computed.paddingLeft) -
+			parseFloat(computed.paddingRight)
 		return {
 			windowHeight: window.innerHeight,
 			windowWidth: window.innerWidth,
-			videoWidth: window.innerWidth,
-			videoHeight: window.innerWidth * (360 / 640)
+			videoWidth: width,
+			videoHeight: width * (360 / 640)
 		}
 	}
 
@@ -46,16 +57,21 @@ class MarketingPage extends React.Component {
 
 	render() {
 		return (
-			<Container className="marketing">
-				<H1>{this.props.config.NAME}</H1>
-				<BotText>{this.props.config.DESCRIPTION}</BotText>
-				{this.props.config.VIMEO_ID && (
+			<Container
+				className="marketing"
+				ref={container => {
+					this.mainContainer = container
+				}}
+			>
+				<H1>{this.props.name}</H1>
+				<BotText>{this.props.description}</BotText>
+				{this.props.vimeoId && (
 					<iframe
 						width={this.state.videoWidth}
 						height={this.state.videoHeight}
 						className="vimeo"
 						title="Marketing"
-						src={`https://player.vimeo.com/video/${this.props.config.VIMEO_ID}`}
+						src={`https://player.vimeo.com/video/${this.props.vimeoId}`}
 						frameBorder="0"
 						allowFullScreen
 					/>

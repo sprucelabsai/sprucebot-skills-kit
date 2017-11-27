@@ -12,7 +12,7 @@ import {
 	Paragraph as P
 } from 'react-sprucebot'
 
-import Styleguide from '../containers/Styleguide'
+import Styleguide from '../components/Styleguide'
 
 class DeveloperPage extends React.Component {
 	static getInitialProps(props) {

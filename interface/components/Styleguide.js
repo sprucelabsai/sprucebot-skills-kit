@@ -29,7 +29,8 @@ import {
 	StatsSlider,
 	ButtonGrid,
 	GridButton,
-	Stars
+	Stars,
+	ImageCropper
 } from 'react-sprucebot'
 
 const Pre = styled.pre`
@@ -90,7 +91,8 @@ export default class Styleguide extends Component {
 	StatsSlider,
 	ButtonGrid,
 	GridButton,
-	Stars
+	Stars,
+	ImageCropper
 } from 'react-sprucebot'`}</Pre>
 				</Container>
 				<H1>Headings</H1>
@@ -587,6 +589,30 @@ export default class Styleguide extends Component {
 	onChange={(score, e) => {
 		console.log('score:', score, 'event:', e)
 	}}
+/>`}</Pre>
+				</Container>
+				<H1>Image Cropper</H1>
+				<Container>
+					<BotText>
+						Our ImageCropper is currently using{' '}
+						<a
+							onClick={e => e.stopPropagation()}
+							href="https://github.com/DominicTobias/react-image-crop"
+						>
+							react-image-crop
+						</a>. Tap the button below and give it a shot.
+					</BotText>
+					<ImageCropper
+						tapToCrop={true}
+						src="https://s3.amazonaws.com/sprucebot/ticket.png"
+						onSave={img => console.log(img)}
+						crop={{ x: 25, y: 25, width: 50, height: 50 }}
+					/>
+					<Pre>{`<ImageCropper
+	tapToCrop={true}
+	src="https://s3.amazonaws.com/sprucebot/ticket.png"
+	onSave={img => console.log(img)}
+	crop={{ x: 25, y: 25, width: 50, height: 50 }}
 />`}</Pre>
 				</Container>
 			</div>

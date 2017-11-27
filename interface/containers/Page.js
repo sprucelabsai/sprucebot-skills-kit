@@ -4,10 +4,14 @@ import reducers from './../store/reducers'
 import config from 'config'
 import { lang } from 'react-sprucebot'
 import defaultLang from './../lang/default'
-import overrideLang from './../lang/override'
+
+let overridesLang = {}
+try {
+	overridesLang = require('./../lang/overrides')
+} catch (err) {}
 
 //setup lang
-lang.mixin(defaultLang, overrideLang)
+lang.mixin(defaultLang, overridesLang || {})
 
 export default Wrapped =>
 	withStore(Page(Wrapped), {

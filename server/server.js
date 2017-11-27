@@ -15,7 +15,8 @@ const {
 	INTERFACE_HOST,
 	API_SSL_ALLOW_SELF_SIGNED,
 	nextConfig,
-	errors
+	errors,
+	bodyParserOptions
 } = require('config')
 
 // Construct a new Sprucebot
@@ -46,6 +47,7 @@ setTimeout(() => {
 		middlewareDir: path.join(__dirname, 'middleware'),
 		staticDir: path.join(__dirname, 'static'),
 		langDir: path.join(__dirname, '..', 'interface', 'lang'),
+		bodyParserOptions,
 		errors
 	})
 }, 2000)
