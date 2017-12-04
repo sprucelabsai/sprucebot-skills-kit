@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
 import {
 	Container,
 	BotText,
@@ -30,7 +31,9 @@ import {
 	ButtonGrid,
 	GridButton,
 	Stars,
-	ImageCropper
+	ImageCropper,
+	Callout,
+	Feed
 } from 'react-sprucebot'
 
 const Pre = styled.pre`
@@ -50,9 +53,62 @@ const Dark = styled.pre`
 	padding: 3px;
 `
 
+const demoGuest = {
+	id: 'b8d62e17-a511-4b9b-ae8a-56710f89af48',
+	role: 'guest',
+	status: 'offline',
+	visits: 1,
+	LocationId: '1975559c-e071-4198-8ab3-eccbeb00e1d0',
+	UserId: 'a2ca3026-ef80-408f-9a39-4ab9fa44a87d',
+	User: {
+		id: 'a2ca3026-ef80-408f-9a39-4ab9fa44a87d',
+		firstName: 'Niki',
+		name: 'Niki R.',
+		profileImageUUID: null,
+		profileImages: {
+			profile60: 'https://hello.sprucebot.com/avatar.jpg',
+			'profile60@2x': 'https://hello.sprucebot.com/avatar.jpg',
+			profile150: 'https://hello.sprucebot.com/avatar.jpg',
+			'profile150@2x': 'https://hello.sprucebot.com/avatar.jpg'
+		},
+		defaultProfileImages: {
+			profile60:
+				'https://s3.amazonaws.com/sprucebot-dev/default-profile--X60.jpg',
+			'profile60@2x':
+				'https://s3.amazonaws.com/sprucebot-dev/default-profile--X60@2x.jpg',
+			profile150:
+				'https://s3.amazonaws.com/sprucebot-dev/default-profile--X150.jpg',
+			'profile150@2x':
+				'https://s3.amazonaws.com/sprucebot-dev/default-profile--X150@2x.jpg'
+		}
+	},
+	isConnected: true,
+	lastRecordedVisit: '2017-12-01T23:05:35.705Z',
+	updatedAt: '2017-12-02T00:06:05.448Z',
+	Location: {
+		id: '1975559c-e071-4198-8ab3-eccbeb00e1d0',
+		name: 'Spruce',
+		addressLine1: '4347 Tennyson St',
+		addressLine2: null,
+		addressCity: 'Denver',
+		addressState: 'CO',
+		addressZip: '80212',
+		addressCountry: 'US',
+		geo: { lat: 39.775644, lng: -105.044258 },
+		OrganizationId: 'fcdd548b-fe3b-42dc-8c66-6810411cd84d'
+	}
+}
+
 export default class Styleguide extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			calloutOn: false
+		}
+	}
 	render() {
 		const HR = <hr style="border-top-width:10px;" />
+		const { calloutOn } = this.state
 		return (
 			<div>
 				<H1>Importing Components</H1>
@@ -92,7 +148,9 @@ export default class Styleguide extends Component {
 	ButtonGrid,
 	GridButton,
 	Stars,
-	ImageCropper
+	ImageCropper,
+	Callout,
+	Feed
 } from 'react-sprucebot'`}</Pre>
 				</Container>
 				<H1>Headings</H1>
@@ -614,6 +672,192 @@ export default class Styleguide extends Component {
 	onSave={img => console.log(img)}
 	crop={{ x: 25, y: 25, width: 50, height: 50 }}
 />`}</Pre>
+				</Container>
+				<H1>Callouts</H1>
+				<Container>
+					<BotText>
+						If you have some information you need to call out (think modal
+						dialog), you can use the {`<Callout />`} component.
+					</BotText>
+					<Callout on={calloutOn}>
+						<H2>Some important sub-form</H2>
+						<BotText>
+							Things like nested forms or multi-step processes benefit greatly
+							from a callout. It lets you see where you were, but brings focus
+							to what you're about to do.
+						</BotText>
+						<List>
+							<ListItem
+								rightInput={
+									<Switch
+										onChange={calloutOn => this.setState({ calloutOn })}
+									/>
+								}
+							>
+								Try the call out! ->
+							</ListItem>
+						</List>
+					</Callout>
+					<Pre>{`<Callout on={calloutOn}>
+	<H2>Call this out</H2>
+	<BotText>
+		Things like nested forms or multi-step processes benefit greatly
+		from a callout. It lets you see where you were, but brings focus
+		to what you're about to do.
+	</BotText>
+	<List>
+		<ListItem
+			rightInput={
+				<Switch
+					onChange={calloutOn => this.setState({ calloutOn })}
+				/>
+			}
+		>
+			Try the call out! ->
+		</ListItem>
+	</List>
+</Callout>`}</Pre>
+				</Container>
+				<H1>The Feed</H1>
+				<Container>
+					<BotText>
+						The Feed is used by nearly every Skill to visualize events and
+						facilitate conversation around those events.
+					</BotText>
+					<Feed
+						data={[
+							{
+								createdAt: moment(new Date()).subtract(34, 'hour'),
+								id: 'bbc55a55-2e13-4322-a2c5-0fec1abc79be',
+								message:
+									'Randy C. has arrived! 💥 This <FeedItem /> has bigAvatar set to true.',
+								user: demoGuest,
+								bigAvatar: true,
+								attachments: [
+									{
+										title: 'Membership level',
+										value: 'Gold'
+									},
+									{
+										title: 'Total Points',
+										value: 1253
+									}
+								]
+							},
+							{
+								createdAt: moment(new Date()).subtract(25, 'hour'),
+								id: 'bbc55a55-2e13-4372-a2c5-0fec1abc79ee',
+								message: 'Ryan J. has arrived! 💥 bigAvatar is not true.',
+								user: demoGuest,
+								attachments: [
+									{
+										title: 'Membership level',
+										value: 'Turquoise'
+									},
+									{
+										title: 'Total Points',
+										value: 2393
+									},
+									{
+										title: 'Note',
+										value:
+											'"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed dolor ac felis scelerisque hendrerit ac et dui. Sed vel tortor vitae magna luctus aliquam sit amet ut eros. Duis et viverra nulla, et mattis nunc." - Taylor R. Sept. 3rd'
+									}
+								]
+							},
+							{
+								createdAt: new Date(),
+								id: 'bbc55a55-2e13-4322-a2c5-0fec1dabc79ee',
+								message:
+									'Shane M. has arrived! 💥 We also added more to this message to demo long alerts.',
+								user: demoGuest,
+								attachments: [
+									{
+										title: 'Membership level',
+										value: 'Platinum'
+									},
+									{
+										title: 'Total Points',
+										value: 5302
+									},
+									{
+										title: 'Visits',
+										value: 5
+									},
+									{
+										title: 'Idle chit-chat',
+										value: 'A little'
+									}
+								]
+							}
+						]}
+					/>
+					<Pre>{`<Feed data={[
+	{
+		createdAt: moment(new Date()).subtract(34, 'hour'),
+		id: 'bbc55a55-2e13-4322-a2c5-0fec1abc79be',
+		message:
+			'Randy C. has arrived! 💥 This <FeedItem /> has bigAvatar set to true.',
+		user: demoGuest,
+		bigAvatar: true,
+		attachments: [
+			{
+				title: 'Membership level',
+				value: 'Gold'
+			},
+			{
+				title: 'Total Points',
+				value: 1253
+			}
+		]
+	},
+	{
+		createdAt: moment(new Date()).subtract(25, 'hour'),
+		id: 'bbc55a55-2e13-4372-a2c5-0fec1abc79ee',
+		message: 'Ryan J. has arrived! 💥 bigAvatar is not true.',
+		user: demoGuest,
+		attachments: [
+			{
+				title: 'Membership level',
+				value: 'Turquoise'
+			},
+			{
+				title: 'Total Points',
+				value: 2393
+			},
+			{
+				title: 'Note',
+				value:
+					'"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed dolor ac felis scelerisque hendrerit ac et dui. Sed vel tortor vitae magna luctus aliquam sit amet ut eros. Duis et viverra nulla, et mattis nunc." - Taylor R. Sept. 3rd'
+			}
+		]
+	},
+	{
+		createdAt: new Date(),
+		id: 'bbc55a55-2e13-4322-a2c5-0fec1dabc79ee',
+		message:
+			'Shane M. has arrived! 💥 We also added more to this message to demo long alerts.',
+		user: demoGuest,
+		attachments: [
+			{
+				title: 'Membership level',
+				value: 'Platinum'
+			},
+			{
+				title: 'Total Points',
+				value: 5302
+			},
+			{
+				title: 'Visits',
+				value: 5
+			},
+			{
+				title: 'Idle chit-chat',
+				value: 'A little'
+			}
+		]
+	}
+]} />`}</Pre>
 				</Container>
 			</div>
 		)
