@@ -25,7 +25,8 @@ These events are built in. They all come with `event.User`.
  * `did-enter` - When a guest returns and their phone hits the wifi
  * `did-leave` - Triggered an hour after a guest leaves
  * `did-message` - A guest has sent a text to Sprucebot
- * `did-add-device` - When a guest adds a new device to a location. Like adding their laptop.
+ * `did-add-device` - When a guest adds a new device to a location. Like adding their laptop
+ * `did-update-profile` - When any user updates their first or last name
 
 
 ## Listening to events
