@@ -22,11 +22,13 @@ The `event` object is really a [`user`](user.md) object, with one exception; `ev
 These events are built in. They all come with `event.User`.
 
  * `did-signup` - When a guest joins wifi at a location for the first time
+ * `did-remote-signup` - When guest remotely opts in to a location (from the guest dashboard)
  * `did-enter` - When a guest returns and their phone hits the wifi
  * `did-leave` - Triggered an hour after a guest leaves
  * `did-message` - A guest has sent a text to Sprucebot
  * `did-add-device` - When a guest adds a new device to a location. Like adding their laptop
  * `did-update-profile` - When any user updates their first or last name
+ * `did-opt-out` - When any guest opts out of a location. By now you have already lost access to their meta data.
 
 
 ## Listening to events
@@ -112,6 +114,7 @@ module.exports = async (ctx, next) => {
 ## Gotchya's
  * Event listeners need to respond in 2 seconds or they will be ignored. That means you may need to respond to Sprucebot right away and run your logic after.
  * Custom events will not `emit` back to your skill unless you set `sendToSelf=true`. This makes testing way easier, but should def be off in production (why we tie it to `DEV_MODE=true`).
+ * Your skill's `slug` can't be arbitrary. It is assigned to you by Spruce Labs when you begin creating your skill.
 
 ## Examples
 ### Modifying the Vip Alert 💥 message to something we like better
