@@ -759,7 +759,12 @@ export default class Styleguide extends Component {
 										value: 2393
 									},
 									{
+										title: 'Favorite Color',
+										value: 'blue'
+									},
+									{
 										title: 'Note',
+										fullWidth: true,
 										value:
 											'"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed dolor ac felis scelerisque hendrerit ac et dui. Sed vel tortor vitae magna luctus aliquam sit amet ut eros. Duis et viverra nulla, et mattis nunc." - Taylor R. Sept. 3rd'
 									}
@@ -826,7 +831,12 @@ export default class Styleguide extends Component {
 				value: 2393
 			},
 			{
+				title: 'Favorite Color',
+				value: 'blue'
+			},
+			{
 				title: 'Note',
+				fullWidth: true,
 				value:
 					'"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed dolor ac felis scelerisque hendrerit ac et dui. Sed vel tortor vitae magna luctus aliquam sit amet ut eros. Duis et viverra nulla, et mattis nunc." - Taylor R. Sept. 3rd'
 			}

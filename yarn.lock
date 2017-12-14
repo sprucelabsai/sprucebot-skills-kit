@@ -5038,9 +5038,9 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-sprucebot@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.10.1.tgz#e5e37ab1b580beeebd7dd23fb30eca06d48c5d43"
+react-sprucebot@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.10.2.tgz#859f6acbfb9c7191ee38540179016fe312f2992c"
   dependencies:
     cookies "^0.7.1"
     js-cookies "^1.0.4"
@@ -5726,9 +5726,9 @@ sprucebot-node@^0.4.0:
   dependencies:
     debug "^3.1.0"
 
-sprucebot-skills-kit-server@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-0.6.0.tgz#ec24b206cc8b2e9ad1eb8df67cb33bb2550a3f20"
+sprucebot-skills-kit-server@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-0.6.1.tgz#883af66663051418339fffb75e8b56bf050834e0"
   dependencies:
     "@koa/cors" "2"
     config "^1.28.0"
