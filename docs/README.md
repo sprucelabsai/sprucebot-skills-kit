@@ -15,6 +15,9 @@ A Skill is a "micro-app". That is, a bit of functionality hyper focused on a sin
  * [Errors](errors.md)
  * [Uploading Files](uploads.md)
 
+<p align="center">
+<img src="images/architecture.gif?raw=true" />
+</p>
 # WTF?
 This is a highly opinionated approach on how to rapidly build skills for Sprucebot.  Ultimately, you could build a skill on any stack. 🤘🏼 This particular kit uses NodeJS + ReactJS with Next + Koa as supporting frameworks... May the force be with you.
 
