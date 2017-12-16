@@ -1,5 +1,9 @@
 # Events
-Events are a wicked powerful part of Sprucebot. They make your Skill relevant. Example; messaging "Welcome to ``${`user.Location.name`}``, ``${`user.User.firstName || user.User.name`}``!" is way more powerful when it's sent on `did-arrive`!
+Events are a wicked powerful part of Sprucebot. They make your Skill relevant. Example; messaging "Welcome to ``${`user.Location.name`}``, ``${`user.User.firstName || user.User.name`}``!" is way more powerful when it's sent on `did-enter`!
+
+<p align="center">
+<img src="images/did-enter.gif?raw=true" />
+</p>
 
 ## Event object
 The `event` object is really a [`user`](user.md) object, with one exception; `event.User` and associated fields are optional. Whether or not an `event.User` exists in the `event` is up to the Skill that emits it. For core and 99% of skills, you can expect `event.User` and it's associated fields to exist. Each skill *should* document the events they `emit`, so you won't be guessing. In fact, at the time of this writing, there is not a single case where a `event.User` is not provided.
