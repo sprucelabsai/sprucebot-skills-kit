@@ -1,6 +1,8 @@
 # Events
 Events are a wicked powerful part of Sprucebot. They make your Skill relevant. Example; messaging "Welcome to ``${`user.Location.name`}``, ``${`user.User.firstName || user.User.name`}``!" is way more powerful when it's sent on `did-enter`!
 
+The following diagram follows the `did-enter` event as it flows through the system. In this example, `Skill 1` is muting the default "Welcome Back" message and sending it's own.
+
 <p align="center">
 <img src="images/did-enter.gif?raw=true" />
 </p>
@@ -36,7 +38,7 @@ These events are built in. They all come with `event.User`.
 
 
 ## Listening to events
-Creating an `event` listener is as simple as dropping a `.js` file into `server/events` that matches the `event`'s name. Note, you only have 2 seconds to respond to an event, so the order you do things matters.
+Creating an `event` listener is as simple as dropping a `.js` file into `server/events` that matches the `event`'s name. Note, you only have 5 seconds to respond to an event, so the order you do things matters.
 
  * `did-signup` -> `server/events/did-signup.js`
  * `did-enter` -> `server/events/did-enter.js`
@@ -100,8 +102,8 @@ Events, such as `did-signup`, have an expected behavior. In this case, core send
 module.exports = async (ctx, next) => {
     ctx.body = { preventDefault: true } // stop the default "Thanks for joining" and push them a reward."
 
-    // since we have 2 seconds to respond, we'll invoke next()
-    // but, we don't need to wait around, so we won't await.
+    // since we have 5 seconds to respond, we'll invoke next()
+    // but, we don't need to await around 😂
     next() 
     
     try {
@@ -116,7 +118,7 @@ module.exports = async (ctx, next) => {
 ```
 
 ## Gotchya's
- * Event listeners need to respond in 2 seconds or they will be ignored. That means you may need to respond to Sprucebot right away and run your logic after.
+ * Event listeners need to respond in 5 seconds or they will be ignored. That means you may need to respond to Sprucebot right away and run your logic after.
  * Custom events will not `emit` back to your skill unless you set `sendToSelf=true`. This makes testing way easier, but should def be off in production (why we tie it to `DEV_MODE=true`).
  * Your skill's `slug` can't be arbitrary. It is assigned to you by Spruce Labs when you begin creating your skill.
 
@@ -126,6 +128,12 @@ module.exports = async (ctx, next) => {
 **Difficulty level**: Easy
 
 **Description:** The Vip Alert 💥 skill allows teammates and owners to configure who triggers an arrival alert. We don't wanna have to rebuild all that functionality, we just want to change the message that is sent when a guest arrives.
+
+
+<p align="center">
+<img src="images/vip.will-send.gif?raw=true" />
+</p>
+
 
 **Required reading:**
 
