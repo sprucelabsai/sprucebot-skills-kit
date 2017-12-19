@@ -1,7 +1,6 @@
 import React from 'react'
 import Page from '../containers/Page'
 import { Container, H1, BotText } from 'react-sprucebot'
-import config from 'config'
 import ReactDOM from 'react-dom'
 
 class MarketingPage extends React.Component {
@@ -10,11 +9,11 @@ class MarketingPage extends React.Component {
 		this.state = {}
 	}
 
-	static getInitialProps() {
+	static getInitialProps(props) {
 		return {
-			name: config.NAME,
-			description: config.DESCRIPTION,
-			vimeoId: config.VIMEO_ID,
+			name: props.config.NAME,
+			description: props.config.DESCRIPTION,
+			vimeoId: props.config.VIMEO_ID,
 			public: true // does not require the user to be of a certain role
 		}
 	}
