@@ -66,6 +66,7 @@ module.exports = {
 			'SKILL_STYLESHEET',
 			'INTERFACE_SSL_ALLOW_SELF_SIGNED',
 			'VIMEO_ID',
+			'DEV_MODE',
 			'log_colors',
 			'nextConfig'
 		])

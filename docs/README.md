@@ -13,6 +13,7 @@ A Skill is a "micro-app". That is, a bit of functionality hyper focused on a sin
  * [Lang](lang.md)
  * [Messages](messages.md)
  * [Errors](errors.md)
+ * [Training](training.md)
  * [Uploading Files](uploads.md)
 
 # WTF?

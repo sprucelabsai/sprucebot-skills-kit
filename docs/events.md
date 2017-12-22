@@ -12,7 +12,7 @@ The `event` object is really a [`user`](user.md) object, with one exception; `ev
 
 ```js
 {
-    Location: Location, // Required
+    Location: Location, // required
     User: User, // optional
     createdAt: Date, // date the guest joined the location (optional)
     updatedAt: Date, // date the guest changed their subscription to the location (optional)
@@ -35,6 +35,8 @@ These events are built in. They all come with `event.User`.
  * `did-add-device` - When a guest adds a new device to a location. Like adding their laptop
  * `did-update-profile` - When any user updates their first or last name
  * `did-opt-out` - When any guest opts out of a location. By now you have already lost access to their meta data.
+ * `did-remote-rejoin` - They had, at one time, opted out. But, now they have remotely opted back in
+ * `will-send-training` - Sprucebot has made the decision that now is the perfect time to send training material
 
 
 ## Listening to events
