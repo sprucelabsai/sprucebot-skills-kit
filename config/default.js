@@ -17,6 +17,7 @@ module.exports = {
 	SKILL_STYLESHEET: process.env.SKILL_STYLESHEET,
 	ID: process.env.ID,
 	NAME: process.env.NAME,
+	SLUG: process.env.SLUG,
 	DESCRIPTION: process.env.DESCRIPTION,
 	ICON: fs.readFileSync(path.join(__dirname, '../icon/icon.svg')).toString(),
 	PORT: process.env.PORT,
