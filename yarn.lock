@@ -850,6 +850,14 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
+babel-polyfill@^6.26.0:
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
+  dependencies:
+    babel-runtime "^6.26.0"
+    core-js "^2.5.0"
+    regenerator-runtime "^0.10.5"
+
 babel-preset-env@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.6.0.tgz#2de1c782a780a0a5d605d199c957596da43c44e4"
@@ -5003,6 +5011,15 @@ react-dom@^16.0.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-dom@^16.2.0:
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+
 react-emojione@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/react-emojione/-/react-emojione-5.0.0.tgz#230fef5e85aa9e1183b9506a15fff37d59ef472f"
@@ -5038,10 +5055,11 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-sprucebot@^0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.10.3.tgz#d54c416a63dada37648e6b8b42018599a1d31524"
+react-sprucebot@^0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.10.5.tgz#60ec2c3c58dda40a4932a4f7f6981818fb555381"
   dependencies:
+    babel-polyfill "^6.26.0"
     cookies "^0.7.1"
     js-cookies "^1.0.4"
     moment "^2.19.3"
@@ -5050,6 +5068,7 @@ react-sprucebot@^0.10.3:
     prop-types "^15.6.0"
     qs "^6.5.1"
     react "^16.0.0"
+    react-dom "^16.2.0"
     react-image-crop "^3.0.7"
     react-redux "^5.0.6"
     redux "^3.7.2"
@@ -5181,6 +5200,10 @@ redux@^3.7.2:
 regenerate@^1.2.1:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.3.3.tgz#0c336d3980553d755c39b586ae3b20aa49c82b7f"
+
+regenerator-runtime@^0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
 
 regenerator-runtime@^0.11.0:
   version "0.11.0"

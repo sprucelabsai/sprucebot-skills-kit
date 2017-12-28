@@ -1,12 +1,18 @@
 # Events
-Events are a wicked powerful part of Sprucebot. They make your Skill relevant. Example; messaging "Welcome to ``${`user.Location.name`}``, ``${`user.User.firstName || user.User.name`}``!" is way more powerful when it's sent on `did-arrive`!
+Events are a wicked powerful part of Sprucebot. They make your Skill relevant. Example; messaging "Welcome to ``${`user.Location.name`}``, ``${`user.User.firstName || user.User.name`}``!" is way more powerful when it's sent on `did-enter`!
+
+The following diagram follows the `did-enter` event as it flows through the system. In this example, `Skill 1` is muting the default "Welcome Back" message and sending it's own.
+
+<p align="center">
+<img src="images/did-enter.gif?raw=true" />
+</p>
 
 ## Event object
 The `event` object is really a [`user`](user.md) object, with one exception; `event.User` and associated fields are optional. Whether or not an `event.User` exists in the `event` is up to the Skill that emits it. For core and 99% of skills, you can expect `event.User` and it's associated fields to exist. Each skill *should* document the events they `emit`, so you won't be guessing. In fact, at the time of this writing, there is not a single case where a `event.User` is not provided.
 
 ```js
 {
-    Location: Location, // Required
+    Location: Location, // required
     User: User, // optional
     createdAt: Date, // date the guest joined the location (optional)
     updatedAt: Date, // date the guest changed their subscription to the location (optional)
@@ -29,10 +35,12 @@ These events are built in. They all come with `event.User`.
  * `did-add-device` - When a guest adds a new device to a location. Like adding their laptop
  * `did-update-profile` - When any user updates their first or last name
  * `did-opt-out` - When any guest opts out of a location. By now you have already lost access to their meta data.
+ * `did-remote-rejoin` - They had, at one time, opted out. But, now they have remotely opted back in
+ * `will-send-training` - Sprucebot has made the decision that now is the perfect time to send training material
 
 
 ## Listening to events
-Creating an `event` listener is as simple as dropping a `.js` file into `server/events` that matches the `event`'s name. Note, you only have 2 seconds to respond to an event, so the order you do things matters.
+Creating an `event` listener is as simple as dropping a `.js` file into `server/events` that matches the `event`'s name. Note, you only have 5 seconds to respond to an event, so the order you do things matters.
 
  * `did-signup` -> `server/events/did-signup.js`
  * `did-enter` -> `server/events/did-enter.js`
@@ -96,8 +104,8 @@ Events, such as `did-signup`, have an expected behavior. In this case, core send
 module.exports = async (ctx, next) => {
     ctx.body = { preventDefault: true } // stop the default "Thanks for joining" and push them a reward."
 
-    // since we have 2 seconds to respond, we'll invoke next()
-    // but, we don't need to wait around, so we won't await.
+    // since we have 5 seconds to respond, we'll invoke next()
+    // but, we don't need to await around 😂
     next() 
     
     try {
@@ -112,7 +120,7 @@ module.exports = async (ctx, next) => {
 ```
 
 ## Gotchya's
- * Event listeners need to respond in 2 seconds or they will be ignored. That means you may need to respond to Sprucebot right away and run your logic after.
+ * Event listeners need to respond in 5 seconds or they will be ignored. That means you may need to respond to Sprucebot right away and run your logic after.
  * Custom events will not `emit` back to your skill unless you set `sendToSelf=true`. This makes testing way easier, but should def be off in production (why we tie it to `DEV_MODE=true`).
  * Your skill's `slug` can't be arbitrary. It is assigned to you by Spruce Labs when you begin creating your skill.
 
@@ -122,6 +130,12 @@ module.exports = async (ctx, next) => {
 **Difficulty level**: Easy
 
 **Description:** The Vip Alert 💥 skill allows teammates and owners to configure who triggers an arrival alert. We don't wanna have to rebuild all that functionality, we just want to change the message that is sent when a guest arrives.
+
+
+<p align="center">
+<img src="images/vip.will-send.gif?raw=true" />
+</p>
+
 
 **Required reading:**
 

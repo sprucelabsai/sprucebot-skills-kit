@@ -5,16 +5,16 @@ module.exports = async (ctx, next) => {
 	// 	preventDefault: true
 	// }
 
-	let payload = ctx.event.payload
+	// let payload = ctx.event.payload
 
-	payload.message = 'This is a new message!'
-	payload.attachments.push({
-		title: 'Membership Level',
-		value: 'Gold',
-		image:
-			'https://s3.amazonaws.com/bucket/f5dc7fd7-1d12-4cc9-a7e3-15bdbba9c377--X60.png'
-	})
+	// payload.message = 'This is a new message!'
+	// payload.attachments.push({
+	// 	title: 'Membership Level',
+	// 	value: 'Gold',
+	// 	image:
+	// 		'https://s3.amazonaws.com/bucket/f5dc7fd7-1d12-4cc9-a7e3-15bdbba9c377--X60.png'
+	// })
 
-	ctx.body = payload
+	// ctx.body = payload
 	await next()
 }

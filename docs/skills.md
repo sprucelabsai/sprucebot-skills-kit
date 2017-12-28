@@ -1,3 +1,8 @@
+
+<p align="center">
+<img src="images/architecture.gif?raw=true" />
+</p>
+
 # Building your first skill
 Before you can build a skill, you must email `scientists@sprucelabs.ai` to receive your skill's `ID`, `API_KEY`, and `slug`. This process will be automated soon.
 

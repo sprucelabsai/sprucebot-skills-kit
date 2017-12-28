@@ -33,7 +33,8 @@ import {
 	Stars,
 	ImageCropper,
 	Callout,
-	Feed
+	Feed,
+	TrainingGuide
 } from 'react-sprucebot'
 
 const Pre = styled.pre`
@@ -869,6 +870,20 @@ export default class Styleguide extends Component {
 	}
 ]} />`}</Pre>
 				</Container>
+				<H1>Training Guide</H1>
+				<Container>
+					<TrainingGuide
+						onComplete={() => alert('Done!')}
+						steps={[
+							'This is a training guide.',
+							'It "guides" you through many steps.',
+							'One at a time',
+							'and the last one shows a done.'
+						]}
+					/>
+				</Container>
+				<H1>More Coming Soon</H1>
+				<Container>Coming soon...</Container>
 			</div>
 		)
 	}
