@@ -4,18 +4,26 @@
 </p>
 
 # Building your first skill
-Before you can build a skill, you must email `scientists@sprucelabs.ai` to receive your skill's `ID`, `API_KEY`, and `slug`. This process will be automated soon.
+This is handled by our [sprucebot-cli](https://github.com/sprucelabsai/sprucebot-cli).
 
-- Clone the `sprucebot-skills-kit` repository
-- Rename the `sprucebot-skills-kit` directory to your new `slug`
-    - Slug is the hyphen separated name of your skill
-    - VIP Alerts -> vip-alerts
-    - Scratch & Win -> scratch-win
-- Delete `.git` folder
-- Modify `name` and `description` in `package.json`
-- Copy `.env.example` to `.env` and configure it
-- `yarn install`
-- `yarn run local`
+```bash
+yarn add sprucebot-cli -g
+sprucebot skill create
+```
+
+# Starting your skill
+After you've finished creating your skill, you'll need to make sure dependencies are installed.
+
+```bash
+yarn
+```
+Then start it up! 🏁
+
+```bash
+yarn run local
+```
+
+If you want to skip all the extremely **important** sh** below and get to playing around, try the [`simulator`](simulator.md).
 
 ## Env
 Below is a description of every setting in your `.env` and a description of what each setting does.`
