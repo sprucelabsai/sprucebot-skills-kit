@@ -70,6 +70,7 @@ A custom `event` is broken into 2 segments, the `slug` of the skill emitting it 
 Skills communicate with each other using the `event` system. 
 
 ```js
+const config = require('config')
 const responses = await ctx.sb.emit(ctx.auth.Location.id, 'scratch-and-win:will-manually-send', {
     userId: ctx.user.User.id, // the id of the guest (ctx.user set in middleware)
     message: ctx.utilities.lang('manualSendMessage', {
@@ -102,7 +103,7 @@ Events, such as `did-signup`, have an expected behavior. In this case, core send
 ```js
 // server/events/did-signup.js
 module.exports = async (ctx, next) => {
-    ctx.body = { preventDefault: true } // stop the default "Thanks for joining" and push them a reward."
+    ctx.body = { preventDefault: true } // stop the default "Thanks for joining" and push them a reward.
 
     // since we have 5 seconds to respond, we'll invoke next()
     // but, we don't need to await around 😂
