@@ -50,13 +50,14 @@ Creating an `event` listener is as simple as dropping a `.js` file into `server/
 
 ```js
 // server/events/did-enter.js
-module.exports = await (ctx, next) => {
+module.exports = async (ctx, next) => {
     console.log('a did enter was just fired, eff yeah!')
     next() // respond, but no need to await
 
     const { event } = ctx
 
     console.log(event) // Event
+    // Some async logic here
 }
 ```
 
