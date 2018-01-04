@@ -35,7 +35,7 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.17.2",
-    "sprucebot-node": "^0.4.0",
+    "sprucebot-node": "^0.4.1",
     "sprucebot-skills-kit-server": "^0.6.1",
     "styled-components": "^2.2.2",
     "universal-cookie": "^2.1.0"
