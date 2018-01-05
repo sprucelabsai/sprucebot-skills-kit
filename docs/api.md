@@ -3,6 +3,9 @@ This kit uses [`sprucebot-node`](https://github.com/sprucelabsai/sprucebot-node)
 
 ## User API
 Learn about the `user` object [here](user.md).
+
+* `user` locationId, userId
+* `users`
 ```js
   // USER API
 
