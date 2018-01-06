@@ -5743,9 +5743,9 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
-sprucebot-node@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/sprucebot-node/-/sprucebot-node-0.4.0.tgz#2d1cacd799f7819b08633f29952b3d58cb89e13b"
+sprucebot-node@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/sprucebot-node/-/sprucebot-node-0.4.2.tgz#127af1ad69f7795c9b93441b3d9414422594ca4d"
   dependencies:
     debug "^3.1.0"
 
