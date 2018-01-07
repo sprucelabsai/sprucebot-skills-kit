@@ -336,8 +336,8 @@ Notice we run a bit of logic in the `didEnterMessage` term. Check [lang](lang.md
 module.exports = {
     didEnterMessage: ({ favoriteColor, event }) =>
         favoriteColor
-            ? `Welcome back ${event.User.firstName || event.User.name}! Your favorite color is ${favoriteColor.value}. That's pretty alright. 👊🏼`
-            : `Hey ${event.User.firstName || event.User.name}, why haven't you set your favorite color?`
+            ? `Welcome back ${event.User.casualName}! Your favorite color is ${favoriteColor.value}. That's pretty alright. 👊🏼`
+            : `Hey ${event.User.casualName}, why haven't you set your favorite color?`
 }
 
 ```

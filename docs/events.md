@@ -1,5 +1,5 @@
 # Events
-Events are a wicked powerful part of Sprucebot. They make your Skill relevant. Example; messaging "Welcome to ``${`user.Location.name`}``, ``${`user.User.firstName || user.User.name`}``!" is way more powerful when it's sent on `did-enter`!
+Events are a wicked powerful part of Sprucebot. They make your Skill relevant. Example; messaging "Welcome to ``${`user.Location.name`}``, ``${`user.User.casualName`}``!" is way more powerful when it's sent on `did-enter`!
 
 The following diagram follows the `did-enter` event as it flows through the system. In this example, `Skill 1` is muting the default "Welcome Back" message and sending it's own.
 
