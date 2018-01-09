@@ -9,7 +9,7 @@ All your `terms` go into `interface/lang/default.js`. A `term` can be a String o
 module.exports = {
 	botName: 'Sprucebot',
 	botNamePlural: 'Sprucebots',
-	teamDashboardWelcome: ({ user, botName }) => `Welcome back ${user.User.firstName}!`,
+	teamDashboardWelcome: ({ user, botName }) => `Welcome back ${user.User.causalName}!`,
 	teamDashboardBotText: ({ user }) =>
 		user.status === 'online'
 			? `You are at ${user.Location.name} as we speak! That's so cool! 🙌🏼`

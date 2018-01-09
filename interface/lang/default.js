@@ -2,7 +2,7 @@
 module.exports = {
 	botName: 'Sprucebot',
 	botNamePlural: 'Sprucebots',
-	teamDashboardWelcome: ({ user }) => `Welcome back ${user.User.firstName}!`,
+	teamDashboardWelcome: ({ user }) => `Welcome back ${user.User.casualName}!`,
 	teamDashboardBotText: ({ user }) =>
 		user.status === 'online'
 			? `You are at ${user.Location.name} as we speak! That's so cool! 🙌🏼`
