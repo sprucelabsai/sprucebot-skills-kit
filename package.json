@@ -38,11 +38,11 @@
     "sprucebot-node": "^0.4.2",
     "sprucebot-skills-kit-server": "^0.6.2",
     "styled-components": "^2.2.2",
+    "babel-plugin-styled-components": "^1.2.1",
     "universal-cookie": "^2.1.0"
   },
   "devDependencies": {
     "babel-jest": "^21.2.0",
-    "babel-plugin-styled-components": "^1.2.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.9.0",
