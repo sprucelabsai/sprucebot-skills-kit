@@ -5749,9 +5749,9 @@ sprucebot-node@^0.4.2:
   dependencies:
     debug "^3.1.0"
 
-sprucebot-skills-kit-server@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-0.6.1.tgz#883af66663051418339fffb75e8b56bf050834e0"
+sprucebot-skills-kit-server@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-0.6.2.tgz#3b4c67913c62d3c7e9fd614cfaa73372999e2497"
   dependencies:
     "@koa/cors" "2"
     config "^1.28.0"
