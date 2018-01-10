@@ -1,5 +1,5 @@
 module.exports = {
-	generateRewardWithCode: async (locationId, code) => {
+	generateRewardWithCode(locationId, code) {
 		// Do your thing
 		return obj
 	}

@@ -31,7 +31,8 @@ A Skill cannot access a user directly. It's gotta go through a `Location`. So, w
         createdAt: Date,
         updatedAt: Date,
         firstName: String, // the users first name or NULL
-        name: String, // the users first name, last initial, or Friend
+        name: String, // the users first name + last name, or Friend
+        casualName: String, // first name or Friend,
         profileImages: { // null if no profile image uploaded
             profile60: String,
             profile60@2x: String,
@@ -80,13 +81,12 @@ const guest = await ctx.sb.updateUser(userId: UUID4, {
 console.log(guest) // {User}
 ```
 ## Gotchya's
- * A `User` isn't just a user, so pay attention to what you are accessing.  ~~`user.firstName`~~ ->  `user.User.firstName`
+ * A `User` isn't just a user, so pay attention to what you are accessing.  ~~`user.casualName`~~ ->  `user.User.casualName`
  * A `User` always comes with a `Location`, so access it via `user.User.Location`
- * `user.User.name` is "Friend" or "${firstName} ${lastInitial}.". 
- * When sending a `message` to a `user` about themselves (Hello Taylor!), use `${user.User.firstName || user.User.name}`. You don't need the last initial and want it to fall back to "Friend".
- * When sending a `message` to a `user` about someone else, use `${user.User.name}` so it includes the last initial.
+ * `user.User.casualName` is "Friend" or firstName
+ * When sending a `message` to a `user` about themselves (Hello Taylor!), use `${user.User.casualName}`. You don't need the last initial and want it to fall back to "Friend".
+ * When sending a `message` to a `user` about someone else, use `${user.User.name}` so it includes the last name.
  * Use `user.User.name` when sending one person's name to another (to help identify)
- * Use ``${`user.User.firstName || user.User.name`}`` when sending a person's name to themselves, e.g. "Welcome back Anthony!" vs ~~"Welcome back Anthony C.!"~~
  * You will rarely have to call `ctx.sb.user()` since it's attached as `ctx.auth` for the currently logged in `User`
  * A user doesn't have much besides a `firstName` and `profilePhotos`, everything you need to store beyond that can be done using `Meta`.
  * To search for both teammates and owners, search against `role=ownerteammate`

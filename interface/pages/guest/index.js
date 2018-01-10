@@ -20,7 +20,7 @@ class GuestPage extends React.Component {
 		return (
 			<Container>
 				<div className="guest">
-					<H1>Welcome {this.props.user.firstName}!</H1>
+					<H1>Welcome {this.props.user.casualName}!</H1>
 					{this.props.status === 'online' && (
 						<BotText>
 							You are at {this.props.location.name} as we speak!
