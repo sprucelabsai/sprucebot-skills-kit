@@ -11,7 +11,7 @@
     "local": "npm run icon && node --inspect=4006 ./server/server.js",
     "interface": "next ./interface -p 3006",
     "lint": "./node_modules/.bin/eslint --fix '**/**/*{.js,.scss}'",
-    "test": "./node_modules/.bin/jest --coverage",
+    "test": "jest",
     "icon": "./node_modules/.bin/svgo icon/icon.svg",
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm run test",
@@ -56,5 +56,9 @@
     "react-test-renderer": "^16.0.0",
     "sinon": "^3.3.0",
     "svgo": "^0.7.2"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
