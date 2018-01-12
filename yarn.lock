@@ -5055,9 +5055,9 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-sprucebot@^0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.10.5.tgz#60ec2c3c58dda40a4932a4f7f6981818fb555381"
+react-sprucebot@^0.10.8:
+  version "0.10.8"
+  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.10.8.tgz#5d5b2ed075f1ec1dda3be43ab1af568478fa25b9"
   dependencies:
     babel-polyfill "^6.26.0"
     cookies "^0.7.1"

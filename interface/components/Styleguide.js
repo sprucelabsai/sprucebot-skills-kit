@@ -487,10 +487,27 @@ export default class Styleguide extends Component {
 						}}
 					>
 						<TabPane title="First">First Pane</TabPane>
-						<TabPane selected title="Second">
-							<BotText>Tabs are fantastic! You can use them so easily!</BotText>
+						{!this.state.hideSecondPane && (
+							<TabPane selected title="Second">
+								<BotText>
+									Tabs are fantastic! You can use them so easily!
+								</BotText>
+							</TabPane>
+						)}
+						<TabPane title="Third">
+							<BotText>Tabs can be dynamically hidden and shown!</BotText>
+							<List>
+								<ListItem
+									title="Show Second Tab"
+									rightInput={
+										<Switch
+											on={true}
+											onChange={on => this.setState({ hideSecondPane: !on })}
+										/>
+									}
+								/>
+							</List>
 						</TabPane>
-						<TabPane title="Third">Third Pane</TabPane>
 					</Tabs>
 					<Pre>{`<Tabs
 	onChange={(idx, e) => {
