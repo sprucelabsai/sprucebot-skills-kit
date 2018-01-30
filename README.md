@@ -1,4 +1,6 @@
 # Your skill's title
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/sprucelabsai/sprucebot-skills-kit.svg)](https://greenkeeper.io/)
 Describe the experience you wish to create from the perspective of the `guest`, `owner`, or `teammate`...
 
 ## Technical overview

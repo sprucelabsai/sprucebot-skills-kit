@@ -34,7 +34,8 @@ import {
 	ImageCropper,
 	Callout,
 	Feed,
-	TrainingGuide
+	TrainingGuide,
+	Dialog
 } from 'react-sprucebot'
 
 const Pre = styled.pre`
@@ -493,10 +494,27 @@ export default class Styleguide extends Component {
 						}}
 					>
 						<TabPane title="First">First Pane</TabPane>
-						<TabPane selected title="Second">
-							<BotText>Tabs are fantastic! You can use them so easily!</BotText>
+						{!this.state.hideSecondPane && (
+							<TabPane selected title="Second">
+								<BotText>
+									Tabs are fantastic! You can use them so easily!
+								</BotText>
+							</TabPane>
+						)}
+						<TabPane title="Third">
+							<BotText>Tabs can be dynamically hidden and shown!</BotText>
+							<List>
+								<ListItem
+									title="Show Second Tab"
+									rightInput={
+										<Switch
+											on={true}
+											onChange={on => this.setState({ hideSecondPane: !on })}
+										/>
+									}
+								/>
+							</List>
 						</TabPane>
-						<TabPane title="Third">Third Pane</TabPane>
 					</Tabs>
 					<Pre>{`<Tabs
 	onChange={(idx, e) => {
@@ -888,8 +906,46 @@ export default class Styleguide extends Component {
 						]}
 					/>
 				</Container>
-				<H1>More Coming Soon</H1>
-				<Container>Coming soon...</Container>
+				<H1>Dialogs</H1>
+				<Container>
+					<BotText>
+						Dialogs are always shown modally. So, you can use them as alerts,
+						confirmation dialogs, popups, etc.
+					</BotText>
+					<List>
+						<ListItem
+							title="Showing as an alert"
+							subtitle="You can drop in a button to hide it too"
+							rightInput={
+								<Button
+									alt
+									type="button"
+									onClick={() => this.setState({ showAlert: true })}
+								>
+									Show Alert
+								</Button>
+							}
+						/>
+					</List>
+					<Dialog show={this.state.showAlert}>
+						<BotText>Use BotText to display any content in the alert.</BotText>
+						<Button
+							type="button"
+							onClick={() => this.setState({ showAlert: false })}
+						>
+							Okay
+						</Button>
+					</Dialog>
+					<Pre>{`<Dialog show={this.state.showAlert}>
+	<BotText>Use BotText to display any content in the alert.</BotText>
+	<Button
+		type="button"
+		onClick={() => this.setState({ showAlert: false })}
+	>
+		Okay
+	</Button>
+</Dialog>`}</Pre>
+				</Container>
 			</div>
 		)
 	}

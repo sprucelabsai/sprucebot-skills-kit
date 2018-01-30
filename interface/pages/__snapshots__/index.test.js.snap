@@ -2039,12 +2039,62 @@ exports[`renders page with styleguide 1`] = `
       <h1
         class="Typography__H1-s1fueepp-1 cceFbQ"
       >
-        More Coming Soon
+        Dialogs
       </h1>
       <div
         class="Container-fikk1v-0 container gLKDhv"
       >
-        Coming soon...
+        <p
+          class="BotText-d8677j-0 bot__text bpogzL"
+        >
+          Dialogs are always shown modally. So, you can use them as alerts, confirmation dialogs, popups, etc.
+        </p>
+        <div
+          class="List-i0qvx7-0 List item__list jfNjUL"
+        >
+          <div
+            class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+            title="Showing as an alert"
+          >
+            <div
+              class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+            >
+              <div
+                class="List__ItemTitle-i0qvx7-5 ItemTitle title dGvWJv"
+              >
+                Showing as an alert
+              </div>
+              <div
+                class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+              >
+                You can drop in a button to hide it too
+              </div>
+            </div>
+            <div
+              class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+            >
+              <button
+                class="btn__alt "
+                type="button"
+              >
+                Show Alert
+              </button>
+            </div>
+          </div>
+        </div>
+        <pre
+          class="sc-bdVaJa iDGKhr"
+        >
+          &lt;Dialog show={this.state.showAlert}&gt;
+	&lt;BotText&gt;Use BotText to display any content in the alert.&lt;/BotText&gt;
+	&lt;Button
+		type="button"
+		onClick={() =&gt; this.setState({ showAlert: false })}
+	&gt;
+		Okay
+	&lt;/Button&gt;
+&lt;/Dialog&gt;
+        </pre>
       </div>
     </div>
   </div>
