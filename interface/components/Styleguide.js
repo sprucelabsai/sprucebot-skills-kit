@@ -99,6 +99,12 @@ const demoGuest = {
 		OrganizationId: 'fcdd548b-fe3b-42dc-8c66-6810411cd84d'
 	}
 }
+let NOW
+if (process.env.NODE_ENV === 'test') {
+	NOW = new Date(946710000000) // Snapshot testing requires an unchanging date
+} else {
+	NOW = new Date()
+}
 
 export default class Styleguide extends Component {
 	constructor(props) {
@@ -728,7 +734,7 @@ export default class Styleguide extends Component {
 					<Feed
 						data={[
 							{
-								createdAt: moment(new Date()).subtract(34, 'hour'),
+								createdAt: moment(NOW).subtract(34, 'hour'),
 								id: 'bbc55a55-2e13-4322-a2c5-0fec1abc79be',
 								message:
 									'Randy C. has arrived! 💥 This <FeedItem /> has bigAvatar set to true.',
@@ -746,7 +752,7 @@ export default class Styleguide extends Component {
 								]
 							},
 							{
-								createdAt: moment(new Date()).subtract(25, 'hour'),
+								createdAt: moment(NOW).subtract(25, 'hour'),
 								id: 'bbc55a55-2e13-4372-a2c5-0fec1abc79ee',
 								message: 'Ryan J. has arrived! 💥 bigAvatar is not true.',
 								user: demoGuest,
@@ -772,7 +778,7 @@ export default class Styleguide extends Component {
 								]
 							},
 							{
-								createdAt: new Date(),
+								createdAt: NOW,
 								id: 'bbc55a55-2e13-4322-a2c5-0fec1dabc79ee',
 								message:
 									'Shane M. has arrived! 💥 We also added more to this message to demo long alerts.',
@@ -800,7 +806,7 @@ export default class Styleguide extends Component {
 					/>
 					<Pre>{`<Feed data={[
 	{
-		createdAt: moment(new Date()).subtract(34, 'hour'),
+		createdAt: moment(NOW).subtract(34, 'hour'),
 		id: 'bbc55a55-2e13-4322-a2c5-0fec1abc79be',
 		message:
 			'Randy C. has arrived! 💥 This <FeedItem /> has bigAvatar set to true.',
@@ -818,7 +824,7 @@ export default class Styleguide extends Component {
 		]
 	},
 	{
-		createdAt: moment(new Date()).subtract(25, 'hour'),
+		createdAt: moment(NOW).subtract(25, 'hour'),
 		id: 'bbc55a55-2e13-4372-a2c5-0fec1abc79ee',
 		message: 'Ryan J. has arrived! 💥 bigAvatar is not true.',
 		user: demoGuest,
@@ -844,7 +850,7 @@ export default class Styleguide extends Component {
 		]
 	},
 	{
-		createdAt: new Date(),
+		createdAt: NOW,
 		id: 'bbc55a55-2e13-4322-a2c5-0fec1dabc79ee',
 		message:
 			'Shane M. has arrived! 💥 We also added more to this message to demo long alerts.',
