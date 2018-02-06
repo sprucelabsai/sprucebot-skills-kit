@@ -2547,6 +2547,10 @@ get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
 
+get-node-dimensions@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/get-node-dimensions/-/get-node-dimensions-1.2.0.tgz#95298e32a752a155f29eb710e069557b4a7fe98c"
+
 get-pkg-repo@^1.0.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/get-pkg-repo/-/get-pkg-repo-1.4.0.tgz#c73b489c06d80cc5536c2c853f9e05232056972d"
@@ -5038,6 +5042,14 @@ react-image-crop@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/react-image-crop/-/react-image-crop-3.0.7.tgz#8f7f1f03031c76c8b6306d11f7d1b8bf3007ab8c"
 
+react-measure@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.0.2.tgz#072a9a5fafc01dfbadc1fa5fb09fc351037f636c"
+  dependencies:
+    get-node-dimensions "^1.2.0"
+    prop-types "^15.5.10"
+    resize-observer-polyfill "^1.4.2"
+
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-3.0.0-alpha.1.tgz#4400426bcfa80caa6724c7755695315209fa4b07"
@@ -5055,9 +5067,9 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-sprucebot@^0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.10.5.tgz#60ec2c3c58dda40a4932a4f7f6981818fb555381"
+react-sprucebot@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.11.0.tgz#c85bf176024ed0ea39d1493f36a65830a2e88413"
   dependencies:
     babel-polyfill "^6.26.0"
     cookies "^0.7.1"
@@ -5070,6 +5082,7 @@ react-sprucebot@^0.10.5:
     react "^16.0.0"
     react-dom "^16.2.0"
     react-image-crop "^3.0.7"
+    react-measure "^2.0.2"
     react-redux "^5.0.6"
     redux "^3.7.2"
     redux-thunk "^2.2.0"
@@ -5382,6 +5395,10 @@ require-uncached@^1.0.3:
   dependencies:
     caller-path "^0.1.0"
     resolve-from "^1.0.0"
+
+resize-observer-polyfill@^1.4.2:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
 
 resolve-from@^1.0.0:
   version "1.0.1"
