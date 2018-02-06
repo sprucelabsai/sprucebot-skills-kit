@@ -1,7 +1,10 @@
 module.exports = {
 	verbose: true,
 	setupFiles: ['<rootDir>/jest/enzymeSetup.js'],
-	roots: ['<rootDir>/server/', '<rootDir>/interface/'],
+	testPathIgnorePatterns: [
+		'<rootDir>/interface/.next',
+		'<rootDir>/config/test.js'
+	],
 	coverageDirectory: './coverage/',
 	collectCoverage: true,
 	snapshotSerializers: ['enzyme-to-json/serializer'],

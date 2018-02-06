@@ -102,7 +102,7 @@ const demoGuest = {
 }
 let NOW
 if (process.env.NODE_ENV === 'test') {
-	NOW = new Date(946710000000) // Snapshot testing requires an unchanging date
+	NOW = new Date(946738800000) // Snapshot testing requires an unchanging date
 } else {
 	NOW = new Date()
 }

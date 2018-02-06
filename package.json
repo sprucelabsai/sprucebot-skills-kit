@@ -15,7 +15,8 @@
     "icon": "./node_modules/.bin/svgo icon/icon.svg",
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm run test",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.2.1",
@@ -37,7 +38,7 @@
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.17.2",
     "sprucebot-node": "^0.4.2",
-    "sprucebot-skills-kit-server": "^1.0.0",
+    "sprucebot-skills-kit-server": "^1.0.1",
     "styled-components": "^2.2.2",
     "universal-cookie": "^2.1.0"
   },
