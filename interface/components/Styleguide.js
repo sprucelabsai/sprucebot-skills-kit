@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import moment from 'moment'
+import moment from 'moment-timezone'
 import {
 	Container,
 	BotText,
@@ -102,7 +102,7 @@ const demoGuest = {
 }
 let NOW
 if (process.env.NODE_ENV === 'test') {
-	NOW = new Date(946738800000) // Snapshot testing requires an unchanging date
+	NOW = moment(946738800000).tz('America/Los_Angeles') // Snapshot testing requires an unchanging date
 } else {
 	NOW = new Date()
 }
