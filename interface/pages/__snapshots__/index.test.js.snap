@@ -1,0 +1,2105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders page with styleguide 1`] = `
+<div>
+  <div
+    class="Container-fikk1v-0 container gLKDhv"
+  >
+    <svg
+      id="Layer_1"
+      style="height:200px;margin:0 auto;display:block"
+      viewBox="0 0 98.2 124.6"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        id="Sprucebot-Logo-Mark"
+      >
+        <path
+          d="M50 16.9L75.5 76H60.2c-1.8 0-3.3 1.5-3.3 3.4s1.5 3.4 3.3 3.4h25.5L50 0 2.1 110.9 0 115.7H77.2c1.8 0 3.3-1.5 3.3-3.4s-1.5-3.4-3.3-3.4h-67l39.8-92z"
+          id="Triangle"
+        />
+        <path
+          d="M63.1 79.3c0-6.8-5.4-12.4-12.1-12.4s-12.1 5.5-12.1 12.4c0 6.8 5.4 12.4 12.1 12.4 6.7 0 12.1-5.6 12.1-12.4zm-17.6 0c0-3.1 2.4-5.6 5.5-5.6s5.5 2.5 5.5 5.6-2.4 5.6-5.5 5.6-5.5-2.5-5.5-5.6z"
+          fill="#020202"
+          id="Oval"
+        />
+        <path
+          d="M98.2 112.2c0-6.8-5.4-12.4-12.1-12.4S74 105.3 74 112.2s5.4 12.4 12.1 12.4c6.6 0 12.1-5.5 12.1-12.4zm-17.6 0c0-3.1 2.4-5.6 5.5-5.6 3 0 5.5 2.5 5.5 5.6s-2.4 5.6-5.5 5.6c-3 0-5.5-2.5-5.5-5.6z"
+          id="Oval_1_"
+        />
+      </g>
+    </svg>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Hello 🌲 Sprucebot 🌲 Developer!
+    </h1>
+    <p
+      class="BotText-d8677j-0 bot__text bpogzL"
+    >
+      Use the Styleguide below to get a jump start. For a proper introduction, see "./docs/README.md" in your project.
+    </p>
+  </div>
+  <div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Importing Components
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        All the components you need to build your skill are available in the 'react-sprucebot' module. Any modules you create yourself are subject to rejection from the Skills Marketplace.
+      </p>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        import {
+	Container,
+	BotText,
+	Loader,
+	H1,
+	H2,
+	H3,
+	H4,
+	H5,
+	H6,
+	SectionHeading,
+	Paragraph as P,
+	A,
+	Avatar,
+	Button,
+	Form,
+	Switch,
+	Input,
+	Select,
+	SubmitWrapper,
+	List,
+	ListItem,
+	Tabs,
+	TabPane,
+	LinkPile,
+	Pager,
+	StatsSlider,
+	ButtonGrid,
+	GridButton,
+	Stars,
+	ImageCropper,
+	Callout,
+	Feed
+} from 'react-sprucebot'
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Headings
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        Notice the use of the Component with a capitalized tag, e.g. 'H' vs 'h'. This is intentional and is actively enforced.
+      </p>
+      <h1
+        class="Typography__H1-s1fueepp-1 cceFbQ"
+      >
+        I'm an H1
+      </h1>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;H1&gt;I'm an H1&lt;/H1&gt;
+      </pre>
+      <h2
+        class="Typography__H2-s1fueepp-2 bBnigf"
+      >
+        I'm an H2
+      </h2>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;H2&gt;I'm an H2&lt;/H2&gt;
+      </pre>
+      <h3
+        class="Typography__H3-s1fueepp-3 hQDaxA"
+      >
+        I'm an H3
+      </h3>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;H3&gt;I'm an H3&lt;/H3&gt;
+      </pre>
+      <h4
+        class="Typography__H4-s1fueepp-4 hdYqvZ"
+      >
+        I'm an H4
+      </h4>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;H4&gt;I'm an H4&lt;/H4&gt;
+      </pre>
+      <h5
+        class="Typography__H5-s1fueepp-5 fkdNxe"
+      >
+        I'm an H5
+      </h5>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;H5&gt;I'm an H5&lt;/H5&gt;
+      </pre>
+      <h6
+        class="Typography__H6-s1fueepp-6 buydtg"
+      >
+        I'm an H6
+      </h6>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;H6&gt;I'm an H6&lt;/H6&gt;
+      </pre>
+      <p
+        class="Typography__Paragraph-s1fueepp-0 hBMeUr"
+      >
+        I'm a paragraph of some text
+      </p>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;P&gt;I'm a paragraph of some text&lt;/P&gt;
+      </pre>
+      <a
+        class="Typography__A-s1fueepp-7 kPmMLG"
+        href="#"
+      >
+        I'm an anchor tag
+      </a>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;A href="#"&gt;I'm an anchor tag&lt;/A&gt;
+      </pre>
+      <h2
+        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+      >
+        Section Heading
+      </h2>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;SectionHeading&gt;Section Heading&lt;/SectionHeading&gt;
+      </pre>
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        Use SectionHeading to break up sections of your page and to label forms, similar to a fieldset.
+      </p>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Sub Headings
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <h1
+        class="Typography__H1-s1fueepp-1 with__subheader cceFbQ"
+      >
+        Header
+      </h1>
+      <h2
+        class="Typography__H2-s1fueepp-2 is__subheader bBnigf"
+      >
+        Sub Headings
+      </h2>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;H1 with_subheader&gt;Header&lt;/H1&gt;
+&lt;H2 subheader&gt;Sub Headings&lt;/H2&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Bot Text
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        I'm some bot text. I'm great for quick hints, tips, shout outs, etc. This text comes right from Sprucebot, so make sure it's on brand.
+      </p>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;BotText&gt;I'm some bot text. I'm great for quick hints, tips, shout outs, etc. This text comes right from Sprucebot, so make sure it's on brand.&lt;/BotText&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Paragraphs
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="Typography__Paragraph-s1fueepp-0 hBMeUr"
+      >
+        I'm a normal paragraph tag
+      </p>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;P&gt;I'm a normal paragraph tag&lt;/P&gt;
+      </pre>
+      <p
+        class="Typography__Paragraph-s1fueepp-0 fine__print hBMeUr"
+      >
+        I'm some fine print
+      </p>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;P fine&gt;I'm some fine print&lt;/P&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Top Avatar
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        Avatars usually go next to users when output in a list. Adding the "top" property will make it big and center. Great for the tops of profile or dashboard pages.
+      </p>
+      <div
+        class="Avatar-bp4k6m-0 top__avatar jdosYG"
+      />
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Avatar top image="https://hello.sprucebot.com/avatar.jpg" /&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Buttons
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <button
+        class="btn__primary "
+        type="button"
+      >
+        I'm a primary button
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button primary&gt;I'm a primary button&lt;/Button&gt;
+      </pre>
+      <a
+        class="btn__primary "
+        type="button"
+      >
+        I'm a primary button turned link
+      </a>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button primary href="https://sprucebot.com"&gt;I'm a primary button turned link.&lt;/Button&gt;
+      </pre>
+      <button
+        class="btn__primary btn__disabled "
+        type="button"
+      >
+        I'm a primary disabled button
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button primary disabled&gt;I'm a primary disabled button&lt;/Button&gt;
+      </pre>
+      <button
+        class="btn__secondary "
+        type="button"
+      >
+        I'm a secondary button
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button secondary&gt;I'm a secondary button&lt;/Button&gt;
+      </pre>
+      <button
+        class="btn__secondary btn__disabled "
+        type="button"
+      >
+        I'm a secondary disabled button
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button secondary disabled&gt;I'm a secondary disabled button&lt;/Button&gt;
+      </pre>
+      <button
+        class="btn__alt "
+        type="button"
+      >
+        I'm an alt button
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button alt&gt;I'm an alt button&lt;/Button&gt;
+      </pre>
+      <button
+        class="btn__alt btn__disabled "
+        type="button"
+      >
+        I'm an alt disabled button
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button alt disabled&gt;I'm an alt disabled button&lt;/Button&gt;
+      </pre>
+      <button
+        class="btn__secondary__alt "
+        type="button"
+      >
+        I'm a secondary alt button
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button secondary alt &gt;I'm a secondary alt button&lt;/Button&gt;
+      </pre>
+      <button
+        class="btn__secondary__alt btn__disabled "
+        type="button"
+      >
+        I'm a secondary alt disabled button
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button secondary alt disabled&gt;I'm a secondary alt disabled button&lt;/Button&gt;
+      </pre>
+      <button
+        class=" btn__caution "
+        type="button"
+      >
+        I'm a caution button
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button caution&gt;I'm a caution button&lt;/Button&gt;
+      </pre>
+      <button
+        class=" btn__link "
+        type="button"
+      >
+        I'm a button link
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button link&gt;I'm a button link&lt;/Button&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Loaders
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        Loaders can be dark or light. Default, they are dark. But, if you need to put a loader on a dark dark background, set dark=.
+      </p>
+      <span
+        class="loader_wrapper"
+        style="display:block;margin:20px;text-align:center"
+      >
+        <span
+          class="loader_dot_dark"
+        />
+        <span
+          class="loader_dot_dark"
+        />
+        <span
+          class="loader_dot_dark"
+        />
+      </span>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Loader /&gt;
+      </pre>
+      <pre
+        class="sc-bwzfXH eaWBkM"
+      >
+        <span
+          class="loader_wrapper"
+          style="display:block;margin:20px;text-align:center"
+        >
+          <span
+            class="loader_dot"
+          />
+          <span
+            class="loader_dot"
+          />
+          <span
+            class="loader_dot"
+          />
+        </span>
+      </pre>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Loader dark={false} /&gt;
+      </pre>
+      <button
+        class="btn "
+        type="button"
+      >
+        <span
+          class="loader_wrapper"
+        >
+          <span
+            class="loader_dot"
+          />
+          <span
+            class="loader_dot"
+          />
+          <span
+            class="loader_dot"
+          />
+        </span>
+      </button>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Button busy&gt;Content does not matter&lt;/Button&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Switches
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <div
+        class="Switch__SwitchComp-ntuyi9-1 Switch switch  hFMueS"
+      >
+        <span
+          class="Switch__SwitchButton-ntuyi9-0 SwitchButton gSwEPv"
+          type="button"
+        />
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Switch
+	onChange={(on, e) =&gt; {
+		console.log('on:', on, 'event:', e)
+	}}
+/&gt;
+      </pre>
+      <div
+        class="Switch__SwitchComp-ntuyi9-1 Switch switch  bqlQsD"
+      >
+        <span
+          class="Switch__SwitchButton-ntuyi9-0 SwitchButton bPboPe"
+          type="button"
+        />
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Switch on /&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Forms
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        Forms and elements currently do not do any validation nor formatting for you. You must manually set 'error' to display an error message.
+      </p>
+      <form
+        class="Form-s1llqxic-0 ghbKZf"
+      >
+        <h2
+          class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+        >
+          Profile
+        </h2>
+        <div
+          class="input__wrapper"
+        >
+          <span
+            class="input__mini__label "
+          >
+            Your Name
+          </span>
+          <input
+            placeholder="Your Name"
+          />
+        </div>
+        <div
+          class="input__wrapper"
+        >
+          <span
+            class="input__mini__label js-show-label"
+          >
+            Email
+          </span>
+          <input
+            value="founders@sprucelabs.ai"
+          />
+          <p
+            class="Typography__Paragraph-s1fueepp-0 fine__print hBMeUr"
+          >
+            This is helpful fine print.
+          </p>
+        </div>
+        <h2
+          class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+        >
+          Another Section
+        </h2>
+        <p
+          class="BotText-d8677j-0 bot__text bpogzL"
+        >
+          Most properties on an Input are passed through, so you can do more than just text!
+        </p>
+        <div
+          class="input__wrapper"
+        >
+          <span
+            class="input__mini__label "
+          >
+            Age
+          </span>
+          <input
+            placeholder="Age"
+            type="number"
+          />
+          <span
+            class="input__error error-is-visible"
+          >
+            This is an error message.
+          </span>
+        </div>
+        <div
+          class="input__wrapper"
+        >
+          <span
+            class="input__mini__label "
+          >
+            Password
+          </span>
+          <input
+            placeholder="Password"
+            type="password"
+          />
+        </div>
+        <div
+          class="input__wrapper"
+        >
+          <span
+            class="input__mini__label js-show-label"
+          >
+            Dropdowns Rock!
+          </span>
+          <select
+            class="custom_dropdown   with_label"
+          >
+            <option
+              value="uno"
+            >
+              Test 1
+            </option>
+            <option
+              value="dos"
+            >
+              Test 2
+            </option>
+          </select>
+        </div>
+        <div
+          class="input__wrapper"
+        >
+          <span
+            class="input__mini__label js-show-label"
+          >
+            Growing multiline input
+          </span>
+          <textarea>
+            You can type in here and I'll auto-size to match the height. How easy and simple and cool and taking up more space now is that?
+          </textarea>
+        </div>
+        <div
+          class="SubmitWrapper-a0o1v5-0 submit__wrapper dPEbUr"
+        >
+          <a
+            class="btn__alt "
+            type="button"
+          >
+            Back to Dashboard
+          </a>
+          <button
+            class="btn__primary "
+            type="button"
+          >
+            Save Changes
+          </button>
+        </div>
+      </form>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Form&gt;
+	&lt;SectionHeading&gt;Profile&lt;/SectionHeading&gt;
+	&lt;Input label="Your Name" /&gt;
+	&lt;Input
+		label="Email"
+		finePrint="This is helpful fine print."
+		defaultValue="founders@sprucelabs.ai"
+	/&gt;
+	&lt;SectionHeading&gt;Another Section&lt;/SectionHeading&gt;
+	&lt;BotText&gt;
+		Most properties on an Input are passed through, so you can do more than just text!
+	&lt;/BotText&gt;
+	&lt;Input
+		onChange={(value, e) =&gt; {
+			console.log('value:', value, 'event:', e)
+		}}
+		type="number"
+		label="Age"
+		error="This is an error message."
+	/&gt;
+	&lt;Input type="password" label="Password" /&gt;
+	&lt;Select
+		label="Dropdowns Rock!"
+		onChange={(value, e) =&gt; {
+			console.log('value:', value, 'event:', e)
+		}}
+	&gt;
+		&lt;option value="uno"&gt;Test 1&lt;/option&gt;
+		&lt;option value="dos"&gt;Test 2&lt;/option&gt;
+	&lt;/Select&gt;
+	&lt;Input
+		multiline
+		label="Growing multiline input"
+		defaultValue="You can type in here and I'll auto-size to match the height. How easy and simple and cool and taking up more space now is that?"
+	/&gt;
+	&lt;SubmitWrapper&gt;
+		&lt;Button alt href="http://hello.sprucebot.com"&gt;
+			Back to Dashboard
+		&lt;/Button&gt;
+		&lt;Button primary&gt;Save Changes&lt;/Button&gt;
+	&lt;/SubmitWrapper&gt;
+&lt;/Form&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Lists
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <h2
+        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+      >
+        A Friend List
+      </h2>
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        Lists are very useful for showing guests, teammates, etc.
+      </p>
+      <div
+        class="List-i0qvx7-0 List item__list jfNjUL"
+      >
+        <div
+          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+          title="Taylor"
+        >
+          <div
+            class="List__ItemAvatar-i0qvx7-2 ItemAvatar avatar__outer__wrapper pWMkO"
+          >
+            <div
+              class="Avatar-bp4k6m-0 avatar__wrapper online jdosYG"
+            />
+          </div>
+          <div
+            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+          >
+            <div
+              class="List__ItemTitle-i0qvx7-5 ItemTitle title dGvWJv"
+            >
+              Taylor
+            </div>
+            <div
+              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+            >
+              Last Visit: Today
+            </div>
+          </div>
+          <div
+            class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+          >
+            <div
+              class="List__ItemTitle-i0qvx7-5 ItemTitle title ijxgmb"
+            >
+              Owner
+            </div>
+            <div
+              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+            >
+              Visits: 7
+            </div>
+          </div>
+        </div>
+        <div
+          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item offline fedWXW"
+          title="Ryan"
+        >
+          <div
+            class="List__ItemAvatar-i0qvx7-2 ItemAvatar avatar__outer__wrapper pWMkO"
+          >
+            <div
+              class="Avatar-bp4k6m-0 avatar__wrapper jdosYG"
+            />
+          </div>
+          <div
+            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+          >
+            <div
+              class="List__ItemTitle-i0qvx7-5 ItemTitle title dGvWJv"
+            >
+              Ryan
+            </div>
+            <div
+              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+            >
+              Last Visit: 10 days ago
+            </div>
+          </div>
+          <div
+            class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+          >
+            <div
+              class="List__ItemTitle-i0qvx7-5 ItemTitle title ijxgmb"
+            >
+              Owner
+            </div>
+            <div
+              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+            >
+              Visits: 7
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;List&gt;
+	&lt;ListItem
+		title="Taylor"
+		subtitle="Last Visit: Today"
+		rightTitle="Owner"
+		rightSubtitle="Visits: 7"
+		avatar="https://hello.sprucebot.com/avatar.jpg"
+	/&gt;
+	&lt;ListItem
+		online={false}
+		title="Ryan"
+		subtitle="Last Visit: 10 days ago"
+		rightTitle="Owner"
+		rightSubtitle="Visits: 7"
+		avatar="https://hello.sprucebot.com/avatar.jpg"
+	/&gt;
+&lt;/List&gt;
+      </pre>
+      <h2
+        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+      >
+        A Flexible List!
+      </h2>
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        But, lists can do more than that! Actually, a LOT more than that!
+      </p>
+      <div
+        class="List-i0qvx7-0 List item__list jfNjUL"
+      >
+        <div
+          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+        >
+          <div
+            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+          >
+            This is the most basic list item.
+          </div>
+        </div>
+        <div
+          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+          title="Awesome title!"
+        >
+          <div
+            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+          >
+            <div
+              class="List__ItemTitle-i0qvx7-5 ItemTitle title dGvWJv"
+            >
+              Awesome title!
+            </div>
+            <div
+              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+            >
+              Fantastic subtitle!
+            </div>
+          </div>
+          <div
+            class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+          >
+            <a
+              class="btn__remove "
+              type="button"
+            />
+          </div>
+        </div>
+        <div
+          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+        >
+          <div
+            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+          >
+            I can even do switches!
+          </div>
+          <div
+            class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+          >
+            <div
+              class="Switch__SwitchComp-ntuyi9-1 Switch switch  hFMueS"
+            >
+              <span
+                class="Switch__SwitchButton-ntuyi9-0 SwitchButton gSwEPv"
+                type="button"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+        >
+          <div
+            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+          >
+            <div
+              class="input__wrapper"
+            >
+              <span
+                class="input__mini__label "
+              >
+                An input!
+              </span>
+              <input
+                placeholder="An input!"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+        >
+          <div
+            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+          >
+            <div
+              class="input__wrapper"
+            >
+              <span
+                class="input__mini__label js-show-label"
+              >
+                And a select!
+              </span>
+              <select
+                class="custom_dropdown   with_label"
+              >
+                <option>
+                  Nuke 'em Rico
+                </option>
+                <option>
+                  With pleasure!
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;List&gt;
+	&lt;ListItem&gt;This is the most basic list item.&lt;/ListItem&gt;
+	&lt;ListItem
+		title="Awesome title!"
+		subtitle="Fantastic subtitle!"
+		rightInput={
+			&lt;Button
+				remove
+				onClick={e =&gt; {
+					console.log('event:', e)
+				}}
+			/&gt;
+		}
+	/&gt;
+	&lt;ListItem rightInput={&lt;Switch /&gt;}&gt;I can even do switches!&lt;/ListItem&gt;
+	&lt;ListItem&gt;
+		&lt;Input label="An input!" /&gt;
+	&lt;/ListItem&gt;
+	&lt;ListItem&gt;
+		&lt;Select label="And a select!"&gt;
+			&lt;option&gt;Nuke 'em Rico&lt;/option&gt;
+			&lt;option&gt;With pleasure!&lt;/option&gt;
+		&lt;/Select&gt;
+	&lt;/ListItem&gt;
+&lt;/List&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Tabs
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <div
+        class="tabs__container "
+      >
+        <div
+          class="tabs"
+        >
+          <button
+            class="btn__toggle toggle__left"
+            type="button"
+          >
+            First
+          </button>
+          <button
+            class="btn__toggle toggle__middle btn__toggle__active"
+            type="button"
+          >
+            Second
+          </button>
+          <button
+            class="btn__toggle toggle__right"
+            type="button"
+          >
+            Third
+          </button>
+        </div>
+        <div
+          class="tab__panes"
+        >
+          <div
+            class="tap__pane"
+          >
+            <p
+              class="BotText-d8677j-0 bot__text bpogzL"
+            >
+              Tabs are fantastic! You can use them so easily!
+            </p>
+          </div>
+        </div>
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Tabs
+	onChange={(idx, e) =&gt; {
+		console.log('tab:', idx, 'event:', e)
+	}}
+&gt;
+	&lt;TabPane title="First"&gt;First Pane&lt;/TabPane&gt;
+	&lt;TabPane selected title="Second"&gt;
+		&lt;BotText&gt;Tabs are fantastic! You can use them so easily!&lt;/BotText&gt;
+	&lt;/TabPane&gt;
+	&lt;TabPane title="Third"&gt;Third Pane&lt;/TabPane&gt;
+&lt;/Tabs&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Link Pile
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        LinkPile's are great for dashboards or control panels. It shrinks the margin between buttons to make them look more cohesive.
+      </p>
+      <h2
+        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+      >
+        Controls
+      </h2>
+      <div
+        class="LinkPile-a3he5q-0 link__pile bDkZiA"
+      >
+        <button
+          class="btn__primary "
+          type="button"
+        >
+          Button 1
+        </button>
+        <button
+          class="btn__alt "
+          type="button"
+        >
+          Button 2
+        </button>
+        <button
+          class="btn__secondary "
+          type="button"
+        >
+          Button 3
+        </button>
+        <button
+          class="btn__secondary__alt "
+          type="button"
+        >
+          Button 4
+        </button>
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;LinkPile&gt;
+	&lt;Button primary&gt;Button 1&lt;/Button&gt;
+	&lt;Button alt&gt;Button 2&lt;/Button&gt;
+	&lt;Button secondary&gt;Button 3&lt;/Button&gt;
+	&lt;Button secondary alt&gt;
+		Button 4
+	&lt;/Button&gt;
+&lt;/LinkPile&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Search
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <div
+        class="input__wrapper"
+      >
+        <input
+          placeholder="Search for something"
+          type="search"
+        />
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Input type="search" placeholder="Search for something" /&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Pager
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        The pager is pretty simple. It will track your page (zero based), but you'll need to implement \`onChange\`\` to make your API requests. Also, don't forget to add \`totalPages\`.
+      </p>
+      <ul
+        class="pager"
+      >
+        <li
+          class="first disabled"
+        >
+          <a>
+            First
+          </a>
+        </li>
+        <li
+          class="back disabled"
+        >
+          <a>
+            Back
+          </a>
+        </li>
+        <li
+          class="current"
+        >
+          <a>
+            Page 1
+          </a>
+        </li>
+        <li
+          class="next "
+        >
+          <a>
+            Next
+          </a>
+        </li>
+        <li
+          class="last "
+        >
+          <a>
+            Last
+          </a>
+        </li>
+      </ul>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Pager
+	totalPages={5}
+	titles={page =&gt;
+		['Page 1', 'Custom', 'What the?', 'You know', 'What'][page]}
+		onChange={(page, e) =&gt; {
+			console.log('page:', page, 'event:', e)
+		}}
+		/&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Stats Slider
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <h2
+        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+      >
+        KPI's
+      </h2>
+      <div
+        class="stat__card__slider "
+      >
+        <div
+          class="stat__card__slider__scroll"
+        >
+          <div
+            class="stat__card"
+          >
+            <div
+              class="icon up"
+            />
+            <div
+              class="value"
+            >
+              $23.50
+            </div>
+            <div
+              class="title"
+            >
+              Hourly
+            </div>
+          </div>
+          <div
+            class="stat__card"
+          >
+            <div
+              class="icon "
+            />
+            <div
+              class="value"
+            >
+              10
+            </div>
+            <div
+              class="title"
+            >
+              Services
+            </div>
+          </div>
+          <div
+            class="stat__card"
+          >
+            <div
+              class="icon up"
+            />
+            <div
+              class="value"
+            >
+              $25.23
+            </div>
+            <div
+              class="title"
+            >
+              Avg. Ticket
+            </div>
+          </div>
+          <div
+            class="stat__card"
+          >
+            <div
+              class="value"
+            >
+              0
+            </div>
+            <div
+              class="title"
+            >
+              Returns
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;StatsSlider
+	stats={[
+		{
+			dir: 1,
+			title: 'Hourly',
+			value: '$23.50'
+		},
+		{
+			dir: -1,
+			title: 'Services',
+			value: 10
+		},
+		{
+			dir: 1,
+			title: 'Avg. Ticket',
+			value: '$25.23'
+		},
+		{
+			dir: 0,
+			title: 'Returns',
+			value: 0
+		}
+	]}
+/&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Button Grid
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <h2
+        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+      >
+        Select Your Options
+      </h2>
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        Set the line-height of .btn_grid .btn to control height of button. The text will stay centered.
+      </p>
+      <div
+        class="ButtonGrid-s3gomjg-0 btn_grid jWCqnU"
+      >
+        <a
+          class="btn  "
+        >
+          <span>
+            Option 1
+            <br />
+            <small>
+              It's good
+            </small>
+          </span>
+        </a>
+        <a
+          class="btn  "
+        >
+          <span>
+            Option 2
+            <br />
+            <small>
+              It's better!
+            </small>
+          </span>
+        </a>
+        <a
+          class="btn  selected"
+        >
+          <span>
+            Option 3
+            <br />
+            <small>
+              Def worth a look
+            </small>
+          </span>
+        </a>
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;ButtonGrid&gt;
+	&lt;GridButton subtitle="It's good"&gt;Option 1&lt;/GridButton&gt;
+	&lt;GridButton subtitle="It's better!"&gt;Option 2&lt;/GridButton&gt;
+	&lt;GridButton subtitle="Def worth a look" selected&gt;
+		Option 3
+	&lt;/GridButton&gt;
+&lt;/ButtonGrid&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Stars
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        Please take a moment to rate this rating component.
+      </p>
+      <div
+        class="stars"
+      >
+        <div
+          class="star active"
+        />
+        <div
+          class="star active"
+        />
+        <div
+          class="star "
+        />
+        <div
+          class="star "
+        />
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Stars
+	max={4}
+	score={2}
+	onChange={(score, e) =&gt; {
+		console.log('score:', score, 'event:', e)
+	}}
+/&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Image Cropper
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        Our ImageCropper is currently using 
+        <a
+          href="https://github.com/DominicTobias/react-image-crop"
+        >
+          react-image-crop
+        </a>
+        . Tap the button below and give it a shot.
+      </p>
+      <div
+        class="image_cropper"
+      >
+        <span
+          class="loader_wrapper"
+          style="display:block;margin:20px;text-align:center"
+        >
+          <span
+            class="loader_dot_dark"
+          />
+          <span
+            class="loader_dot_dark"
+          />
+          <span
+            class="loader_dot_dark"
+          />
+        </span>
+        <div
+          class="ImageCropper__StyledReactCrop-p6nh2a-0 eVQhpV"
+        >
+          <div
+            class="ReactCrop"
+            tabindex="1"
+          >
+            <img
+              alt=""
+              class="ReactCrop__image"
+              crossorigin="Anonymous"
+              src="https://s3.amazonaws.com/sprucebot/ticket.png"
+            />
+            <div
+              class="ReactCrop__crop-selection"
+              style="top:25%;left:25%;width:50%;height:50%"
+            >
+              <div
+                class="ReactCrop__drag-elements"
+              >
+                <div
+                  class="ReactCrop__drag-bar ord-n"
+                  data-ord="n"
+                />
+                <div
+                  class="ReactCrop__drag-bar ord-e"
+                  data-ord="e"
+                />
+                <div
+                  class="ReactCrop__drag-bar ord-s"
+                  data-ord="s"
+                />
+                <div
+                  class="ReactCrop__drag-bar ord-w"
+                  data-ord="w"
+                />
+                <div
+                  class="ReactCrop__drag-handle ord-nw"
+                  data-ord="nw"
+                />
+                <div
+                  class="ReactCrop__drag-handle ord-n"
+                  data-ord="n"
+                />
+                <div
+                  class="ReactCrop__drag-handle ord-ne"
+                  data-ord="ne"
+                />
+                <div
+                  class="ReactCrop__drag-handle ord-e"
+                  data-ord="e"
+                />
+                <div
+                  class="ReactCrop__drag-handle ord-se"
+                  data-ord="se"
+                />
+                <div
+                  class="ReactCrop__drag-handle ord-s"
+                  data-ord="s"
+                />
+                <div
+                  class="ReactCrop__drag-handle ord-sw"
+                  data-ord="sw"
+                />
+                <div
+                  class="ReactCrop__drag-handle ord-w"
+                  data-ord="w"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="block"
+          />
+        </div>
+        <input
+          accept="image/*"
+          style="display:none"
+          type="file"
+        />
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;ImageCropper
+	tapToCrop={true}
+	src="https://s3.amazonaws.com/sprucebot/ticket.png"
+	onSave={img =&gt; console.log(img)}
+	crop={{ x: 25, y: 25, width: 50, height: 50 }}
+/&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Callouts
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        If you have some information you need to call out (think modal dialog), you can use the &lt;Callout /&gt; component.
+      </p>
+      <div>
+        <div
+          class="callout_underlay off"
+        />
+        <div
+          class="callout  off"
+        >
+          <h2
+            class="Typography__H2-s1fueepp-2 bBnigf"
+          >
+            Some important sub-form
+          </h2>
+          <p
+            class="BotText-d8677j-0 bot__text bpogzL"
+          >
+            Things like nested forms or multi-step processes benefit greatly from a callout. It lets you see where you were, but brings focus to what you're about to do.
+          </p>
+          <div
+            class="List-i0qvx7-0 List item__list jfNjUL"
+          >
+            <div
+              class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+            >
+              <div
+                class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+              >
+                Try the call out! -&gt;
+              </div>
+              <div
+                class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+              >
+                <div
+                  class="Switch__SwitchComp-ntuyi9-1 Switch switch  hFMueS"
+                >
+                  <span
+                    class="Switch__SwitchButton-ntuyi9-0 SwitchButton gSwEPv"
+                    type="button"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Callout on={calloutOn}&gt;
+	&lt;H2&gt;Call this out&lt;/H2&gt;
+	&lt;BotText&gt;
+		Things like nested forms or multi-step processes benefit greatly
+		from a callout. It lets you see where you were, but brings focus
+		to what you're about to do.
+	&lt;/BotText&gt;
+	&lt;List&gt;
+		&lt;ListItem
+			rightInput={
+				&lt;Switch
+					onChange={calloutOn =&gt; this.setState({ calloutOn })}
+				/&gt;
+			}
+		&gt;
+			Try the call out! -&gt;
+		&lt;/ListItem&gt;
+	&lt;/List&gt;
+&lt;/Callout&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      The Feed
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        The Feed is used by nearly every Skill to visualize events and facilitate conversation around those events.
+      </p>
+      <div
+        class="feed__wrapper"
+      >
+        <div
+          class="feed__item big_avatar"
+        >
+          <h2
+            class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+          >
+            Dec 30th
+          </h2>
+          <div
+            class="feed__avatar"
+          >
+            <div
+              class="Avatar-bp4k6m-0 top__avatar jdosYG"
+            />
+          </div>
+          <p
+            class="BotText-d8677j-0 bot__text bpogzL"
+          >
+            Randy C. has arrived! 💥 This &lt;FeedItem /&gt; has bigAvatar set to true.
+            <span
+              class="date"
+            >
+              12/30/1999
+            </span>
+          </p>
+          <div
+            class="feed__attachments"
+          >
+            <div
+              class="feed__attachment "
+            >
+              <div
+                class="title"
+              >
+                Membership level
+              </div>
+              <div
+                class="value"
+              >
+                Gold
+              </div>
+            </div>
+            <div
+              class="feed__attachment "
+            >
+              <div
+                class="title"
+              >
+                Total Points
+              </div>
+              <div
+                class="value"
+              >
+                1253
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="feed__item "
+        >
+          <h2
+            class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+          >
+            Dec 31st
+          </h2>
+          <div
+            class="feed__avatar"
+          >
+            <div
+              class="Avatar-bp4k6m-0 avatar__wrapper jdosYG"
+            />
+          </div>
+          <p
+            class="BotText-d8677j-0 bot__text bpogzL"
+          >
+            Ryan J. has arrived! 💥 bigAvatar is not true.
+            <span
+              class="date"
+            >
+              12/31/1999
+            </span>
+          </p>
+          <div
+            class="feed__attachments"
+          >
+            <div
+              class="feed__attachment "
+            >
+              <div
+                class="title"
+              >
+                Membership level
+              </div>
+              <div
+                class="value"
+              >
+                Turquoise
+              </div>
+            </div>
+            <div
+              class="feed__attachment "
+            >
+              <div
+                class="title"
+              >
+                Total Points
+              </div>
+              <div
+                class="value"
+              >
+                2393
+              </div>
+            </div>
+            <div
+              class="feed__attachment "
+            >
+              <div
+                class="title"
+              >
+                Favorite Color
+              </div>
+              <div
+                class="value"
+              >
+                blue
+              </div>
+            </div>
+            <div
+              class="feed__attachment full-width"
+            >
+              <div
+                class="title"
+              >
+                Note
+              </div>
+              <div
+                class="value"
+              >
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed dolor ac felis scelerisque hendrerit ac et dui. Sed vel tortor vitae magna luctus aliquam sit amet ut eros. Duis et viverra nulla, et mattis nunc." - Taylor R. Sept. 3rd
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="feed__item "
+        >
+          <h2
+            class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+          >
+            Jan 1st
+          </h2>
+          <div
+            class="feed__avatar"
+          >
+            <div
+              class="Avatar-bp4k6m-0 avatar__wrapper jdosYG"
+            />
+          </div>
+          <p
+            class="BotText-d8677j-0 bot__text bpogzL"
+          >
+            Shane M. has arrived! 💥 We also added more to this message to demo long alerts.
+            <span
+              class="date"
+            >
+              01/01/2000
+            </span>
+          </p>
+          <div
+            class="feed__attachments"
+          >
+            <div
+              class="feed__attachment "
+            >
+              <div
+                class="title"
+              >
+                Membership level
+              </div>
+              <div
+                class="value"
+              >
+                Platinum
+              </div>
+            </div>
+            <div
+              class="feed__attachment "
+            >
+              <div
+                class="title"
+              >
+                Total Points
+              </div>
+              <div
+                class="value"
+              >
+                5302
+              </div>
+            </div>
+            <div
+              class="feed__attachment "
+            >
+              <div
+                class="title"
+              >
+                Visits
+              </div>
+              <div
+                class="value"
+              >
+                5
+              </div>
+            </div>
+            <div
+              class="feed__attachment "
+            >
+              <div
+                class="title"
+              >
+                Idle chit-chat
+              </div>
+              <div
+                class="value"
+              >
+                A little
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Feed data={[
+	{
+		createdAt: moment(NOW).subtract(34, 'hour'),
+		id: 'bbc55a55-2e13-4322-a2c5-0fec1abc79be',
+		message:
+			'Randy C. has arrived! 💥 This &lt;FeedItem /&gt; has bigAvatar set to true.',
+		user: demoGuest,
+		bigAvatar: true,
+		attachments: [
+			{
+				title: 'Membership level',
+				value: 'Gold'
+			},
+			{
+				title: 'Total Points',
+				value: 1253
+			}
+		]
+	},
+	{
+		createdAt: moment(NOW).subtract(25, 'hour'),
+		id: 'bbc55a55-2e13-4372-a2c5-0fec1abc79ee',
+		message: 'Ryan J. has arrived! 💥 bigAvatar is not true.',
+		user: demoGuest,
+		attachments: [
+			{
+				title: 'Membership level',
+				value: 'Turquoise'
+			},
+			{
+				title: 'Total Points',
+				value: 2393
+			},
+			{
+				title: 'Favorite Color',
+				value: 'blue'
+			},
+			{
+				title: 'Note',
+				fullWidth: true,
+				value:
+					'"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed dolor ac felis scelerisque hendrerit ac et dui. Sed vel tortor vitae magna luctus aliquam sit amet ut eros. Duis et viverra nulla, et mattis nunc." - Taylor R. Sept. 3rd'
+			}
+		]
+	},
+	{
+		createdAt: NOW,
+		id: 'bbc55a55-2e13-4322-a2c5-0fec1dabc79ee',
+		message:
+			'Shane M. has arrived! 💥 We also added more to this message to demo long alerts.',
+		user: demoGuest,
+		attachments: [
+			{
+				title: 'Membership level',
+				value: 'Platinum'
+			},
+			{
+				title: 'Total Points',
+				value: 5302
+			},
+			{
+				title: 'Visits',
+				value: 5
+			},
+			{
+				title: 'Idle chit-chat',
+				value: 'A little'
+			}
+		]
+	}
+]} /&gt;
+      </pre>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Training Guide
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <div
+        class="training_guide"
+      >
+        <div
+          class="training_guide__step on first"
+          style="height:0"
+        >
+          <p
+            class="BotText-d8677j-0 bot__text bpogzL"
+          >
+            <span>
+              This is a training guide.
+            </span>
+          </p>
+        </div>
+        <div
+          class="training_guide__step off "
+          style="height:0"
+        >
+          <p
+            class="BotText-d8677j-0 bot__text bpogzL"
+          >
+            <span>
+              It "guides" you through many steps.
+            </span>
+          </p>
+        </div>
+        <div
+          class="training_guide__step off "
+          style="height:0"
+        >
+          <p
+            class="BotText-d8677j-0 bot__text bpogzL"
+          >
+            <span>
+              One at a time
+            </span>
+          </p>
+        </div>
+        <div
+          class="training_guide__step off "
+          style="height:0"
+        >
+          <p
+            class="BotText-d8677j-0 bot__text bpogzL"
+          >
+            <span>
+              and the last one shows a done.
+            </span>
+          </p>
+        </div>
+        <div>
+          <button
+            class="btn__alt "
+            type="button"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+    <h1
+      class="Typography__H1-s1fueepp-1 cceFbQ"
+    >
+      Dialogs
+    </h1>
+    <div
+      class="Container-fikk1v-0 container gLKDhv"
+    >
+      <p
+        class="BotText-d8677j-0 bot__text bpogzL"
+      >
+        Dialogs are always shown modally. So, you can use them as alerts, confirmation dialogs, popups, etc.
+      </p>
+      <div
+        class="List-i0qvx7-0 List item__list jfNjUL"
+      >
+        <div
+          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+          title="Showing as an alert"
+        >
+          <div
+            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+          >
+            <div
+              class="List__ItemTitle-i0qvx7-5 ItemTitle title dGvWJv"
+            >
+              Showing as an alert
+            </div>
+            <div
+              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+            >
+              You can drop in a button to hide it too
+            </div>
+          </div>
+          <div
+            class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+          >
+            <button
+              class="btn__alt "
+              type="button"
+            >
+              Show Alert
+            </button>
+          </div>
+        </div>
+      </div>
+      <pre
+        class="sc-bdVaJa iDGKhr"
+      >
+        &lt;Dialog show={this.state.showAlert}&gt;
+	&lt;BotText&gt;Use BotText to display any content in the alert.&lt;/BotText&gt;
+	&lt;Button
+		type="button"
+		onClick={() =&gt; this.setState({ showAlert: false })}
+	&gt;
+		Okay
+	&lt;/Button&gt;
+&lt;/Dialog&gt;
+      </pre>
+    </div>
+  </div>
+</div>
+`;
