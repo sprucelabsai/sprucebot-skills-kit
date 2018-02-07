@@ -20,7 +20,9 @@ export default class TeamDashboard extends Component {
 				key={`item-${idx}`}
 				online={user.status === 'online'}
 				title={user.User.name}
-				subtitle={moment(new Date(user.lastRecordedVisit)).fromNow()}
+				subtitle={user.lastRecordedVisit
+						? moment(new Date(user.lastRecordedVisit)).fromNow()
+						: 'Never'}
 				rightTitle={`${user.visits} visit${user.visits === 1 ? '' : 's'}`}
 				avatar={
 					user.User.profileImages
