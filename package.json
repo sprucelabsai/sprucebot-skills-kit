@@ -33,7 +33,7 @@
     "react-dom": "^16.0.0",
     "react-emojione": "^5.0.0",
     "react-redux": "^5.0.6",
-    "react-sprucebot": "^0.11.1",
+    "react-sprucebot": "^0.10.10",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.17.2",
