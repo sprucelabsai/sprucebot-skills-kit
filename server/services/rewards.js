@@ -1,6 +1,6 @@
 module.exports = {
-	generateRewardWithCode(locationId, code) {
+	generateRewardWithCode(user, code) {
 		// Do your thing
-		return obj
+		return meta
 	}
 }
