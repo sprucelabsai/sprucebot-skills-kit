@@ -319,6 +319,7 @@ exports[`renders page with styleguide 1`] = `
       </pre>
       <a
         class="btn__primary "
+        href="https://sprucebot.com"
         type="button"
       >
         I'm a primary button turned link
@@ -677,6 +678,7 @@ exports[`renders page with styleguide 1`] = `
         >
           <a
             class="btn__alt "
+            href="http://hello.sprucebot.com"
             type="button"
           >
             Back to Dashboard
@@ -755,83 +757,83 @@ exports[`renders page with styleguide 1`] = `
         Lists are very useful for showing guests, teammates, etc.
       </p>
       <div
-        class="List-i0qvx7-0 List item__list jfNjUL"
+        class="List-fkaza4-0 List item__list irjMJZ"
       >
         <div
-          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+          class="List__ListItemWrapper-fkaza4-1  ListItemWrapper item__list__item  ecDflN"
           title="Taylor"
         >
           <div
-            class="List__ItemAvatar-i0qvx7-2 ItemAvatar avatar__outer__wrapper pWMkO"
+            class="List__ItemAvatar-fkaza4-2 ItemAvatar avatar__outer__wrapper diUSZG"
           >
             <div
               class="Avatar-bp4k6m-0 avatar__wrapper online jdosYG"
             />
           </div>
           <div
-            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+            class="List__ItemDetail-fkaza4-3 ItemDetail item__details iLwXre"
           >
             <div
-              class="List__ItemTitle-i0qvx7-5 ItemTitle title dGvWJv"
+              class="List__ItemTitle-fkaza4-5 ItemTitle title ccRilT"
             >
               Taylor
             </div>
             <div
-              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+              class="List__ItemSubTitle-fkaza4-6 ItemSubTitle sub__title VIqoH"
             >
               Last Visit: Today
             </div>
           </div>
           <div
-            class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+            class="List__ItemRightContent-fkaza4-4 ItemRightContent content__right fcAweD"
           >
             <div
-              class="List__ItemTitle-i0qvx7-5 ItemTitle title ijxgmb"
+              class="List__ItemTitle-fkaza4-5 ItemTitle title jRjUQt"
             >
               Owner
             </div>
             <div
-              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+              class="List__ItemSubTitle-fkaza4-6 ItemSubTitle sub__title VIqoH"
             >
               Visits: 7
             </div>
           </div>
         </div>
         <div
-          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item offline fedWXW"
+          class="List__ListItemWrapper-fkaza4-1  ListItemWrapper item__list__item offline jzbYw"
           title="Ryan"
         >
           <div
-            class="List__ItemAvatar-i0qvx7-2 ItemAvatar avatar__outer__wrapper pWMkO"
+            class="List__ItemAvatar-fkaza4-2 ItemAvatar avatar__outer__wrapper diUSZG"
           >
             <div
               class="Avatar-bp4k6m-0 avatar__wrapper jdosYG"
             />
           </div>
           <div
-            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+            class="List__ItemDetail-fkaza4-3 ItemDetail item__details iLwXre"
           >
             <div
-              class="List__ItemTitle-i0qvx7-5 ItemTitle title dGvWJv"
+              class="List__ItemTitle-fkaza4-5 ItemTitle title ccRilT"
             >
               Ryan
             </div>
             <div
-              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+              class="List__ItemSubTitle-fkaza4-6 ItemSubTitle sub__title VIqoH"
             >
               Last Visit: 10 days ago
             </div>
           </div>
           <div
-            class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+            class="List__ItemRightContent-fkaza4-4 ItemRightContent content__right fcAweD"
           >
             <div
-              class="List__ItemTitle-i0qvx7-5 ItemTitle title ijxgmb"
+              class="List__ItemTitle-fkaza4-5 ItemTitle title jRjUQt"
             >
               Owner
             </div>
             <div
-              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+              class="List__ItemSubTitle-fkaza4-6 ItemSubTitle sub__title VIqoH"
             >
               Visits: 7
             </div>
@@ -870,37 +872,37 @@ exports[`renders page with styleguide 1`] = `
         But, lists can do more than that! Actually, a LOT more than that!
       </p>
       <div
-        class="List-i0qvx7-0 List item__list jfNjUL"
+        class="List-fkaza4-0 List item__list irjMJZ"
       >
         <div
-          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+          class="List__ListItemWrapper-fkaza4-1  ListItemWrapper item__list__item  ecDflN"
         >
           <div
-            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+            class="List__ItemDetail-fkaza4-3 ItemDetail item__details iLwXre"
           >
             This is the most basic list item.
           </div>
         </div>
         <div
-          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+          class="List__ListItemWrapper-fkaza4-1  ListItemWrapper item__list__item  ecDflN"
           title="Awesome title!"
         >
           <div
-            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+            class="List__ItemDetail-fkaza4-3 ItemDetail item__details iLwXre"
           >
             <div
-              class="List__ItemTitle-i0qvx7-5 ItemTitle title dGvWJv"
+              class="List__ItemTitle-fkaza4-5 ItemTitle title ccRilT"
             >
               Awesome title!
             </div>
             <div
-              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+              class="List__ItemSubTitle-fkaza4-6 ItemSubTitle sub__title VIqoH"
             >
               Fantastic subtitle!
             </div>
           </div>
           <div
-            class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+            class="List__ItemRightContent-fkaza4-4 ItemRightContent content__right fcAweD"
           >
             <a
               class="btn__remove "
@@ -909,15 +911,15 @@ exports[`renders page with styleguide 1`] = `
           </div>
         </div>
         <div
-          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+          class="List__ListItemWrapper-fkaza4-1  ListItemWrapper item__list__item  ecDflN"
         >
           <div
-            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+            class="List__ItemDetail-fkaza4-3 ItemDetail item__details iLwXre"
           >
             I can even do switches!
           </div>
           <div
-            class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+            class="List__ItemRightContent-fkaza4-4 ItemRightContent content__right fcAweD"
           >
             <div
               class="Switch__SwitchComp-ntuyi9-1 Switch switch  hFMueS"
@@ -930,10 +932,10 @@ exports[`renders page with styleguide 1`] = `
           </div>
         </div>
         <div
-          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+          class="List__ListItemWrapper-fkaza4-1  ListItemWrapper item__list__item  ecDflN"
         >
           <div
-            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+            class="List__ItemDetail-fkaza4-3 ItemDetail item__details iLwXre"
           >
             <div
               class="input__wrapper"
@@ -950,10 +952,10 @@ exports[`renders page with styleguide 1`] = `
           </div>
         </div>
         <div
-          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+          class="List__ListItemWrapper-fkaza4-1  ListItemWrapper item__list__item  ecDflN"
         >
           <div
-            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+            class="List__ItemDetail-fkaza4-3 ItemDetail item__details iLwXre"
           >
             <div
               class="input__wrapper"
@@ -1476,7 +1478,7 @@ exports[`renders page with styleguide 1`] = `
           />
         </span>
         <div
-          class="ImageCropper__StyledReactCrop-p6nh2a-0 eVQhpV"
+          class="ImageCropper__StyledReactCrop-s1vwwtwy-0 kiJZXW"
         >
           <div
             class="ReactCrop"
@@ -1598,18 +1600,18 @@ exports[`renders page with styleguide 1`] = `
             Things like nested forms or multi-step processes benefit greatly from a callout. It lets you see where you were, but brings focus to what you're about to do.
           </p>
           <div
-            class="List-i0qvx7-0 List item__list jfNjUL"
+            class="List-fkaza4-0 List item__list irjMJZ"
           >
             <div
-              class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+              class="List__ListItemWrapper-fkaza4-1  ListItemWrapper item__list__item  ecDflN"
             >
               <div
-                class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+                class="List__ItemDetail-fkaza4-3 ItemDetail item__details iLwXre"
               >
                 Try the call out! -&gt;
               </div>
               <div
-                class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+                class="List__ItemRightContent-fkaza4-4 ItemRightContent content__right fcAweD"
               >
                 <div
                   class="Switch__SwitchComp-ntuyi9-1 Switch switch  hFMueS"
@@ -2054,28 +2056,28 @@ exports[`renders page with styleguide 1`] = `
         Dialogs are always shown modally. So, you can use them as alerts, confirmation dialogs, popups, etc.
       </p>
       <div
-        class="List-i0qvx7-0 List item__list jfNjUL"
+        class="List-fkaza4-0 List item__list irjMJZ"
       >
         <div
-          class="List__ListItemWrapper-i0qvx7-1  ListItemWrapper item__list__item  kayrdJ"
+          class="List__ListItemWrapper-fkaza4-1  ListItemWrapper item__list__item  ecDflN"
           title="Showing as an alert"
         >
           <div
-            class="List__ItemDetail-i0qvx7-3 ItemDetail item__details hHsNYr"
+            class="List__ItemDetail-fkaza4-3 ItemDetail item__details iLwXre"
           >
             <div
-              class="List__ItemTitle-i0qvx7-5 ItemTitle title dGvWJv"
+              class="List__ItemTitle-fkaza4-5 ItemTitle title ccRilT"
             >
               Showing as an alert
             </div>
             <div
-              class="List__ItemSubTitle-i0qvx7-6 ItemSubTitle sub__title imvoJP"
+              class="List__ItemSubTitle-fkaza4-6 ItemSubTitle sub__title VIqoH"
             >
               You can drop in a button to hide it too
             </div>
           </div>
           <div
-            class="List__ItemRightContent-i0qvx7-4 ItemRightContent content__right dIwVNt"
+            class="List__ItemRightContent-fkaza4-4 ItemRightContent content__right fcAweD"
           >
             <button
               class="btn__alt "
