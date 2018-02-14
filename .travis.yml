@@ -1,9 +1,16 @@
 language: node_js
 node_js: '8'
 
-install: yarn install
+before_install:
+  - yarn global add greenkeeper-lockfile@1
+install:
+  - yarn install
+before_script:
+    # Determine if a greenkeeper package update
+    # This is a null op if not on `greenkeeper/*` branch
+    - greenkeeper-lockfile-update
 script: 
   - yarn run lint
-  - yarn test
+  - yarn run test
 after_script:
   - bash <(curl -s https://codecov.io/bash) # Upload code coverage reports

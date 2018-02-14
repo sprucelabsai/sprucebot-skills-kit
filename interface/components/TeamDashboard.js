@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import moment from 'moment'
+import moment from 'moment-timezone'
 import {
 	H1,
 	BotText,
@@ -20,7 +20,11 @@ export default class TeamDashboard extends Component {
 				key={`item-${idx}`}
 				online={user.status === 'online'}
 				title={user.User.name}
-				subtitle={moment(new Date(user.lastRecordedVisit)).fromNow()}
+				subtitle={
+					user.lastRecordedVisit
+						? moment(new Date(user.lastRecordedVisit)).fromNow()
+						: 'Never'
+				}
 				rightTitle={`${user.visits} visit${user.visits === 1 ? '' : 's'}`}
 				avatar={
 					user.User.profileImages
