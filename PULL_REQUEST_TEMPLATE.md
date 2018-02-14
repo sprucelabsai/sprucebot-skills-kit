@@ -1,4 +1,4 @@
-[SB-](https://jira-issue-number.com)
+[SB-](https://jira.sprucelabs.ai/jira/browse/SB-)
 
 @sprucelabsai/engineers
 
