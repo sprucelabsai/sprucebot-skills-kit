@@ -3727,9 +3727,9 @@ jest-snapshot@^22.1.2:
     natural-compare "^1.4.0"
     pretty-format "^22.1.0"
 
-jest-styled-components@^4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/jest-styled-components/-/jest-styled-components-4.9.0.tgz#459ccb37d0f5720007c8dba358bfff93c8cf4aed"
+jest-styled-components@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/jest-styled-components/-/jest-styled-components-5.0.0.tgz#258f64c0a9c388042fb6b5d40af71ec11cec82f2"
   dependencies:
     css "^2.2.1"
 
@@ -6086,9 +6086,9 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
-sprucebot-node@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/sprucebot-node/-/sprucebot-node-0.4.2.tgz#127af1ad69f7795c9b93441b3d9414422594ca4d"
+sprucebot-node@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/sprucebot-node/-/sprucebot-node-0.5.0.tgz#963384375a792b233097780cfeb61e8b5beb1411"
   dependencies:
     debug "^3.1.0"
 
