@@ -28,6 +28,12 @@ module.exports = {
 		process.env.INTERFACE_SSL_ALLOW_SELF_SIGNED === 'true',
 	API_SSL_ALLOW_SELF_SIGNED: process.env.API_SSL_ALLOW_SELF_SIGNED === 'true',
 	WHITELABEL: process.env.WHITELABEL,
+	sequelizeOptions: {
+		enabled: process.env.DB_ENABLED === 'true',
+		runMigrations: process.env.DB_MIGRATIONS === 'true',
+		modelsDir: path.resolve(__dirname, '../server/models'),
+		migrationsDir: path.resolve(__dirname, '../server/migrations')
+	},
 	utilities: {}, // Settings for any utilities.
 	services: {
 		'uploads.disabled': {

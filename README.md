@@ -12,6 +12,20 @@ Describe how your skill works for anyone who may need to come in and maintain or
 ### Utilities
  * `rewards` - Does something else.
 
+### Sequelize Adapter
+Allow your skill to an external sql database.
+* In .env enable with `DB_ENABLED=true`
+* Configure the `DB_MIGRATIONS=true` to enable automatically running migrations
+* Create `server/models/Example.js` from `.example`
+* Setup a migration to build the table in `server/migrations/*_example.js#up()` from `.example`
+
+All of your models are available via koa `ctx.db.models.Example.*` and `ctx.db.sequelize.*`
+
+We also ship with three "Core" models
+`ctx.db.models.User`
+`ctx.db.models.Location`
+`ctx.db.models.UserLocation`
+
 ### Custom events
 Describe any custom events your skill emits. Make sure you include whether or not it honors `preventDefault` and include the `payload`'s schema.
 

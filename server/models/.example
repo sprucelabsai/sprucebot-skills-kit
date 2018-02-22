@@ -1,0 +1,20 @@
+// http://docs.sequelizejs.com/manual/tutorial/models-definition.html
+
+const modelName = 'Example'
+
+module.exports = (sequelize, DataTypes) => {
+	const attributes = {
+		title: {
+			type: DataTypes.STRING,
+			defaultValue: 'My Model.title'
+		}
+	}
+	const options = {
+		classMethods: {
+			associate(models) {
+				this.belongsToMany(models.OtherModel...)
+			}
+		}
+	}
+	return sequelize.define(modelName, attributes, options)
+}

@@ -1,0 +1,16 @@
+// http://docs.sequelizejs.com/manual/tutorial/migrations.html#creating-first-model-and-migration-
+module.exports = {
+	up: (queryInterface, Sequelize) => {
+		return queryInterface.bulkInsert(
+			'Examples', // The model.name
+			[
+				{
+					title: 'Migrations rock!',
+					createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+					updatedAt: Sequelize.literal('CURRENT_TIMESTAMP')
+				}
+			],
+			{}
+		)
+	}
+}
