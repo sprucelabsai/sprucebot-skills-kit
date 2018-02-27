@@ -27,6 +27,7 @@ module.exports = {
 	INTERFACE_SSL_ALLOW_SELF_SIGNED:
 		process.env.INTERFACE_SSL_ALLOW_SELF_SIGNED === 'true',
 	API_SSL_ALLOW_SELF_SIGNED: process.env.API_SSL_ALLOW_SELF_SIGNED === 'true',
+	WHITELABEL_STYLESHEET_URL: process.env.WHITELABEL_STYLESHEET_URL,
 	utilities: {}, // Settings for any utilities.
 	services: {
 		'uploads.disabled': {
@@ -69,6 +70,7 @@ module.exports = {
 			'VIMEO_ID',
 			'DEV_MODE',
 			'log_colors',
-			'nextConfig'
+			'nextConfig',
+			'WHITELABEL_STYLESHEET_URL'
 		])
 }

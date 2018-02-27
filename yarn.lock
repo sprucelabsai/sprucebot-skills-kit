@@ -1346,6 +1346,10 @@ circular-json@^0.3.1:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.3.tgz#815c99ea84f6809529d2f45791bdf82711352d66"
 
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 cli-cursor@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-2.1.0.tgz#b35dac376479facc3e94747d41d0d0f5238ffcb5"
@@ -5376,12 +5380,13 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-sprucebot@^0.12.5:
-  version "0.12.5"
-  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.12.5.tgz#5776aa105246e86f28cbdf3f4c68c01f0184d443"
+react-sprucebot@^0.12.12:
+  version "0.12.12"
+  resolved "https://registry.yarnpkg.com/react-sprucebot/-/react-sprucebot-0.12.12.tgz#7f0e60fc3193538d71156924cdb89dc2fd496e20"
   dependencies:
     babel-polyfill "^6.26.0"
     babel-register "^6.26.0"
+    classnames "^2.2.5"
     cookies "^0.7.1"
     imagesloaded "^4.1.4"
     js-cookies "^1.0.4"
@@ -6092,9 +6097,9 @@ sprucebot-node@^0.5.0:
   dependencies:
     debug "^3.1.0"
 
-sprucebot-skills-kit-server@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-1.0.1.tgz#6dc29b32ba5c1eb6897ca763e6b00340cd226e34"
+sprucebot-skills-kit-server@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/sprucebot-skills-kit-server/-/sprucebot-skills-kit-server-1.0.6.tgz#d4062efd5594a58bb0e7e6f5a31a4e308d061312"
   dependencies:
     "@koa/cors" "2"
     config "^1.28.0"
