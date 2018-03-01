@@ -71,6 +71,7 @@ module.exports = {
 			'DEV_MODE',
 			'log_colors',
 			'nextConfig',
-			'WHITELABEL'
+			'WHITELABEL',
+			'SLUG'
 		])
 }
