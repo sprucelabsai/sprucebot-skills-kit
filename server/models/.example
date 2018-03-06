@@ -9,12 +9,12 @@ module.exports = (sequelize, DataTypes) => {
 			defaultValue: 'My Model.title'
 		}
 	}
-	const options = {
-		classMethods: {
-			associate(models) {
-				this.belongsToMany(models.OtherModel...)
-			}
-		}
+	const options = {}
+	const Example = sequelize.define(modelName, attributes, options)
+	
+	Example.associate = function(models) {
+		this.belongsToMany(models.OtherModel...)
 	}
-	return sequelize.define(modelName, attributes, options)
+
+	return Example
 }

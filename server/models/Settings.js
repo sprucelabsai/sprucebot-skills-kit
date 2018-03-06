@@ -9,10 +9,10 @@ module.exports = (sequelize, DataTypes) => {
 			primaryKey: true
 		}
 	}
-	const options = {
-		classMethods: {
-			associate(models) {}
-		}
-	}
-	return sequelize.define(modelName, attributes, options)
+	const options = {}
+	const Settings = sequelize.define(modelName, attributes, options)
+
+	Settings.associate = function(models) {}
+
+	return Settings
 }
