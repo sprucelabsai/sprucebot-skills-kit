@@ -53,7 +53,4 @@ setTimeout(() => {
 		sequelizeOptions,
 		errors
 	})
-	// .then(async koa => {
-	// 	console.log(await koa.context.db.models.User.count())
-	// })
 }, 2000)
