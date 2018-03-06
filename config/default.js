@@ -27,7 +27,7 @@ module.exports = {
 	INTERFACE_SSL_ALLOW_SELF_SIGNED:
 		process.env.INTERFACE_SSL_ALLOW_SELF_SIGNED === 'true',
 	API_SSL_ALLOW_SELF_SIGNED: process.env.API_SSL_ALLOW_SELF_SIGNED === 'true',
-	WHITELABEL_STYLESHEET_URL: process.env.WHITELABEL_STYLESHEET_URL,
+	WHITELABEL: process.env.WHITELABEL,
 	utilities: {}, // Settings for any utilities.
 	services: {
 		'uploads.disabled': {
@@ -71,6 +71,7 @@ module.exports = {
 			'DEV_MODE',
 			'log_colors',
 			'nextConfig',
-			'WHITELABEL_STYLESHEET_URL'
+			'WHITELABEL',
+			'SLUG'
 		])
 }
