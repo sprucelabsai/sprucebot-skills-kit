@@ -517,10 +517,11 @@ exports[`renders page with styleguide 1`] = `
       class="Container-fikk1v-0 container gLKDhv"
     >
       <div
-        class="Switch__SwitchComp-tukiv5-1 Switch switch  bAxOYI"
+        class="Switch__SwitchComp-s1c00dta-1 Switch switch  dZXjAe"
+        tabindex="0"
       >
         <span
-          class="Switch__SwitchButton-tukiv5-0 SwitchButton fZrhai"
+          class="Switch__SwitchButton-s1c00dta-0 SwitchButton kvPrAW"
           type="button"
         />
       </div>
@@ -534,10 +535,11 @@ exports[`renders page with styleguide 1`] = `
 /&gt;
       </pre>
       <div
-        class="Switch__SwitchComp-tukiv5-1 Switch switch  kJnaWS"
+        class="Switch__SwitchComp-s1c00dta-1 Switch switch  ccpGXB"
+        tabindex="0"
       >
         <span
-          class="Switch__SwitchButton-tukiv5-0 SwitchButton gnhffu"
+          class="Switch__SwitchButton-s1c00dta-0 SwitchButton ljoFZW"
           type="button"
         />
       </div>
@@ -922,10 +924,11 @@ exports[`renders page with styleguide 1`] = `
             class="List__ItemRightContent-ozoa0c-4 ItemRightContent content__right lanRUR"
           >
             <div
-              class="Switch__SwitchComp-tukiv5-1 Switch switch  bAxOYI"
+              class="Switch__SwitchComp-s1c00dta-1 Switch switch  dZXjAe"
+              tabindex="0"
             >
               <span
-                class="Switch__SwitchButton-tukiv5-0 SwitchButton fZrhai"
+                class="Switch__SwitchButton-s1c00dta-0 SwitchButton kvPrAW"
                 type="button"
               />
             </div>
@@ -1614,10 +1617,11 @@ exports[`renders page with styleguide 1`] = `
                 class="List__ItemRightContent-ozoa0c-4 ItemRightContent content__right lanRUR"
               >
                 <div
-                  class="Switch__SwitchComp-tukiv5-1 Switch switch  bAxOYI"
+                  class="Switch__SwitchComp-s1c00dta-1 Switch switch  dZXjAe"
+                  tabindex="0"
                 >
                   <span
-                    class="Switch__SwitchButton-tukiv5-0 SwitchButton fZrhai"
+                    class="Switch__SwitchButton-s1c00dta-0 SwitchButton kvPrAW"
                     type="button"
                   />
                 </div>
