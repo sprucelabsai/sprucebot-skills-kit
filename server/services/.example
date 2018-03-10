@@ -1,0 +1,8 @@
+module.exports = {
+	getSomeMetas() {
+		return this.sb.metas('my-key')
+	},
+	getSomeDatabaseCount() {
+		return this.db.models.Example.count()
+	}
+}

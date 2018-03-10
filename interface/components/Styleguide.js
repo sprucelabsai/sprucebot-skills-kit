@@ -568,7 +568,8 @@ export default class Styleguide extends Component {
 					<Pager
 						totalPages={5}
 						titles={page =>
-							['Page 1', 'Custom', 'What the?', 'You know', 'What'][page]}
+							['Page 1', 'Custom', 'What the?', 'You know', 'What'][page]
+						}
 						onChange={(page, e) => {
 							console.log('page:', page, 'event:', e)
 						}}

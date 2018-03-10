@@ -16,7 +16,8 @@ const {
 	API_SSL_ALLOW_SELF_SIGNED,
 	nextConfig,
 	errors,
-	bodyParserOptions
+	bodyParserOptions,
+	sequelizeOptions
 } = require('config')
 
 // Construct a new Sprucebot
@@ -29,7 +30,8 @@ const sprucebot = new Sprucebot({
 	interfaceUrl: INTERFACE_HOST,
 	serverUrl: SERVER_HOST,
 	svgIcon: ICON,
-	allowSelfSignedCerts: API_SSL_ALLOW_SELF_SIGNED
+	allowSelfSignedCerts: API_SSL_ALLOW_SELF_SIGNED,
+	dbEnabled: sequelizeOptions && sequelizeOptions.enabled
 })
 
 // serve the skill, wait 2 seconds for debugger to connect
@@ -48,6 +50,7 @@ setTimeout(() => {
 		staticDir: path.join(__dirname, 'static'),
 		langDir: path.join(__dirname, '..', 'interface', 'lang'),
 		bodyParserOptions,
+		sequelizeOptions,
 		errors
 	})
 }, 2000)
