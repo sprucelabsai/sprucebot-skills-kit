@@ -3,7 +3,7 @@
 exports[`renders page with styleguide 1`] = `
 <div>
   <div
-    class="Container-fikk1v-0 container gLKDhv"
+    class="Container-md3jvi-0 container cqhPkv"
   >
     <svg
       id="Layer_1"
@@ -30,27 +30,27 @@ exports[`renders page with styleguide 1`] = `
       </g>
     </svg>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Hello 🌲 Sprucebot 🌲 Developer!
     </h1>
     <p
-      class="BotText-s2akchz-0 bot__text gnwltl"
+      class="BotText-s1aw735w-0 bot__text gicUIk"
     >
       Use the Styleguide below to get a jump start. For a proper introduction, see "./docs/README.md" in your project.
     </p>
   </div>
   <div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Importing Components
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         All the components you need to build your skill are available in the 'react-sprucebot' module. Any modules you create yourself are subject to rejection from the Skills Marketplace.
       </p>
@@ -94,20 +94,20 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Headings
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         Notice the use of the Component with a capitalized tag, e.g. 'H' vs 'h'. This is intentional and is actively enforced.
       </p>
       <h1
-        class="Typography__H1-s1fueepp-1 cceFbQ"
+        class="Typography__H1-s141trq-1 cblwbP"
       >
         I'm an H1
       </h1>
@@ -117,7 +117,7 @@ exports[`renders page with styleguide 1`] = `
         &lt;H1&gt;I'm an H1&lt;/H1&gt;
       </pre>
       <h2
-        class="Typography__H2-s1fueepp-2 bBnigf"
+        class="Typography__H2-s141trq-2 ehMvHj"
       >
         I'm an H2
       </h2>
@@ -127,7 +127,7 @@ exports[`renders page with styleguide 1`] = `
         &lt;H2&gt;I'm an H2&lt;/H2&gt;
       </pre>
       <h3
-        class="Typography__H3-s1fueepp-3 hQDaxA"
+        class="Typography__H3-s141trq-3 grEfnu"
       >
         I'm an H3
       </h3>
@@ -137,7 +137,7 @@ exports[`renders page with styleguide 1`] = `
         &lt;H3&gt;I'm an H3&lt;/H3&gt;
       </pre>
       <h4
-        class="Typography__H4-s1fueepp-4 hdYqvZ"
+        class="Typography__H4-s141trq-4 gRQOrT"
       >
         I'm an H4
       </h4>
@@ -147,7 +147,7 @@ exports[`renders page with styleguide 1`] = `
         &lt;H4&gt;I'm an H4&lt;/H4&gt;
       </pre>
       <h5
-        class="Typography__H5-s1fueepp-5 fkdNxe"
+        class="Typography__H5-s141trq-5 imnRsg"
       >
         I'm an H5
       </h5>
@@ -157,7 +157,7 @@ exports[`renders page with styleguide 1`] = `
         &lt;H5&gt;I'm an H5&lt;/H5&gt;
       </pre>
       <h6
-        class="Typography__H6-s1fueepp-6 buydtg"
+        class="Typography__H6-s141trq-6 yrvUm"
       >
         I'm an H6
       </h6>
@@ -167,7 +167,7 @@ exports[`renders page with styleguide 1`] = `
         &lt;H6&gt;I'm an H6&lt;/H6&gt;
       </pre>
       <p
-        class="Typography__Paragraph-s1fueepp-0 hBMeUr"
+        class="Typography__Paragraph-s141trq-0 kcAfmu"
       >
         I'm a paragraph of some text
       </p>
@@ -177,7 +177,7 @@ exports[`renders page with styleguide 1`] = `
         &lt;P&gt;I'm a paragraph of some text&lt;/P&gt;
       </pre>
       <a
-        class="Typography__A-s1fueepp-7 kPmMLG"
+        class="Typography__A-s141trq-7 hzUJIm"
         href="#"
       >
         I'm an anchor tag
@@ -188,7 +188,7 @@ exports[`renders page with styleguide 1`] = `
         &lt;A href="#"&gt;I'm an anchor tag&lt;/A&gt;
       </pre>
       <h2
-        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+        class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
       >
         Section Heading
       </h2>
@@ -198,26 +198,26 @@ exports[`renders page with styleguide 1`] = `
         &lt;SectionHeading&gt;Section Heading&lt;/SectionHeading&gt;
       </pre>
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         Use SectionHeading to break up sections of your page and to label forms, similar to a fieldset.
       </p>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Sub Headings
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <h1
-        class="Typography__H1-s1fueepp-1 with__subheader cceFbQ"
+        class="Typography__H1-s141trq-1 with__subheader cblwbP"
       >
         Header
       </h1>
       <h2
-        class="Typography__H2-s1fueepp-2 is__subheader bBnigf"
+        class="Typography__H2-s141trq-2 is__subheader ehMvHj"
       >
         Sub Headings
       </h2>
@@ -229,15 +229,15 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Bot Text
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         I'm some bot text. I'm great for quick hints, tips, shout outs, etc. This text comes right from Sprucebot, so make sure it's on brand.
       </p>
@@ -248,15 +248,15 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Paragraphs
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="Typography__Paragraph-s1fueepp-0 hBMeUr"
+        class="Typography__Paragraph-s141trq-0 kcAfmu"
       >
         I'm a normal paragraph tag
       </p>
@@ -266,7 +266,7 @@ exports[`renders page with styleguide 1`] = `
         &lt;P&gt;I'm a normal paragraph tag&lt;/P&gt;
       </pre>
       <p
-        class="Typography__Paragraph-s1fueepp-0 fine__print hBMeUr"
+        class="Typography__Paragraph-s141trq-0 fine__print kcAfmu"
       >
         I'm some fine print
       </p>
@@ -277,20 +277,20 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Top Avatar
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         Avatars usually go next to users when output in a list. Adding the "top" property will make it big and center. Great for the tops of profile or dashboard pages.
       </p>
       <div
-        class="Avatar-bp4k6m-0 top__avatar jdosYG"
+        class="Avatar-dlsm6o-0 top__avatar jbkXms"
       />
       <pre
         class="sc-bdVaJa iDGKhr"
@@ -299,12 +299,12 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Buttons
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <button
         class="btn__primary "
@@ -430,15 +430,15 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Loaders
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         Loaders can be dark or light. Default, they are dark. But, if you need to put a loader on a dark dark background, set dark=.
       </p>
@@ -509,19 +509,19 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Switches
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <div
-        class="Switch__SwitchComp-s1c00dta-1 Switch switch  dZXjAe"
+        class="Switch__SwitchComp-wfc8pr-1 Switch switch  eHWIUy"
         tabindex="0"
       >
         <span
-          class="Switch__SwitchButton-s1c00dta-0 SwitchButton kvPrAW"
+          class="Switch__SwitchButton-wfc8pr-0 SwitchButton kLTHFe"
           type="button"
         />
       </div>
@@ -535,11 +535,11 @@ exports[`renders page with styleguide 1`] = `
 /&gt;
       </pre>
       <div
-        class="Switch__SwitchComp-s1c00dta-1 Switch switch  ccpGXB"
+        class="Switch__SwitchComp-wfc8pr-1 Switch switch  fzCZJB"
         tabindex="0"
       >
         <span
-          class="Switch__SwitchButton-s1c00dta-0 SwitchButton ljoFZW"
+          class="Switch__SwitchButton-wfc8pr-0 SwitchButton esjjoB"
           type="button"
         />
       </div>
@@ -550,23 +550,23 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Forms
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         Forms and elements currently do not do any validation nor formatting for you. You must manually set 'error' to display an error message.
       </p>
       <form
-        class="Form-s1llqxic-0 ghbKZf"
+        class="Form-u8jhv9-0 cRDFHA"
       >
         <h2
-          class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+          class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
         >
           Profile
         </h2>
@@ -594,18 +594,18 @@ exports[`renders page with styleguide 1`] = `
             value="founders@sprucelabs.ai"
           />
           <p
-            class="Typography__Paragraph-s1fueepp-0 fine__print hBMeUr"
+            class="Typography__Paragraph-s141trq-0 fine__print kcAfmu"
           >
             This is helpful fine print.
           </p>
         </div>
         <h2
-          class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+          class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
         >
           Another Section
         </h2>
         <p
-          class="BotText-s2akchz-0 bot__text gnwltl"
+          class="BotText-s1aw735w-0 bot__text gicUIk"
         >
           Most properties on an Input are passed through, so you can do more than just text!
         </p>
@@ -676,7 +676,7 @@ exports[`renders page with styleguide 1`] = `
           </textarea>
         </div>
         <div
-          class="SubmitWrapper-a0o1v5-0 submit__wrapper dPEbUr"
+          class="SubmitWrapper-s5rqw4n-0 submit__wrapper jWcvtf"
         >
           <a
             class="btn__alt "
@@ -741,101 +741,101 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Lists
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <h2
-        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+        class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
       >
         A Friend List
       </h2>
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         Lists are very useful for showing guests, teammates, etc.
       </p>
       <div
-        class="List-ozoa0c-0 List item__list aogba"
+        class="List-s15prkdz-0 List item__list bkLHAA"
       >
         <div
-          class="List__ListItemWrapper-ozoa0c-1  ListItemWrapper item__list__item  hFoMeC"
+          class="List__ListItemWrapper-s15prkdz-1  ListItemWrapper item__list__item  eKoNxy"
           title="Taylor"
         >
           <div
-            class="List__ItemAvatar-ozoa0c-2 ItemAvatar avatar__outer__wrapper fSQElD"
+            class="List__ItemAvatar-s15prkdz-2 ItemAvatar avatar__outer__wrapper bSeSyS"
           >
             <div
-              class="Avatar-bp4k6m-0 avatar__wrapper online jdosYG"
+              class="Avatar-dlsm6o-0 avatar__wrapper online jbkXms"
             />
           </div>
           <div
-            class="List__ItemDetail-ozoa0c-3 ItemDetail item__details bGjznf"
+            class="List__ItemDetail-s15prkdz-3 ItemDetail item__details gwpIUt"
           >
             <div
-              class="List__ItemTitle-ozoa0c-5 ItemTitle title epcuzO"
+              class="List__ItemTitle-s15prkdz-5 ItemTitle title knxUoe"
             >
               Taylor
             </div>
             <div
-              class="List__ItemSubTitle-ozoa0c-6 ItemSubTitle sub__title kjSlhC"
+              class="List__ItemSubTitle-s15prkdz-6 ItemSubTitle sub__title jrzuey"
             >
               Last Visit: Today
             </div>
           </div>
           <div
-            class="List__ItemRightContent-ozoa0c-4 ItemRightContent content__right lanRUR"
+            class="List__ItemRightContent-s15prkdz-4 ItemRightContent content__right fgoBzY"
           >
             <div
-              class="List__ItemTitle-ozoa0c-5 ItemTitle title jappWb"
+              class="List__ItemTitle-s15prkdz-5 ItemTitle title hiLMKd"
             >
               Owner
             </div>
             <div
-              class="List__ItemSubTitle-ozoa0c-6 ItemSubTitle sub__title kjSlhC"
+              class="List__ItemSubTitle-s15prkdz-6 ItemSubTitle sub__title jrzuey"
             >
               Visits: 7
             </div>
           </div>
         </div>
         <div
-          class="List__ListItemWrapper-ozoa0c-1  ListItemWrapper item__list__item offline lmtmdM"
+          class="List__ListItemWrapper-s15prkdz-1  ListItemWrapper item__list__item offline kZQZZV"
           title="Ryan"
         >
           <div
-            class="List__ItemAvatar-ozoa0c-2 ItemAvatar avatar__outer__wrapper fSQElD"
+            class="List__ItemAvatar-s15prkdz-2 ItemAvatar avatar__outer__wrapper bSeSyS"
           >
             <div
-              class="Avatar-bp4k6m-0 avatar__wrapper jdosYG"
+              class="Avatar-dlsm6o-0 avatar__wrapper jbkXms"
             />
           </div>
           <div
-            class="List__ItemDetail-ozoa0c-3 ItemDetail item__details bGjznf"
+            class="List__ItemDetail-s15prkdz-3 ItemDetail item__details gwpIUt"
           >
             <div
-              class="List__ItemTitle-ozoa0c-5 ItemTitle title epcuzO"
+              class="List__ItemTitle-s15prkdz-5 ItemTitle title knxUoe"
             >
               Ryan
             </div>
             <div
-              class="List__ItemSubTitle-ozoa0c-6 ItemSubTitle sub__title kjSlhC"
+              class="List__ItemSubTitle-s15prkdz-6 ItemSubTitle sub__title jrzuey"
             >
               Last Visit: 10 days ago
             </div>
           </div>
           <div
-            class="List__ItemRightContent-ozoa0c-4 ItemRightContent content__right lanRUR"
+            class="List__ItemRightContent-s15prkdz-4 ItemRightContent content__right fgoBzY"
           >
             <div
-              class="List__ItemTitle-ozoa0c-5 ItemTitle title jappWb"
+              class="List__ItemTitle-s15prkdz-5 ItemTitle title hiLMKd"
             >
               Owner
             </div>
             <div
-              class="List__ItemSubTitle-ozoa0c-6 ItemSubTitle sub__title kjSlhC"
+              class="List__ItemSubTitle-s15prkdz-6 ItemSubTitle sub__title jrzuey"
             >
               Visits: 7
             </div>
@@ -864,47 +864,47 @@ exports[`renders page with styleguide 1`] = `
 &lt;/List&gt;
       </pre>
       <h2
-        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+        class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
       >
         A Flexible List!
       </h2>
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         But, lists can do more than that! Actually, a LOT more than that!
       </p>
       <div
-        class="List-ozoa0c-0 List item__list aogba"
+        class="List-s15prkdz-0 List item__list bkLHAA"
       >
         <div
-          class="List__ListItemWrapper-ozoa0c-1  ListItemWrapper item__list__item  hFoMeC"
+          class="List__ListItemWrapper-s15prkdz-1  ListItemWrapper item__list__item  eKoNxy"
         >
           <div
-            class="List__ItemDetail-ozoa0c-3 ItemDetail item__details bGjznf"
+            class="List__ItemDetail-s15prkdz-3 ItemDetail item__details gwpIUt"
           >
             This is the most basic list item.
           </div>
         </div>
         <div
-          class="List__ListItemWrapper-ozoa0c-1  ListItemWrapper item__list__item  hFoMeC"
+          class="List__ListItemWrapper-s15prkdz-1  ListItemWrapper item__list__item  eKoNxy"
           title="Awesome title!"
         >
           <div
-            class="List__ItemDetail-ozoa0c-3 ItemDetail item__details bGjznf"
+            class="List__ItemDetail-s15prkdz-3 ItemDetail item__details gwpIUt"
           >
             <div
-              class="List__ItemTitle-ozoa0c-5 ItemTitle title epcuzO"
+              class="List__ItemTitle-s15prkdz-5 ItemTitle title knxUoe"
             >
               Awesome title!
             </div>
             <div
-              class="List__ItemSubTitle-ozoa0c-6 ItemSubTitle sub__title kjSlhC"
+              class="List__ItemSubTitle-s15prkdz-6 ItemSubTitle sub__title jrzuey"
             >
               Fantastic subtitle!
             </div>
           </div>
           <div
-            class="List__ItemRightContent-ozoa0c-4 ItemRightContent content__right lanRUR"
+            class="List__ItemRightContent-s15prkdz-4 ItemRightContent content__right fgoBzY"
           >
             <a
               class="btn__remove "
@@ -913,32 +913,32 @@ exports[`renders page with styleguide 1`] = `
           </div>
         </div>
         <div
-          class="List__ListItemWrapper-ozoa0c-1  ListItemWrapper item__list__item  hFoMeC"
+          class="List__ListItemWrapper-s15prkdz-1  ListItemWrapper item__list__item  eKoNxy"
         >
           <div
-            class="List__ItemDetail-ozoa0c-3 ItemDetail item__details bGjznf"
+            class="List__ItemDetail-s15prkdz-3 ItemDetail item__details gwpIUt"
           >
             I can even do switches!
           </div>
           <div
-            class="List__ItemRightContent-ozoa0c-4 ItemRightContent content__right lanRUR"
+            class="List__ItemRightContent-s15prkdz-4 ItemRightContent content__right fgoBzY"
           >
             <div
-              class="Switch__SwitchComp-s1c00dta-1 Switch switch  dZXjAe"
+              class="Switch__SwitchComp-wfc8pr-1 Switch switch  eHWIUy"
               tabindex="0"
             >
               <span
-                class="Switch__SwitchButton-s1c00dta-0 SwitchButton kvPrAW"
+                class="Switch__SwitchButton-wfc8pr-0 SwitchButton kLTHFe"
                 type="button"
               />
             </div>
           </div>
         </div>
         <div
-          class="List__ListItemWrapper-ozoa0c-1  ListItemWrapper item__list__item  hFoMeC"
+          class="List__ListItemWrapper-s15prkdz-1  ListItemWrapper item__list__item  eKoNxy"
         >
           <div
-            class="List__ItemDetail-ozoa0c-3 ItemDetail item__details bGjznf"
+            class="List__ItemDetail-s15prkdz-3 ItemDetail item__details gwpIUt"
           >
             <div
               class="input__wrapper"
@@ -955,10 +955,10 @@ exports[`renders page with styleguide 1`] = `
           </div>
         </div>
         <div
-          class="List__ListItemWrapper-ozoa0c-1  ListItemWrapper item__list__item  hFoMeC"
+          class="List__ListItemWrapper-s15prkdz-1  ListItemWrapper item__list__item  eKoNxy"
         >
           <div
-            class="List__ItemDetail-ozoa0c-3 ItemDetail item__details bGjznf"
+            class="List__ItemDetail-s15prkdz-3 ItemDetail item__details gwpIUt"
           >
             <div
               class="input__wrapper"
@@ -1013,12 +1013,12 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Tabs
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <div
         class="tabs__container "
@@ -1052,7 +1052,7 @@ exports[`renders page with styleguide 1`] = `
             class="tap__pane"
           >
             <p
-              class="BotText-s2akchz-0 bot__text gnwltl"
+              class="BotText-s1aw735w-0 bot__text gicUIk"
             >
               Tabs are fantastic! You can use them so easily!
             </p>
@@ -1076,25 +1076,25 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Link Pile
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         LinkPile's are great for dashboards or control panels. It shrinks the margin between buttons to make them look more cohesive.
       </p>
       <h2
-        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+        class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
       >
         Controls
       </h2>
       <div
-        class="LinkPile-a3he5q-0 link__pile bDkZiA"
+        class="LinkPile-abktjg-0 link__pile fwfXpR"
       >
         <button
           class="btn__primary "
@@ -1135,12 +1135,12 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Search
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <div
         class="input__wrapper"
@@ -1157,15 +1157,15 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Pager
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         The pager is pretty simple. It will track your page (zero based), but you'll need to implement \`onChange\`\` to make your API requests. Also, don't forget to add \`totalPages\`.
       </p>
@@ -1222,15 +1222,15 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Stats Slider
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <h2
-        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+        class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
       >
         KPI's
       </h2>
@@ -1337,25 +1337,25 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Button Grid
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <h2
-        class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+        class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
       >
         Select Your Options
       </h2>
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         Set the line-height of .btn_grid .btn to control height of button. The text will stay centered.
       </p>
       <div
-        class="ButtonGrid-s3gomjg-0 btn_grid jWCqnU"
+        class="ButtonGrid-s119c6nx-0 btn_grid ivLDPO"
       >
         <a
           class="btn  "
@@ -1404,15 +1404,15 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Stars
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         Please take a moment to rate this rating component.
       </p>
@@ -1445,15 +1445,15 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Image Cropper
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         Our ImageCropper is currently using 
         <a
@@ -1481,7 +1481,7 @@ exports[`renders page with styleguide 1`] = `
           />
         </span>
         <div
-          class="ImageCropper__StyledReactCrop-s1vwwtwy-0 kiJZXW"
+          class="ImageCropper__StyledReactCrop-h49vwj-0 fWDHhs"
         >
           <div
             class="ReactCrop"
@@ -1573,15 +1573,15 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Callouts
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         If you have some information you need to call out (think modal dialog), you can use the &lt;Callout /&gt; component.
       </p>
@@ -1593,35 +1593,35 @@ exports[`renders page with styleguide 1`] = `
           class="callout  off"
         >
           <h2
-            class="Typography__H2-s1fueepp-2 bBnigf"
+            class="Typography__H2-s141trq-2 ehMvHj"
           >
             Some important sub-form
           </h2>
           <p
-            class="BotText-s2akchz-0 bot__text gnwltl"
+            class="BotText-s1aw735w-0 bot__text gicUIk"
           >
             Things like nested forms or multi-step processes benefit greatly from a callout. It lets you see where you were, but brings focus to what you're about to do.
           </p>
           <div
-            class="List-ozoa0c-0 List item__list aogba"
+            class="List-s15prkdz-0 List item__list bkLHAA"
           >
             <div
-              class="List__ListItemWrapper-ozoa0c-1  ListItemWrapper item__list__item  hFoMeC"
+              class="List__ListItemWrapper-s15prkdz-1  ListItemWrapper item__list__item  eKoNxy"
             >
               <div
-                class="List__ItemDetail-ozoa0c-3 ItemDetail item__details bGjznf"
+                class="List__ItemDetail-s15prkdz-3 ItemDetail item__details gwpIUt"
               >
                 Try the call out! -&gt;
               </div>
               <div
-                class="List__ItemRightContent-ozoa0c-4 ItemRightContent content__right lanRUR"
+                class="List__ItemRightContent-s15prkdz-4 ItemRightContent content__right fgoBzY"
               >
                 <div
-                  class="Switch__SwitchComp-s1c00dta-1 Switch switch  dZXjAe"
+                  class="Switch__SwitchComp-wfc8pr-1 Switch switch  eHWIUy"
                   tabindex="0"
                 >
                   <span
-                    class="Switch__SwitchButton-s1c00dta-0 SwitchButton kvPrAW"
+                    class="Switch__SwitchButton-wfc8pr-0 SwitchButton kLTHFe"
                     type="button"
                   />
                 </div>
@@ -1655,15 +1655,15 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       The Feed
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         The Feed is used by nearly every Skill to visualize events and facilitate conversation around those events.
       </p>
@@ -1674,7 +1674,7 @@ exports[`renders page with styleguide 1`] = `
           class="feed__item big_avatar"
         >
           <h2
-            class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+            class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
           >
             Dec 30th
           </h2>
@@ -1682,11 +1682,11 @@ exports[`renders page with styleguide 1`] = `
             class="feed__avatar"
           >
             <div
-              class="Avatar-bp4k6m-0 top__avatar jdosYG"
+              class="Avatar-dlsm6o-0 top__avatar jbkXms"
             />
           </div>
           <p
-            class="BotText-s2akchz-0 bot__text gnwltl"
+            class="BotText-s1aw735w-0 bot__text gicUIk"
           >
             Randy C. has arrived! 💥 This &lt;FeedItem /&gt; has bigAvatar set to true.
             <span
@@ -1732,7 +1732,7 @@ exports[`renders page with styleguide 1`] = `
           class="feed__item "
         >
           <h2
-            class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+            class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
           >
             Dec 31st
           </h2>
@@ -1740,11 +1740,11 @@ exports[`renders page with styleguide 1`] = `
             class="feed__avatar"
           >
             <div
-              class="Avatar-bp4k6m-0 avatar__wrapper jdosYG"
+              class="Avatar-dlsm6o-0 avatar__wrapper jbkXms"
             />
           </div>
           <p
-            class="BotText-s2akchz-0 bot__text gnwltl"
+            class="BotText-s1aw735w-0 bot__text gicUIk"
           >
             Ryan J. has arrived! 💥 bigAvatar is not true.
             <span
@@ -1818,7 +1818,7 @@ exports[`renders page with styleguide 1`] = `
           class="feed__item "
         >
           <h2
-            class="Typography__SectionHeading-s1fueepp-8 profile__subtitle huTZJG"
+            class="Typography__SectionHeading-s141trq-8 profile__subtitle gAZGdv"
           >
             Jan 1st
           </h2>
@@ -1826,11 +1826,11 @@ exports[`renders page with styleguide 1`] = `
             class="feed__avatar"
           >
             <div
-              class="Avatar-bp4k6m-0 avatar__wrapper jdosYG"
+              class="Avatar-dlsm6o-0 avatar__wrapper jbkXms"
             />
           </div>
           <p
-            class="BotText-s2akchz-0 bot__text gnwltl"
+            class="BotText-s1aw735w-0 bot__text gicUIk"
           >
             Shane M. has arrived! 💥 We also added more to this message to demo long alerts.
             <span
@@ -1978,12 +1978,12 @@ exports[`renders page with styleguide 1`] = `
       </pre>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Training Guide
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <div
         class="training_guide"
@@ -1993,7 +1993,7 @@ exports[`renders page with styleguide 1`] = `
           style="height:0"
         >
           <p
-            class="BotText-s2akchz-0 bot__text gnwltl"
+            class="BotText-s1aw735w-0 bot__text gicUIk"
           >
             <span>
               This is a training guide.
@@ -2005,7 +2005,7 @@ exports[`renders page with styleguide 1`] = `
           style="height:0"
         >
           <p
-            class="BotText-s2akchz-0 bot__text gnwltl"
+            class="BotText-s1aw735w-0 bot__text gicUIk"
           >
             <span>
               It "guides" you through many steps.
@@ -2017,7 +2017,7 @@ exports[`renders page with styleguide 1`] = `
           style="height:0"
         >
           <p
-            class="BotText-s2akchz-0 bot__text gnwltl"
+            class="BotText-s1aw735w-0 bot__text gicUIk"
           >
             <span>
               One at a time
@@ -2029,7 +2029,7 @@ exports[`renders page with styleguide 1`] = `
           style="height:0"
         >
           <p
-            class="BotText-s2akchz-0 bot__text gnwltl"
+            class="BotText-s1aw735w-0 bot__text gicUIk"
           >
             <span>
               and the last one shows a done.
@@ -2047,41 +2047,41 @@ exports[`renders page with styleguide 1`] = `
       </div>
     </div>
     <h1
-      class="Typography__H1-s1fueepp-1 cceFbQ"
+      class="Typography__H1-s141trq-1 cblwbP"
     >
       Dialogs
     </h1>
     <div
-      class="Container-fikk1v-0 container gLKDhv"
+      class="Container-md3jvi-0 container cqhPkv"
     >
       <p
-        class="BotText-s2akchz-0 bot__text gnwltl"
+        class="BotText-s1aw735w-0 bot__text gicUIk"
       >
         Dialogs are always shown modally. So, you can use them as alerts, confirmation dialogs, popups, etc.
       </p>
       <div
-        class="List-ozoa0c-0 List item__list aogba"
+        class="List-s15prkdz-0 List item__list bkLHAA"
       >
         <div
-          class="List__ListItemWrapper-ozoa0c-1  ListItemWrapper item__list__item  hFoMeC"
+          class="List__ListItemWrapper-s15prkdz-1  ListItemWrapper item__list__item  eKoNxy"
           title="Showing as an alert"
         >
           <div
-            class="List__ItemDetail-ozoa0c-3 ItemDetail item__details bGjznf"
+            class="List__ItemDetail-s15prkdz-3 ItemDetail item__details gwpIUt"
           >
             <div
-              class="List__ItemTitle-ozoa0c-5 ItemTitle title epcuzO"
+              class="List__ItemTitle-s15prkdz-5 ItemTitle title knxUoe"
             >
               Showing as an alert
             </div>
             <div
-              class="List__ItemSubTitle-ozoa0c-6 ItemSubTitle sub__title kjSlhC"
+              class="List__ItemSubTitle-s15prkdz-6 ItemSubTitle sub__title jrzuey"
             >
               You can drop in a button to hide it too
             </div>
           </div>
           <div
-            class="List__ItemRightContent-ozoa0c-4 ItemRightContent content__right lanRUR"
+            class="List__ItemRightContent-s15prkdz-4 ItemRightContent content__right fgoBzY"
           >
             <button
               class="btn__alt "
