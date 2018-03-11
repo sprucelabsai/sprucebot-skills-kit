@@ -11,12 +11,11 @@
     "local": "npm run icon && node --inspect=4006 ./server/server.js",
     "interface": "next ./interface -p 3006",
     "lint": "./node_modules/.bin/eslint --fix '**/**/*{.js,.scss}'",
-    "test": "jest",
+    "test": "yarn run build && jest",
     "icon": "./node_modules/.bin/svgo icon/icon.svg",
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm run test",
-    "heroku-postbuild": "npm run build",
-    "postinstall": "npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.2.1",
