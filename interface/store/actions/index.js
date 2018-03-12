@@ -1,7 +1,7 @@
 import * as users from './users'
 import * as locations from './locations'
 
-module.exports = {
+export default {
 	users,
 	locations
 }
