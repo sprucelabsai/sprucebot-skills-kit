@@ -37,7 +37,7 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sprucebot-node": "^1.1.0",
-    "sprucebot-skills-kit-server": "^1.1.1",
+    "sprucebot-skills-kit-server": "^2.0.0",
     "styled-components": "^3.2.1",
     "universal-cookie": "^2.1.0",
     "enzyme": "^3.3.0",
